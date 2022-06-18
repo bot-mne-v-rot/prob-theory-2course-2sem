@@ -3,26 +3,26 @@
 \documentclass[12pt, a4paper, oneside]{book}
 \usepackage{preamble}
 \renewcommand{\thesection}{\arabic{section}}
-%здесь похоронены 2 часа моей жизни. проявите увожение и не трогайте эту секцию
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{titletoc}% http://ctan.org/pkg/titletoc
-\titlecontents*{chapter}% <section-type>
-  [0pt]% <left>
-  {}% <above-code>
-  {\bfseries\chaptername\ \thecontentslabel. }% <numbered-entry-format>
-  {}% <numberless-entry-format>
-  {\bfseries\hfill}% <filler-page-format>
+% %здесь похоронены 2 часа моей жизни. проявите увожение и не трогайте эту секцию
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{titletoc}% http://ctan.org/pkg/titletoc
+% \titlecontents*{chapter}% <section-type>
+%   [0pt]% <left>
+%   {}% <above-code>
+%   {\bfseries\chaptername\ \thecontentslabel. }% <numbered-entry-format>
+%   {}% <numberless-entry-format>
+%   {\bfseries\hfill}% <filler-page-format>
   
-\titlecontents{section}
-   [25pt]
-   {\normalsize}
-   {\textsection\thecontentslabel. }
-   {}
-   {\titlerule*[0.7pc]{.}\contentspage}
-   [\addvspace{0pt}]
-\usepackage{titlesec}
-\titleformat{\section}
-  {\normalfont\Large\bfseries}{\S\thesection. }{0em}{}
+% \titlecontents{section}
+%    [25pt]
+%    {\normalsize}
+%    {\textsection\thecontentslabel. }
+%    {}
+%    {\titlerule*[0.7pc]{.}\contentspage}
+%    [\addvspace{0pt}]
+% \usepackage{titlesec}
+% \titleformat{\section}
+%   {\normalfont\Large\bfseries}{\S\thesection. }{0em}{}
   
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,7 +30,7 @@
 %подписывайтесь!
 % и на сп дурку тоже https://t.me/spdank
 
-\renewcommand{\sectionmark}[1]{\markright{\textsection\arabic{section}.\ #1}}
+% \renewcommand{\sectionmark}[1]{\markright{\textsection\arabic{section}.\ #1}}
 \usepackage{bbm}
 \usepackage{tikz}
 \newcommand{\bsc}{\bigsqcup}
@@ -58,34 +58,14 @@
 
 \begin{document}
 
-\input{title}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter
 
-\tableofcontents
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter 
-% \input{sections/section_1}
-% \input{sections/section_2}
-% \input{sections/section_3}
-% \input{sections/section_4}
-% \input{sections/section_5}
-% \input{sections/section_6}
-% \input{sections/section_7}
-% \input{sections/section_8}
-% \input{sections/section_9}
-% \input{sections/section_10}
-% \input{sections/section_11}
-% \input{sections/section_12}
-% \input{sections/section_13}
-% \input{sections/section_14}
-% \input{sections/section_15}
-% \input{sections/section_16}
-% \input{sections/section_17}
-% \input{sections/section_18}
+
 \input{tickets/ticket1.tex}
 \input{tickets/ticket2.tex}
 \input{tickets/ticket3.tex}

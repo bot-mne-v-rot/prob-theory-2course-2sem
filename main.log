@@ -1,8 +1,8 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.9.9)  18 JUN 2022 04:05
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.11.1)  18 JUN 2022 04:20
  restricted system commands enabled.
  file:line:error style messages enabled.
-**"/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/main.tex"
-("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/main.tex"
+**/Users/mraker/prob-theory-2course-2sem/main.tex
+(/Users/mraker/prob-theory-2course-2sem/main.tex
 LaTeX2e <2020-02-02> patch level 5
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
 Lua module: luaotfload-init 2020-02-02 3.12 luaotfload submodule / initialization
@@ -11,7 +11,7 @@ Lua module: lualibs-extended 2020-02-02 2.70 ConTeXt Lua libraries -- extended c
 Lua module: luaotfload-log 2020-02-02 3.12 luaotfload submodule / logging
 Lua module: luaotfload-parsers 2020-02-02 3.12 luaotfload submodule / filelist
 Lua module: luaotfload-configuration 2020-02-02 3.12 luaotfload submodule / config file reader
-luaotfload | conf : Root cache directory is /usr/local/texlive/2020/texmf-var/luatex-cache/generic-dev/names.
+luaotfload | conf : Root cache directory is /Users/mraker/Library/texlive/2020/texmf-var/luatex-cache/generic-dev/names.
 luaotfload | init : Loading fontloader “fontloader-2020-01-26.lua” from kpse-resolved path “/usr/local/texlive/2020/texmf-dist/tex/luatex/luaotfload/fontloader-2020-01-26.lua”.
 Lua-only attribute luaotfload@state = 2
 Lua-only attribute luaotfload@noligature = 3
@@ -26,7 +26,7 @@ Lua module: luaotfload-unicode 2020-02-02 3.12 luaotfload submodule / Unicode he
 Lua module: luaotfload-colors 2020-02-02 3.12 luaotfload submodule / color
 Lua-only attribute luaotfload_color_attribute = 5
 Lua module: luaotfload-resolvers 2020-02-02 3.12 luaotfload submodule / resolvers
-luaotfload | conf : Root cache directory is /usr/local/texlive/2020/texmf-var/luatex-cache/generic-dev/names.
+luaotfload | conf : Root cache directory is /Users/mraker/Library/texlive/2020/texmf-var/luatex-cache/generic-dev/names.
 Lua module: luaotfload-features 2020-02-02 3.12 luaotfload submodule / features
 Lua module: luaotfload-letterspace 2020-02-02 3.12 luaotfload submodule / color
 Lua module: luaotfload-embolden 2020-02-02 3.12 luaotfload submodule / color
@@ -54,7 +54,7 @@ Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
 Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/bk12.clo
 File: bk12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
-luaotfload | db : Font names database loaded from /usr/local/texlive/2020/texmf-var/luatex-cache/generic-dev/names/luaotfload-names.luc)
+luaotfload | db : Font names database loaded from /Users/mraker/Library/texlive/2020/texmf-var/luatex-cache/generic-dev/names/luaotfload-names.luc)
 \c@part=\count163
 \c@chapter=\count164
 \c@section=\count165
@@ -67,7 +67,7 @@ luaotfload | db : Font names database loaded from /usr/local/texlive/2020/texmf-
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
-) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/preamble.sty"
+) (/Users/mraker/prob-theory-2course-2sem/preamble.sty
 Package: preamble 2020/07/17 Preamble
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-03-06 L3 programming layer (loader) 
@@ -292,26 +292,18 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
 \langwohyphens=\language87
 LaTeX Info: Redefining \_ on input line 43.
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip50
-\enit@outerparindent=\dimen148
-\enit@toks=\toks18
-\enit@inbox=\box46
-\enit@count@id=\count278
-\enitdp@description=\count279
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count280
-\float@exts=\toks19
-\float@box=\box47
-\@float@everytoks=\toks20
-\@floatcapt=\box48
+\c@float@type=\count278
+\float@exts=\toks18
+\float@box=\box46
+\@float@everytoks=\toks19
+\@floatcapt=\box47
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks21
-\footnotemargin=\dimen149
-\c@pp@next@reset=\count281
+\FN@temptoken=\toks20
+\footnotemargin=\dimen148
+\c@pp@next@reset=\count279
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -332,7 +324,7 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks22
+\pdftexcmds@toks=\toks21
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -348,9 +340,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen150
-\Hy@linkcounter=\count282
-\Hy@pagecounter=\count283
+\@linkdim=\dimen149
+\Hy@linkcounter=\count280
+\Hy@pagecounter=\count281
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
@@ -358,7 +350,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count284
+\Hy@SavedSpaceFactor=\count282
 Package hyperref Info: Option `unicode' set `true' on input line 3502.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
@@ -370,21 +362,21 @@ Package hyperref Info: Plain pages OFF on input line 4562.
 Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count285
+\c@Hy@tempcnt=\count283
  (/usr/local/texlive/2020/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen151
+\XeTeXLinkMargin=\dimen150
  (/usr/local/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count286
-\Field@Width=\dimen152
-\Fld@charsize=\dimen153
+\Fld@menulength=\count284
+\Field@Width=\dimen151
+\Fld@charsize=\dimen152
 Package hyperref Info: Hyper figures OFF on input line 6430.
 Package hyperref Info: Link nesting OFF on input line 6435.
 Package hyperref Info: Hyper index ON on input line 6438.
@@ -397,9 +389,9 @@ LaTeX Info: Redefining \pageref on input line 6504.
  (/usr/local/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count287
-\c@Item=\count288
-\c@Hfootnote=\count289
+\Hy@abspage=\count285
+\c@Item=\count286
+\c@Hfootnote=\count287
 )
 Package hyperref Info: Driver (autodetected): hluatex.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hluatex.def
@@ -410,8 +402,8 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
 )
-\Fld@listcount=\count290
-\c@bookmark@seq@number=\count291
+\Fld@listcount=\count288
+\c@bookmark@seq@number=\count289
  (/usr/local/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -419,7 +411,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
-\Hy@SectionHShift=\skip51
+\Hy@SectionHShift=\skip50
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
@@ -431,24 +423,24 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: luatex.def on input line 105.
 )
-\Gin@req@height=\dimen154
-\Gin@req@width=\dimen155
+\Gin@req@height=\dimen153
+\Gin@req@width=\dimen154
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen156
-\captionmargin@=\dimen157
-\captionwidth=\dimen158
-\caption@tempdima=\dimen159
-\caption@indent=\dimen160
-\caption@parindent=\dimen161
-\caption@hangindent=\dimen162
+\captionmargin=\dimen155
+\captionmargin@=\dimen156
+\captionwidth=\dimen157
+\caption@tempdima=\dimen158
+\caption@indent=\dimen159
+\caption@parindent=\dimen160
+\caption@hangindent=\dimen161
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count292
-\c@continuedfloat=\count293
+\c@caption@flags=\count290
+\c@continuedfloat=\count291
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/tocbibind/tocbibind.sty
@@ -467,10 +459,10 @@ Package: imakeidx 2016/10/15 v1.3e Package for typesetting indices in a synchron
  (/usr/local/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks23
-\XKV@tempa@toks=\toks24
+\XKV@toks=\toks22
+\XKV@tempa@toks=\toks23
 )
-\XKV@depth=\count294
+\XKV@depth=\count292
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
@@ -478,27 +470,28 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count295
-\mult@box=\box49
-\multicol@leftmargin=\dimen163
-\c@unbalance=\count296
-\c@collectmore=\count297
-\doublecol@number=\count298
-\multicoltolerance=\count299
-\multicolpretolerance=\count300
-\full@width=\dimen164
-\page@free=\dimen165
-\premulticols=\dimen166
-\postmulticols=\dimen167
-\multicolsep=\skip52
-\multicolbaselineskip=\skip53
-\partial@page=\box50
-\last@line=\box51
-\maxbalancingoverflow=\dimen168
-\mult@rightbox=\box52
-\mult@grightbox=\box53
-\mult@gfirstbox=\box54
-\mult@firstbox=\box55
+\c@tracingmulticols=\count293
+\mult@box=\box48
+\multicol@leftmargin=\dimen162
+\c@unbalance=\count294
+\c@collectmore=\count295
+\doublecol@number=\count296
+\multicoltolerance=\count297
+\multicolpretolerance=\count298
+\full@width=\dimen163
+\page@free=\dimen164
+\premulticols=\dimen165
+\postmulticols=\dimen166
+\multicolsep=\skip51
+\multicolbaselineskip=\skip52
+\partial@page=\box49
+\last@line=\box50
+\maxbalancingoverflow=\dimen167
+\mult@rightbox=\box51
+\mult@grightbox=\box52
+\mult@gfirstbox=\box53
+\mult@firstbox=\box54
+\@tempa=\box55
 \@tempa=\box56
 \@tempa=\box57
 \@tempa=\box58
@@ -535,134 +528,133 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box89
 \@tempa=\box90
 \@tempa=\box91
-\@tempa=\box92
-\c@minrows=\count301
-\c@columnbadness=\count302
-\c@finalcolumnbadness=\count303
-\last@try=\dimen169
-\multicolovershoot=\dimen170
-\multicolundershoot=\dimen171
-\mult@nat@firstbox=\box93
-\colbreak@box=\box94
-\mc@col@check@num=\count304
+\c@minrows=\count299
+\c@columnbadness=\count300
+\c@finalcolumnbadness=\count301
+\last@try=\dimen168
+\multicolovershoot=\dimen169
+\multicolundershoot=\dimen170
+\mult@nat@firstbox=\box92
+\colbreak@box=\box93
+\mc@col@check@num=\count302
 )) (/usr/local/texlive/2020/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip54
-\cftbeforetoctitleskip=\skip55
-\cftaftertoctitleskip=\skip56
-\cftbeforepartskip=\skip57
-\cftpartnumwidth=\skip58
-\cftpartindent=\skip59
-\cftbeforechapskip=\skip60
-\cftchapindent=\skip61
-\cftchapnumwidth=\skip62
-\cftbeforesecskip=\skip63
-\cftsecindent=\skip64
-\cftsecnumwidth=\skip65
-\cftbeforesubsecskip=\skip66
-\cftsubsecindent=\skip67
-\cftsubsecnumwidth=\skip68
-\cftbeforesubsubsecskip=\skip69
-\cftsubsubsecindent=\skip70
-\cftsubsubsecnumwidth=\skip71
-\cftbeforeparaskip=\skip72
-\cftparaindent=\skip73
-\cftparanumwidth=\skip74
-\cftbeforesubparaskip=\skip75
-\cftsubparaindent=\skip76
-\cftsubparanumwidth=\skip77
-\cftbeforeloftitleskip=\skip78
-\cftafterloftitleskip=\skip79
-\cftbeforefigskip=\skip80
-\cftfigindent=\skip81
-\cftfignumwidth=\skip82
-\c@lofdepth=\count305
-\c@lotdepth=\count306
-\cftbeforelottitleskip=\skip83
-\cftafterlottitleskip=\skip84
-\cftbeforetabskip=\skip85
-\cfttabindent=\skip86
-\cfttabnumwidth=\skip87
+\cftparskip=\skip53
+\cftbeforetoctitleskip=\skip54
+\cftaftertoctitleskip=\skip55
+\cftbeforepartskip=\skip56
+\cftpartnumwidth=\skip57
+\cftpartindent=\skip58
+\cftbeforechapskip=\skip59
+\cftchapindent=\skip60
+\cftchapnumwidth=\skip61
+\cftbeforesecskip=\skip62
+\cftsecindent=\skip63
+\cftsecnumwidth=\skip64
+\cftbeforesubsecskip=\skip65
+\cftsubsecindent=\skip66
+\cftsubsecnumwidth=\skip67
+\cftbeforesubsubsecskip=\skip68
+\cftsubsubsecindent=\skip69
+\cftsubsubsecnumwidth=\skip70
+\cftbeforeparaskip=\skip71
+\cftparaindent=\skip72
+\cftparanumwidth=\skip73
+\cftbeforesubparaskip=\skip74
+\cftsubparaindent=\skip75
+\cftsubparanumwidth=\skip76
+\cftbeforeloftitleskip=\skip77
+\cftafterloftitleskip=\skip78
+\cftbeforefigskip=\skip79
+\cftfigindent=\skip80
+\cftfignumwidth=\skip81
+\c@lofdepth=\count303
+\c@lotdepth=\count304
+\cftbeforelottitleskip=\skip82
+\cftafterlottitleskip=\skip83
+\cftbeforetabskip=\skip84
+\cfttabindent=\skip85
+\cfttabnumwidth=\skip86
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks25
-\thm@bodyfont=\toks26
-\thm@headfont=\toks27
-\thm@notefont=\toks28
-\thm@headpunct=\toks29
-\thm@preskip=\skip88
-\thm@postskip=\skip89
-\thm@headsep=\skip90
-\dth@everypar=\toks30
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip87
+\thm@postskip=\skip88
+\thm@headsep=\skip89
+\dth@everypar=\toks29
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip91
+\@mathmargin=\skip90
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks31
-\ex@=\dimen172
+\@emptytoks=\toks30
+\ex@=\dimen171
 )) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen173
+\pmbraise@=\dimen172
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count307
+\inf@bad=\count305
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count308
-\leftroot@=\count309
+\uproot@=\count306
+\leftroot@=\count307
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count310
-\DOTSCASE@=\count311
+\classnum@=\count308
+\DOTSCASE@=\count309
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box95
-\strutbox@=\box96
-\big@size=\dimen174
+\Mathstrutbox@=\box94
+\strutbox@=\box95
+\big@size=\dimen173
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count312
-\c@MaxMatrixCols=\count313
+\macc@depth=\count310
+\c@MaxMatrixCols=\count311
 \dotsspace@=\muskip17
-\c@parentequation=\count314
-\dspbrk@lvl=\count315
-\tag@help=\toks32
-\row@=\count316
-\column@=\count317
-\maxfields@=\count318
-\andhelp@=\toks33
-\eqnshift@=\dimen175
-\alignsep@=\dimen176
-\tagshift@=\dimen177
-\tagwidth@=\dimen178
-\totwidth@=\dimen179
-\lineht@=\dimen180
-\@envbody=\toks34
-\multlinegap=\skip92
-\multlinetaggap=\skip93
-\mathdisplay@stack=\toks35
+\c@parentequation=\count312
+\dspbrk@lvl=\count313
+\tag@help=\toks31
+\row@=\count314
+\column@=\count315
+\maxfields@=\count316
+\andhelp@=\toks32
+\eqnshift@=\dimen174
+\alignsep@=\dimen175
+\tagshift@=\dimen176
+\tagwidth@=\dimen177
+\totwidth@=\dimen178
+\lineht@=\dimen179
+\@envbody=\toks33
+\multlinegap=\skip91
+\multlinetaggap=\skip92
+\mathdisplay@stack=\toks34
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
  (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count319
-\calc@Bcount=\count320
-\calc@Adimen=\dimen181
-\calc@Bdimen=\dimen182
-\calc@Askip=\skip94
-\calc@Bskip=\skip95
+\calc@Acount=\count317
+\calc@Bcount=\count318
+\calc@Adimen=\dimen180
+\calc@Bdimen=\dimen181
+\calc@Askip=\skip93
+\calc@Bskip=\skip94
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count321
-\calc@Cskip=\skip96
+\calc@Ccount=\count319
+\calc@Cskip=\skip95
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
@@ -670,24 +662,24 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count322
-\l_MT_multwidth_dim=\dimen183
-\origjot=\skip97
-\l_MT_shortvdotswithinadjustabove_dim=\dimen184
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen185
-\l_MT_above_intertext_sep=\dimen186
-\l_MT_below_intertext_sep=\dimen187
-\l_MT_above_shortintertext_sep=\dimen188
-\l_MT_below_shortintertext_sep=\dimen189
-\xmathstrut@box=\box97
-\xmathstrut@dim=\dimen190
+\g_MT_multlinerow_int=\count320
+\l_MT_multwidth_dim=\dimen182
+\origjot=\skip96
+\l_MT_shortvdotswithinadjustabove_dim=\dimen183
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen184
+\l_MT_above_intertext_sep=\dimen185
+\l_MT_below_intertext_sep=\dimen186
+\l_MT_above_shortintertext_sep=\dimen187
+\l_MT_below_shortintertext_sep=\dimen188
+\xmathstrut@box=\box96
+\xmathstrut@dim=\dimen189
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/tensor/tensor.sty
 Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
-\tnsr@Sps=\toks36
-\tnsr@Sbs=\toks37
-\tnsr@Spe=\toks38
-\tnsr@Sbe=\toks39
-\ncld@Mno=\toks40
+\tnsr@Sps=\toks35
+\tnsr@Sbs=\toks36
+\tnsr@Spe=\toks37
+\tnsr@Sbe=\toks38
+\ncld@Mno=\toks39
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/oberdiek/stackrel.sty
 Package: stackrel 2016/05/16 v1.3 Adding subscript option to stackrel (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/oberdiek/centernot.sty
@@ -695,11 +687,11 @@ Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 Package: tikz-cd 2018/11/19 v0.9f Commutative diagrams with TikZ
  (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks41
-\pgfutil@tempdima=\dimen191
-\pgfutil@tempdimb=\dimen192
+\pgfutil@everybye=\toks40
+\pgfutil@tempdima=\dimen190
+\pgfutil@tempdimb=\dimen191
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box98
+\pgfutil@abb=\box97
  (/usr/local/texlive/2020/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -709,31 +701,31 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks42
-\pgfkeys@temptoks=\toks43
+\pgfkeys@pathtoks=\toks41
+\pgfkeys@temptoks=\toks42
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks44
+\pgfkeys@tmptoks=\toks43
 ))
-\pgf@x=\dimen193
-\pgf@y=\dimen194
-\pgf@xa=\dimen195
-\pgf@ya=\dimen196
-\pgf@xb=\dimen197
-\pgf@yb=\dimen198
-\pgf@xc=\dimen199
-\pgf@yc=\dimen256
-\pgf@xd=\dimen257
-\pgf@yd=\dimen258
+\pgf@x=\dimen192
+\pgf@y=\dimen193
+\pgf@xa=\dimen194
+\pgf@ya=\dimen195
+\pgf@xb=\dimen196
+\pgf@yb=\dimen197
+\pgf@xc=\dimen198
+\pgf@yc=\dimen199
+\pgf@xd=\dimen256
+\pgf@yd=\dimen257
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
-\c@pgf@counta=\count323
-\c@pgf@countb=\count324
-\c@pgf@countc=\count325
-\c@pgf@countd=\count326
-\t@pgf@toka=\toks45
-\t@pgf@tokb=\toks46
-\t@pgf@tokc=\toks47
-\pgf@sys@id@count=\count327
+\c@pgf@counta=\count321
+\c@pgf@countb=\count322
+\c@pgf@countc=\count323
+\c@pgf@countd=\count324
+\t@pgf@toka=\toks44
+\t@pgf@tokb=\toks45
+\t@pgf@tokc=\toks46
+\pgf@sys@id@count=\count325
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -744,59 +736,59 @@ File: pgfsys-luatex.def 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count328
-\pgfsyssoftpath@bigbuffer@items=\count329
+\pgfsyssoftpath@smallbuffer@items=\count326
+\pgfsyssoftpath@bigbuffer@items=\count327
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen259
-\pgfmath@count=\count330
-\pgfmath@box=\box99
-\pgfmath@toks=\toks48
-\pgfmath@stack@operand=\toks49
-\pgfmath@stack@operation=\toks50
+\pgfmath@dimen=\dimen258
+\pgfmath@count=\count328
+\pgfmath@box=\box98
+\pgfmath@toks=\toks47
+\pgfmath@stack@operand=\toks48
+\pgfmath@stack@operation=\toks49
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count331
+\c@pgfmathroundto@lastzeros=\count329
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen260
-\pgf@picmaxx=\dimen261
-\pgf@picminy=\dimen262
-\pgf@picmaxy=\dimen263
-\pgf@pathminx=\dimen264
-\pgf@pathmaxx=\dimen265
-\pgf@pathminy=\dimen266
-\pgf@pathmaxy=\dimen267
-\pgf@xx=\dimen268
-\pgf@xy=\dimen269
-\pgf@yx=\dimen270
-\pgf@yy=\dimen271
-\pgf@zx=\dimen272
-\pgf@zy=\dimen273
+\pgf@picminx=\dimen259
+\pgf@picmaxx=\dimen260
+\pgf@picminy=\dimen261
+\pgf@picmaxy=\dimen262
+\pgf@pathminx=\dimen263
+\pgf@pathmaxx=\dimen264
+\pgf@pathminy=\dimen265
+\pgf@pathmaxy=\dimen266
+\pgf@xx=\dimen267
+\pgf@xy=\dimen268
+\pgf@yx=\dimen269
+\pgf@yy=\dimen270
+\pgf@zx=\dimen271
+\pgf@zy=\dimen272
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen274
-\pgf@path@lasty=\dimen275
+\pgf@path@lastx=\dimen273
+\pgf@path@lasty=\dimen274
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen276
-\pgf@shorten@start@additional=\dimen277
+\pgf@shorten@end@additional=\dimen275
+\pgf@shorten@start@additional=\dimen276
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box100
-\pgf@hbox=\box101
-\pgf@layerbox@main=\box102
-\pgf@picture@serial@count=\count332
+\pgfpic=\box99
+\pgf@hbox=\box100
+\pgf@layerbox@main=\box101
+\pgf@picture@serial@count=\count330
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen278
+\pgflinewidth=\dimen277
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen279
-\pgf@pt@y=\dimen280
-\pgf@pt@temp=\dimen281
+\pgf@pt@x=\dimen278
+\pgf@pt@y=\dimen279
+\pgf@pt@temp=\dimen280
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -805,17 +797,17 @@ File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen282
+\pgfarrowsep=\dimen281
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen283
-\pgf@sys@shading@range@num=\count333
-\pgf@shadingcount=\count334
+\pgf@max=\dimen282
+\pgf@sys@shading@range@num=\count331
+\pgf@shadingcount=\count332
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box103
+\pgfexternal@startupbox=\box102
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -826,52 +818,52 @@ File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box104
+\pgfnodeparttextbox=\box103
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen284
-\pgf@nodesepend=\dimen285
+\pgf@nodesepstart=\dimen283
+\pgf@nodesepend=\dimen284
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 )) (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen286
-\pgffor@skip=\dimen287
-\pgffor@stack=\toks51
-\pgffor@toks=\toks52
+\pgffor@iter=\dimen285
+\pgffor@skip=\dimen286
+\pgffor@stack=\toks50
+\pgffor@toks=\toks51
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count335
-\pgfplotmarksize=\dimen288
+\pgf@plot@mark@count=\count333
+\pgfplotmarksize=\dimen287
 )
-\tikz@lastx=\dimen289
-\tikz@lasty=\dimen290
-\tikz@lastxsaved=\dimen291
-\tikz@lastysaved=\dimen292
-\tikz@lastmovetox=\dimen293
-\tikz@lastmovetoy=\dimen294
-\tikzleveldistance=\dimen295
-\tikzsiblingdistance=\dimen296
-\tikz@figbox=\box105
-\tikz@figbox@bg=\box106
-\tikz@tempbox=\box107
-\tikz@tempbox@bg=\box108
-\tikztreelevel=\count336
-\tikznumberofchildren=\count337
-\tikznumberofcurrentchild=\count338
-\tikz@fig@count=\count339
+\tikz@lastx=\dimen288
+\tikz@lasty=\dimen289
+\tikz@lastxsaved=\dimen290
+\tikz@lastysaved=\dimen291
+\tikz@lastmovetox=\dimen292
+\tikz@lastmovetoy=\dimen293
+\tikzleveldistance=\dimen294
+\tikzsiblingdistance=\dimen295
+\tikz@figbox=\box104
+\tikz@figbox@bg=\box105
+\tikz@tempbox=\box106
+\tikz@tempbox@bg=\box107
+\tikztreelevel=\count334
+\tikznumberofchildren=\count335
+\tikznumberofcurrentchild=\count336
+\tikz@fig@count=\count337
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count340
-\pgfmatrixcurrentcolumn=\count341
-\pgf@matrix@numberofcolumns=\count342
+\pgfmatrixcurrentrow=\count338
+\pgfmatrixcurrentcolumn=\count339
+\pgf@matrix@numberofcolumns=\count340
 )
-\tikz@expandcount=\count343
+\tikz@expandcount=\count341
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/local/texlive/2020/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
@@ -880,30 +872,19 @@ File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: tikzlibraryquotes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowinset=\dimen297
-\pgfarrowlength=\dimen298
-\pgfarrowwidth=\dimen299
-\pgfarrowlinewidth=\dimen300
+\pgfarrowinset=\dimen296
+\pgfarrowlength=\dimen297
+\pgfarrowwidth=\dimen298
+\pgfarrowlinewidth=\dimen299
 ))) (/usr/local/texlive/2020/texmf-dist/tex/latex/extarrows/extarrows.sty
 Package: extarrows 2020/03/12 v1.2.0 Some extensible arrows
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
-\f@nch@headwidth=\skip98
-\f@nch@O@elh=\skip99
-\f@nch@O@erh=\skip100
-\f@nch@O@olh=\skip101
-\f@nch@O@orh=\skip102
-\f@nch@O@elf=\skip103
-\f@nch@O@erf=\skip104
-\f@nch@O@olf=\skip105
-\f@nch@O@orf=\skip106
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/xpatch/xpatch.sty
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
  (/usr/local/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count344
+\etb@tempcnta=\count342
 ))
-luaotfload | cache : Lookup cache loaded from /usr/local/texlive/2020/texmf-var/luatex-cache/generic-dev/names/luaotfload-lookup-cache.luc.
+luaotfload | cache : Lookup cache loaded from /Users/mraker/Library/texlive/2020/texmf-var/luatex-cache/generic-dev/names/luaotfload-lookup-cache.luc.
 
 Package fontspec Info: Font family 'STIXTwoText(0)' created for font 'STIX Two
 (fontspec)             Text' with options [Ligatures=TeX].
@@ -931,12 +912,12 @@ Package fontspec Info: Font family 'STIXTwoText(0)' created for font 'STIX Two
  (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/newtxmath.sty
 Package: newtxmath 2020/03/02 v1.625
  `newtxmath' v1.625, 2020/03/02 Math macros based originally on txfonts (msharpe)
-\tx@cntz=\count345
+\tx@cntz=\count343
  (/usr/local/texlive/2020/texmf-dist/tex/generic/kastrup/binhex.tex)
-\tx@Isdigit=\count346
-\tx@IsAlNum=\count347
-\tx@tA=\toks53
-\tx@tB=\toks54
+\tx@Isdigit=\count344
+\tx@IsAlNum=\count345
+\tx@tA=\toks52
+\tx@tB=\toks53
 \tx@su=\read4
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 317.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -1012,7 +993,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 \symlargesymbolsTXA=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
 (Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 570.
-\tx@sbptoks=\toks55
+\tx@sbptoks=\toks54
 LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 792.
 LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 793.
 LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 794.
@@ -1034,12 +1015,12 @@ LaTeX Font Info:    Redeclaring math accent \breve on input line 886.
 LaTeX Font Info:    Redeclaring math accent \mathring on input line 887.
 LaTeX Font Info:    Redeclaring math accent \check on input line 888.
 LaTeX Font Info:    Redeclaring math accent \vec on input line 1940.
-\ntx@numstart=\count348
-\ntx@UCstart=\count349
-\ntx@lcstart=\count350
-\ntx@tmpc=\count351
-\ntx@imath=\count352
-\ntx@jmath=\count353
+\ntx@numstart=\count346
+\ntx@UCstart=\count347
+\ntx@lcstart=\count348
+\ntx@tmpc=\count349
+\ntx@imath=\count350
+\ntx@jmath=\count351
 LaTeX Info: Redefining \Bbbk on input line 2449.
 LaTeX Info: Redefining \not on input line 2598.
 LaTeX Info: Redefining \textsquare on input line 2628.
@@ -1058,32 +1039,18 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 89.
 \openout5 = main.idx
 
 Writing index file main.idx
-\c@theorem=\count354
-\c@example=\count355
-\c@problem=\count356
+\c@theorem=\count352
+\c@example=\count353
+\c@problem=\count354
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybabel.code.tex
 File: tikzlibrarybabel.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)) (/usr/local/texlive/2020/texmf-dist/tex/latex/titlesec/titletoc.sty
-Package: titletoc 2019/10/16 v2.13 TOC entries
-\ttl@leftsep=\dimen301
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box109
-\beforetitleunit=\skip107
-\aftertitleunit=\skip108
-\ttl@plus=\dimen302
-\ttl@minus=\dimen303
-\ttl@toksa=\toks56
-\titlewidth=\dimen304
-\titlewidthlast=\dimen305
-\titlewidthfirst=\dimen306
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/bbm-macros/bbm.sty
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/bbm-macros/bbm.sty
 Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
 LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
-) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/main.aux")
+) (/Users/mraker/prob-theory-2course-2sem/main.aux)
 \openout1 = main.aux
 
 LaTeX Font Info:    Checking defaults for OML/ntxstx2mi/m/it on input line 59.
@@ -1163,7 +1130,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 * \oddsidemargin=0.0pt
 * \evensidemargin=0.0pt
 * \topmargin=-31.8738pt
-* \headheight=15.0pt
+* \headheight=12.0pt
 * \headsep=19.8738pt
 * \topskip=12.0pt
 * \footskip=30.0pt
@@ -1182,24 +1149,24 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count357
-\scratchdimen=\dimen307
-\scratchbox=\box110
-\nofMPsegments=\count358
-\nofMParguments=\count359
-\everyMPshowfont=\toks57
-\MPscratchCnt=\count360
-\MPscratchDim=\dimen308
-\MPnumerator=\count361
-\makeMPintoPDFobject=\count362
-\everyMPtoPDFconversion=\toks58
+\scratchcounter=\count355
+\scratchdimen=\dimen300
+\scratchbox=\box108
+\nofMPsegments=\count356
+\nofMParguments=\count357
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count358
+\MPscratchDim=\dimen301
+\MPnumerator=\count359
+\makeMPintoPDFobject=\count360
+\everyMPtoPDFconversion=\toks56
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\AtBeginShipoutBox=\box111
+\AtBeginShipoutBox=\box109
 Package hyperref Info: Link coloring ON on input line 59.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1208,127 +1175,75 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count363
+\c@section@level=\count361
 )
 LaTeX Info: Redefining \ref on input line 59.
 LaTeX Info: Redefining \pageref on input line 59.
 LaTeX Info: Redefining \nameref on input line 59.
- ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/main.out") ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/main.out")
+ (/Users/mraker/prob-theory-2course-2sem/main.out) (/Users/mraker/prob-theory-2course-2sem/main.out)
 \@outlinefile=\write6
 
 \openout6 = main.out
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/title.tex"
-<spbgu.pdf, id=212, 526.37654pt x 156.49466pt>
-File: spbgu.pdf Graphic file (type pdf)
-<use spbgu.pdf>
-Package luatex.def Info: spbgu.pdf  used on input line 25.
-(luatex.def)             Requested size: 199.4681pt x 59.30142pt.
-<fmkn.pdf, id=213, 762.85pt x 406.51875pt>
-File: fmkn.pdf Graphic file (type pdf)
-<use fmkn.pdf>
-Package luatex.def Info: fmkn.pdf  used on input line 27.
-(luatex.def)             Requested size: 173.44534pt x 92.42422pt.
-LaTeX Font Info:    Trying to load font information for OT1+stix2 on input line 28.
- (/usr/local/texlive/2020/texmf-dist/tex/latex/stix2/ot1stix2.fd
+ ABD: EveryShipout initializing macros (/Users/mraker/prob-theory-2course-2sem/tickets/ticket1.tex
+Overfull \hbox (2.35094pt too wide) in paragraph at lines 1--1
+\TU/STIXTwoText(0)/b/n/17.28 ве-ро-ят-но-сти. Клас-си-че-ское опре-де-ле-ние ве-ро-ят-но-
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+stix2 on input line 4.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/stix2/ot1stix2.fd
 File: ot1stix2.fd 2018/04/02 v2.0.0-latex stix2 OT1 font definitions
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `stix2' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 28.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 4.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 28.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 4.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 28.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 4.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-) [1
-
-
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}</Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/spbgu.pdf></Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/fmkn.pdf>]
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-Overfull \hbox (2.61856pt too wide) in paragraph at lines 65--67
-\TU/STIXTwoText(0)/m/n/12 Распространяется под ли-цен-зи-ей Creative Commons Attribution 4.0 International License,
- []
-
 )
-warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
-[1] ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/main.toc")
-\tf@toc=\write7
+LaTeX Font Info:    Font shape `TU/STIXTwoText(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/STIXTwoText(0)/m/it' tried instead on input line 55.
+ [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-\openout7 = main.toc
- [1
 
-]
-Overfull \vbox (763.73036pt too high) has occurred while \output is active []
 
- [2] ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket1.tex"
-Overfull \hbox (2.38551pt too wide) in paragraph at lines 1--1
-\TU/STIXTwoText(0)/b/n/17.28 ве-ро-ят-но-сти. Клас-си-че-ское опре-де-ле-ние ве-ро-ят-но-
+]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket2.tex
+Overfull \hbox (3.95932pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Услов-ная ве-ро-ят-ность. Мо-ти-ви-ров-ка, опре-де-ле-ние
  []
 
-
-Package Fancyhdr Warning: \headheight is too small (15.0pt): 
-Make it at least 27.34604pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
-
-
-warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
-[1
-
-]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket2.tex"
-Overfull \hbox (3.9939pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Услов-ная ве-ро-ят-ность. Мо-ти-ви-ров-ка, опре-де-ле-ние
- []
-
-) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket3.tex" [2] [3]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket4.tex"
-
-Package Fancyhdr Warning: \headheight is too small (27.34604pt): 
-Make it at least 27.45404pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
-
-[4] [5]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket5.tex") ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket6.tex" [6] [7]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket7.tex" [8]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket8.tex"
-Overfull \hbox (22.4706pt too wide) in paragraph at lines 1--1
+) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket3.tex [2] [3]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket4.tex [4] [5]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket5.tex) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket6.tex [6] [7]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket7.tex [8]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket8.tex
+Overfull \hbox (22.43602pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 на ско-рость схо-ди-мо-сти (без до-ка-за-тель-ства). Неулуч-
  []
 
-[9]
-
-Package Fancyhdr Warning: \headheight is too small (27.45404pt): 
-Make it at least 42.11003pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
-
-[10]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket9.tex"
-Overfull \hbox (16.1922pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Ве-ро-ят-ност-ное про-стран-ство. Услов-ная ве-ро-ят-ность.
+[9] [10]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket9.tex
+Overfull \hbox (16.15762pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Ве-ро-ят-ност-ное про-стран-ство. Услов-ная ве-ро-ят-ность.
  []
 
-[11]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket10.tex" [12]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket11.tex" [13]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket12.tex"
-Overfull \hbox (4.96503pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Дис-крет-ное, непре-рыв-ное и аб-со-лют-но непре-рыв-
+[11]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket10.tex [12]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket11.tex [13]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket12.tex
+Overfull \hbox (4.49844pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Дис-крет-ное, непре-рыв-ное и аб-со-лют-но непре-рыв-
  []
 
-[14]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket13.tex" [15]
+[14]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket13.tex [15]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 41.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket14.tex" [16]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket15.tex"
-Overfull \hbox (11.65102pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Сов-мест-ная функ-ция рас-пре-де-ле-ния и сов-мест-ная
+)) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket14.tex [16]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket15.tex
+Overfull \hbox (11.18443pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Сов-мест-ная функ-ция рас-пре-де-ле-ния и сов-мест-ная
  []
 
 [17]
@@ -1336,87 +1251,84 @@ Overfull \hbox (4.5368pt too wide) in paragraph at lines 22--24
 []\TU/STIXTwoText(0)/m/n/12 Пусть $\OML/ntxstx2mi/m/it/12 []; [] ; []$ \TU/STIXTwoText(0)/m/n/12 --- аб-со-лют-но непре-рыв-ные слу-чай-ные ве-ли-чи-ны. То-гда $\OML/ntxstx2mi/m/it/12 []; [] ; []$
  []
 
-) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket16.tex" [18] [19]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket17.tex"
-Overfull \hbox (11.63374pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Рас-пре-де-ле-ние сум-мы неза-ви-си-мых слу-чай-ных ве-
+) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket16.tex [18] [19]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket17.tex
+Overfull \hbox (11.16716pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Рас-пре-де-ле-ние сум-мы неза-ви-си-мых слу-чай-ных ве-
  []
 
-[20]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket18.tex" [21]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket19.tex"
-Overfull \hbox (17.1599pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Ма-те-ма-ти-че-ское ожи-да-ние. Свой-ства (нера-вен-ства
+[20]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket18.tex [21]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket19.tex
+Overfull \hbox (16.69331pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Ма-те-ма-ти-че-ское ожи-да-ние. Свой-ства (нера-вен-ства
  []
 
-[22]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket20.tex"
-Overfull \hbox (2.12868pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Дис-пер-сия. Свой-ства дис-пер-сии. Нера-вен-ство Че-
+[22]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket20.tex
+Overfull \hbox (2.0941pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Дис-пер-сия. Свой-ства дис-пер-сии. Нера-вен-ство Че-
  []
 
-[23] [24]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket21.tex"
-Overfull \hbox (5.39458pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Ко-ва-ри-а-ция. Связь с неза-ви-си-мо-стью. Ко-эф-фи-ци-
+[23] [24]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket21.tex
+Overfull \hbox (5.36pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Ко-ва-ри-а-ция. Связь с неза-ви-си-мо-стью. Ко-эф-фи-ци-
  []
 
-[25]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket22.tex" [26]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket23.tex"
-Overfull \hbox (11.3054pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Тео-ре-ма Хар-ди–Ра-ма-нуд-жа-на о ко-ли-че-стве раз-лич-
+[25]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket22.tex [26]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket23.tex
+Overfull \hbox (11.27083pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Тео-ре-ма Хар-ди–Ра-ма-нуд-жа-на о ко-ли-че-стве раз-лич-
  []
 
-[27]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket24.tex"
-Overfull \hbox (0.41904pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Неза-ви-си-мость функ-ций от неза-ви-си-мых слу-чай-
+[27]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket24.tex
+Overfull \hbox (0.38446pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Неза-ви-си-мость функ-ций от неза-ви-си-мых слу-чай-
  []
 
-[28]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket25.tex"
-Overfull \hbox (6.66283pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Раз-лич-ные ви-ды схо-ди-мо-сти по-сле-до-ва-тель-но-сти
+[28]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket25.tex
+Overfull \hbox (6.62825pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Раз-лич-ные ви-ды схо-ди-мо-сти по-сле-до-ва-тель-но-сти
  []
 
 
-Overfull \hbox (2.16661pt too wide) in paragraph at lines 1--1
-\TU/STIXTwoText(0)/b/n/17.28 слу-чай-ных ве-ли-чин. Связь меж-ду схо- ди-мо-стя-ми| 
+Overfull \hbox (2.13203pt too wide) in paragraph at lines 1--1
+\TU/STIXTwoText(0)/b/n/17.28 слу-чай-ных ве-ли-чин. Связь меж-ду схо- ди-мо-стя-ми 
  []
 
-[29]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket26.tex" [30]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket27.tex" [31]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket28.tex"
-Overfull \hbox (1.139pt too wide) in paragraph at lines 1--1
+[29]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket26.tex [30]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket27.tex [31]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket28.tex
+Overfull \hbox (1.10443pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 ва-тель-но-сти схо-дя-щих-ся по ве-ро-ят-но-сти слу- чай-
  []
 
 
-Overfull \hbox (5.72629pt too wide) in paragraph at lines 1--1
+Overfull \hbox (5.69171pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 ных ве-ли-чин. До-ка-за-тель-ство Берн-штей-на тео- ре-
  []
 
-[32]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket29.tex"
-Overfull \hbox (9.26639pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Про-из-во-дя-щие функ-ции для це-лознач-ных слу-чай-
+[32]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket29.tex
+Overfull \hbox (9.23181pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Про-из-во-дя-щие функ-ции для це-лознач-ных слу-чай-
  []
 
-[33] [34]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket30.tex" [35]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket31.tex"
-Overfull \hbox (5.21024pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Ха-рак-те-ри-сти-че-ская функ-ция. Свой-ства. Ха-рак-те-
+[33] [34]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket30.tex [35]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket31.tex
+Overfull \hbox (5.17566pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Ха-рак-те-ри-сти-че-ская функ-ция. Свой-ства. Ха-рак-те-
  []
 
 
-Overfull \hbox (18.53424pt too wide) in paragraph at lines 1--1
-\TU/STIXTwoText(0)/b/n/17.28 ри-сти-че-ская функ-ция нор-маль-но-го рас-пре-де-ле-ния| 
+Overfull \hbox (18.49966pt too wide) in paragraph at lines 1--1
+\TU/STIXTwoText(0)/b/n/17.28 ри-сти-че-ская функ-ция нор-маль-но-го рас-пре-де-ле-ния 
  []
 
-[36] [37]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket32.tex" [38]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket33.tex"
-LaTeX Font Info:    Font shape `TU/STIXTwoText(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/STIXTwoText(0)/m/it' tried instead on input line 14.
- [39] [40]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket34.tex"
-Overfull \hbox (3.07094pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 След-ствия фор-му-лы об-ра-ще-ния. Сум-ма неза-ви-си-
+[36] [37]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket32.tex [38]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket33.tex [39] [40]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket34.tex
+Overfull \hbox (3.03636pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 След-ствия фор-му-лы об-ра-ще-ния. Сум-ма неза-ви-си-
  []
 
-[41]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket35.tex"
+[41]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket35.tex
 
 LaTeX Font Warning: Font shape `U/bbm/m/n' in size <12.5> not available
 (Font)              size <12> substituted on input line 1.
 
 
-Overfull \hbox (5.83478pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Тео-ре-ма о схо-ди-мо-сти по рас-пре-де-ле-нию (все, кро-
+Overfull \hbox (5.8002pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Тео-ре-ма о схо-ди-мо-сти по рас-пре-де-ле-нию (все, кро-
  []
 
 
@@ -1431,7 +1343,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-[42] [43] [44]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket36.tex"
+[42] [43] [44]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket36.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1464,13 +1376,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket37.tex"
-Overfull \hbox (12.99887pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Рав-но-мер-ная схо-ди-мость к непре-рыв-ной функ-ции
+) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket37.tex
+Overfull \hbox (12.9643pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Рав-но-мер-ная схо-ди-мость к непре-рыв-ной функ-ции
  []
 
 
-Overfull \hbox (5.73784pt too wide) in paragraph at lines 1--1
+Overfull \hbox (5.70326pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 рас-пре-де-ле-ния. Цен-траль-ная пре-дель-ная тео-ре-ма
  []
 
@@ -1479,32 +1391,27 @@ Overfull \hbox (5.73784pt too wide) in paragraph at lines 1--1
 LaTeX Font Warning: Font shape `U/bbm/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 18.
 
-) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket38.tex" [47] [48]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket39.tex" [49]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket40.tex"
-Overfull \hbox (0.38681pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Оцен-ки Чер-но-ва для боль-ших укло-не-ний. При-ме-
+) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket38.tex [47] [48]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket39.tex [49]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket40.tex [50] [51]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket41.tex
+Overfull \hbox (3.03403pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Услов-ные ма-те-ма-ти-че-ские ожи-да-ния от-но-си-тель-
  []
 
-[50] [51]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket41.tex"
-Overfull \hbox (3.50061pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Услов-ные ма-те-ма-ти-че-ские ожи-да-ния от-но-си-тель-
+[52] [53]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket42.tex
+Overfull \hbox (7.72844pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Ма-те-ма-ти-че-ское ожи-да-ние и про-из-во-дя-щая функ-
  []
 
-[52] [53]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket42.tex"
-Overfull \hbox (8.19502pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Ма-те-ма-ти-че-ское ожи-да-ние и про-из-во-дя-щая функ-
+[54]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket43.tex [55] [56]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket44.tex
+Overfull \hbox (14.96297pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Ско-рость вы-рож-де-ния вет-вя-ще-го-ся про-цес-са в кри-
  []
 
-[54]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket43.tex" [55] [56]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket44.tex"
-Overfull \hbox (15.42955pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Ско-рость вы-рож-де-ния вет-вя-ще-го-ся про-цес-са в кри-
- []
-
-[57]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket45.tex"
-Overfull \hbox (15.47798pt too wide) in paragraph at lines 1--1
+[57]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket45.tex
+Overfull \hbox (15.4434pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 ро-ван-ной тра-ек-то-рии. Тео-ре-ма су-ще-ство-ва-ния (без
  []
 
-[58]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket46.tex"
+[58]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket46.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1513,17 +1420,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-[59] [60]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket47.tex") ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket48.tex"
-Overfull \hbox (1.46394pt too wide) in paragraph at lines 1--1
-|[]\TU/STIXTwoText(0)/b/n/17.28 Клас-си-фи-ка-ция со-сто-я-ний це-пи Мар-ко-ва. Кри-те-
+[59]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket47.tex [60]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket48.tex
+Overfull \hbox (0.99736pt too wide) in paragraph at lines 1--1
+[]\TU/STIXTwoText(0)/b/n/17.28 Клас-си-фи-ка-ция со-сто-я-ний це-пи Мар-ко-ва. Кри-те-
  []
 
-[61] [62]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket49.tex" [63]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket50.tex" [64]) ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/tickets/ticket51.tex") [65]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
- ("/Users/andrei/Documents/MCS Lectures/SP Probability Theory 2022/main.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
+[61] [62]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket49.tex [63]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket50.tex) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket51.tex [64]) [65]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
+ (/Users/mraker/prob-theory-2course-2sem/main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 125.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 125.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1A9E16362DB79445B55FCBA6EA1B7281;32313.
 
@@ -1531,23 +1438,23 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.36998pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
 )
 
 Here is how much of LuaTeX's memory you used:
- 34343 strings out of 480992
+ 33364 strings out of 480992
  100000,1144653 words of node,token memory allocated
- 4237 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 151 glyph, 768 attribute, 97 glue_spec, 385 attribute_list, 3 write, 29 pdf_action nodes
-   avail lists: 1:1,2:1310,3:301,4:237,5:546,6:80,7:5792,8:105,9:729,10:16,11:861
- 49483 multiletter control sequences out of 65536+600000
- 381 fonts using 34786275 bytes
- 75i,17n,88p,1568b,613s stack positions out of 5000i,500n,10000p,200000b,100000s
-<</Users/andrei/Library/texlive/2020/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>><</Users/andrei/Library/texlive/2020/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>>{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/stix2/stix2-ot1.enc}</usr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIX2Text-Italic.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIX2Text-Bold.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIX2Text-Regular.otf></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/stix2/STIX2Text-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/stickstoo/stickstooMath-Italic.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/stickstoo/stickstooMath-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (69 pages, 1490224 bytes).
+ 3872 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 151 glyph, 709 attribute, 94 glue_spec, 356 attribute_list, 3 write nodes
+   avail lists: 1:1,2:897,3:220,4:69,5:545,6:24,7:2799,8:105,9:711,10:16,11:301
+ 48602 multiletter control sequences out of 65536+600000
+ 330 fonts using 29225163 bytes
+ 75i,17n,88p,1541b,561s stack positions out of 5000i,500n,10000p,200000b,100000s
+<</Users/mraker/Library/texlive/2020/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>><</Users/mraker/Library/texlive/2020/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIX2Text-Italic.otf>{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/stix2/stix2-ot1.enc}</usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIX2Text-Bold.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIX2Text-Regular.otf></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/stix2/STIX2Text-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/stickstoo/stickstooMath-Italic.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/stickstoo/stickstooMath-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (65 pages, 534538 bytes).
 
-PDF statistics: 1076 PDF objects out of 1200 (max. 8388607)
- 880 compressed objects within 9 object streams
- 366 named destinations out of 1000 (max. 131072)
+PDF statistics: 851 PDF objects out of 1000 (max. 8388607)
+ 755 compressed objects within 8 object streams
+ 364 named destinations out of 1000 (max. 131072)
  424 words of extra memory for PDF output out of 10000 (max. 100000000)
 
