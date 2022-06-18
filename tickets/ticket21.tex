@@ -1,0 +1,66 @@
+\section{Ковариация. Связь с независимостью. Коэффициент корреляции. Моменты случайной величины}
+
+\begin{definition}
+    \textit{Ковариацией} случайных величин $\xi$ и $\eta$ называется
+     $$\cov(\xi, \eta) = \EE ((\xi - \EE \xi)(\eta - \EE \eta)).$$
+ \end{definition}
+
+ \begin{properties}[ковариации]
+\enewline
+     \begin{enumerate}
+
+         \item $\cov(\xi, \xi) = \DD \xi$.
+
+
+         \item $\cov(\xi, \eta) = \EE (\xi\eta) - \EE \xi \EE \eta$.
+
+
+         \item $\DD (\xi + \eta) = \DD \xi + \DD \eta + 2\cov(\xi, \eta)$.
+
+         \item $\DD (\overset{n}{\underset{k = 1}{\sum}}\xi_k) = \overset{n}{\underset{k = 1}{\sum}}\DD \xi_k + \underset{i\neq k}{\sum}\cov(\xi_i, \xi_k) =
+                   \overset{n}{\underset{k = 1}{\sum}}\DD \xi_k + 2\underset{i < k}{\sum}\cov(\xi_i, \xi_k)$.
+
+         \item Если $\xi$ и $\eta$ независимые, то $\cov(\xi, \eta) = 0$.
+
+         \item $\cov(\xi, \eta) = \cov(\eta, \xi)$.
+
+
+         \item $\cov(c\xi, \eta) = c\cdot \cov(\xi, \eta)$.
+
+
+         \item $\cov(\xi_1+\xi_2, \eta) = \cov(\xi_1, \eta) + \cov(\xi_2, \eta)$.
+     \end{enumerate}
+ \end{properties}
+
+Сделаем несколько важных замечаний.
+
+     \begin{enumerate}
+         \item Дисперсия и ковариация могут не существовать (например, если не определено матожидание). Для существования ковариации надо, чтобы $\EE \xi^2 < +\infty$ и $\EE \eta^2 < +\infty$ (а дисперсия --- частный случай ковариации).
+
+         \item Из $\cov(\xi, \eta) = 0$ не следует независимость этих величин.
+
+               Например, пусть $\Omega = \{0, \frac{\pi}{2}, \pi\}$, каждое значение равновероятно. Возьмём
+               $\xi = \sin\omega$, $\eta = \cos\omega$. Тогда 
+               \begin{gather*}
+                   \xi\eta\equiv 0, \ \EE (\xi\eta) = 0, \ \EE \eta = 0;\\
+                   \cov(\xi, \eta) = \EE (\xi\eta) - \EE \xi \EE \eta = 0.
+               \end{gather*}
+               Но они не являются независимыми:
+               $$P(\xi = 1, \eta = 1) = 0 \neq P(\xi = 1)P(\xi = 1) = \frac{1}{9}.$$
+     \end{enumerate}
+
+ \begin{definition}\textit{Коэффициентом корреляции} случайных величин $\xi$ и $\eta$ называется
+     $$\rho(\xi, \eta) = \frac{\cov(\xi, \eta)}{\sqrt{\DD \xi}\sqrt{\DD \eta}}.$$
+ \end{definition}
+Очевидно, это значение лежит на отрезке $[-1, 1]$.
+ \begin{definition}
+     Случайные величины, для которых $\cov(\xi, \eta) = 0$ называются \textit{некоррелированными}.
+ \end{definition}
+
+ \begin{definition}
+    $\EE \xi^k = \int\limits_\mathbb{R}x^k \dd P_\xi(x)$ --- \textit{$k$-й момент} случайной величины. 
+    $\EE \abs{\xi}^k$--- \textit{$k$-й абсолютный момент}. 
+    $\EE ((\xi - \EE \xi)^k)$ --- \textit{$k$-й центральный момент}.
+\end{definition}
+
+Легко заметить, что дисперсия --- 2-й центральный момент.

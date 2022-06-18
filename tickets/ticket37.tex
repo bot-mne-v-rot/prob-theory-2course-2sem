@@ -1,0 +1,35 @@
+\section{Равномерная сходимость к непрерывной функции распределения. Центральная предельная теорема в форме Леви}
+
+\begin{theorem}
+    Пусть функции $F_n, F\colon\mathbb{R}\rightarrow [0, 1]$ монотонно возрастают и $F$ непрерывна на $\R$. Тогда, если $F_n\rightarrow F$ поточечно, то $F_n\rightrightarrows F$ равномерно.
+\end{theorem}
+
+\begin{proof}
+    Найдем $t_k$, такие что $F(t_k) =\frac{k}{m}$, $t_0 < \ldots < t_m$.
+    По условию 
+    $$\abs{F_n(t_k) - F(t_k)} <  \e = \frac{1}{m},$$ начиная с некоторого номера.
+    Рассмотрим $t_k\le t < t_{k + 1}$:
+    $$F_n(t_k) \le F_n(t) \le F_n(t_{k+1}) < F(t_{k+1}) + \e = \frac{k+1}{m} + \frac{1}{m} = \frac{k}{m} + 2 \e = F(t_k) +2 \e \le F(t) + 2 \e.$$
+    $$F_n(t_k) > F(t_k) - \e =\frac{k}{m} -\frac{1}{m} = \frac{k+1}{m} - 2 \e = F(t_{k +1}) - 2 \e \ge F(t) -2 \e.$$
+    Итого 
+    $$F(t) - 2 \e < F_n(t) < F(t) + 2 \e.$$
+\end{proof}
+
+\begin{theorem}[Центральная предельная теорема в форме Поля Леви\footnote{Лев\'и}] Пусть
+    $\xi_1, \ldots$ независимые одинаково распределенные случайные величины. $a= \EE \xi_1$,
+    $\sigma^2 =  \DD\xi_1$, $S_n = \xi_1 + \ldots + \xi_n$.
+    Тогда 
+    $$P\left(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x\right) = P\left(\frac{S_n - na}{\sqrt{n}\sigma} \le x\right) \rightrightarrows \Phi =\frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{u^2}{2}}\dd u.$$
+\end{theorem}
+
+\begin{proof} Обозначим
+    $$\phi(t) = \phi_{\xi_1 - a}(t) = 1-\frac{\sigma^2t^2}{2} + o(t^2).$$
+    Равенство верно, поскольку у нас есть дисперсия, то характеристическая функция дважды дифференцируема, поэтому есть формула через матожидание и дисперсию для неё.
+   Пусть
+    $$\phi_n(t) = \phi_{\frac{S_n - na}{\sqrt{n}\sigma}}(t) = \phi_{S_n - an} (\frac{t}{\sqrt{n}\sigma}).$$
+   Тогда
+    $$S_n - an = (\xi_1 - a) + \ldots + (\xi_n - a),$$
+    и, так как $\xi_i$ независимы, то
+    $$\phi_{S_n - an}\left(\frac{t}{\sqrt{n}\sigma}\right) = \left(\phi\left(\frac{t}{\sqrt{n}\sigma}\right)\right)^n = \left(1 - \frac{t^2}{2n} +o\left(\frac{t^2}{n}\right)\right)^n = \left(1 - \frac{t^2}{2n} +o\left(\frac{1}{n}\right)\right)^n \rightarrow e^{-\frac{t^2}{2}}.$$
+   Значит, $\frac{S_n - na}{\sqrt{n}\sigma} \rightarrow\mathcal{N}(0, 1)$ по распределению, следовательно, поскольку предельная функция непрерывна, то сходимость будет равномерной.
+\end{proof}

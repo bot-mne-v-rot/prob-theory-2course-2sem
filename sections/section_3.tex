@@ -1,0 +1,77 @@
+\section{Колмогоровская модель теории вероятности}
+
+ \begin{definition} \textit{Вероятностное пространство} --- это $(\Omega, \mathcal{F}, P),$ где
+     $\Omega$ --- множество элементарных событий;
+     $\mathcal{F}$ ---  $\sigma$-алгебра подмножеств $\Omega$, его элементы --- \textit{случайные события};
+     $P$ --- вероятностная мера на $\mathcal{F}$, такая что $P(\Omega) = 1$.
+ \end{definition}
+
+
+ \begin{definition} \textit{Условная вероятность}.
+     Пусть $B \in \mathcal{F}, P(B) > 0$. Тогда
+     $P(A|B) = \frac{P(A\cap B)}{P(B)}$~--- вероятность $A$ при условии $B$.
+
+ \end{definition}
+
+ \begin{definition}
+     События $A$ и $B$ независимы, если 
+     $P(A \cap B) = P(A) \cdot P(B)$.
+
+ \end{definition}
+
+ \begin{definition}
+     Множество событий $A_i$ по $i \in I$ является независимым в совокупности, если
+     $\forall i_1, ..., i_k \in I$
+
+     $P(A_{i_1}\cap A_{i_2} \cap\ldots\cap A_{i_k}) = P(A_{i_1})\cdot P(A_{i_2})\cdot\ldots\cdot P(A_{i_k})$.
+
+ \end{definition}
+
+ \begin{lemma}[Бореля-Кантелли]\label{lem:borkan}
+     $A_1, A_2, \ldots$ --- последовательность случайных событий. Событие $B$ --- наступило бесконечное число из событий $A$.
+      \begin{enumerate}
+          \item  Если $\sum_{n = 1}^\infty P(A_n) < +\infty$, то $P(B) = 0$.
+          \item Если $A_1, A_2, \ldots$ независимы в совокупности и $\sum_{n = 1}^\infty P(A_n) = +\infty$, то
+     $P(B) = 1$.
+      \end{enumerate}
+
+ \end{lemma}
+
+ \begin{proof}
+      Поймём, что $B = \bigcap\limits_{n = 1}^\infty \bigcup_{k = n}^\infty A_k$. 
+     $\omega \in B \Ra \omega \in A_{m_k} $ для некоторой последовательности $m_1,m_2, \ldots$ $\Rightarrow \omega$ лежит в каждом из объединений
+     $\bigcup_{k = n}^\infty A_k$, то есть и в их пересечении.
+     В обратную сторону:  $\omega \in \bigcap\bigcup \Ra \omega\in\bigcup_{k = n}^\infty A_k $ $\forall n$ $\Ra \omega\in A_{m_k}$ для
+     некоторой последовательности $m_1, m_2, \ldots$, а это по определению $B$ означает, что $\omega\in B$.
+    \begin{enumerate}
+        \item По только что доказанному верно
+        \begin{align*}
+            P(B) &= P\left(\bigcap_{n = 1}^\infty \bigcup_{k = n}^\infty A_k\right) = [\text{из свойств меры}]
+            \\ &= \underset{n\to \infty}{\lim}
+         P\left(\bigcup_{k = n}^\infty A_k\right) \le \underset{n\to\infty}{\lim} \sum_{k = n}^\infty P(A_k) = 0.
+        \end{align*}
+        Последнее верно, так как это предел хвоста сходящегося ряда.
+        \item По лемме \ref{ex:nez} $\ov{A_1}, \ov{A_2}, \ldots$ независимы в совокупности.
+        \begin{gather*}
+            P\left(\bigcap_{k = n}^\infty \ov{A_k}\right) \leftarrow P\left(\bigcap_{k = n}^m \ov{A_k}\right) = \prod_{k = n}^m P(\ov{A_k}) \rightarrow  \prod_{k = n}^\infty
+         P(\ov{A_k}) =  \prod_{k = n}^\infty (1 - P(A_k)).\\
+          \ln P\left(\bigcap_{k = n}^\infty \ov{A_k}\right) = \sum_{k = n}^\infty \ln (1 - P(A_k)) \le - \sum_{k = n}^\infty P(A_k)  = -\infty \Ra
+         P\left(\bigcap_{k = n}^\infty \ov{A_k}\right) = 0.\\
+         \ov{B} = \bigcup_{n = 1}^\infty\left(\ov{\bigcup_{k = n}^\infty A_k}\right) = \bigcup_{n = 1}^\infty\bigcap_{k = n}^\infty \ov{A_k}
+         \Ra P(\ov{B}) \le \sum_{n = 0}^\infty P\left(\bigcap_{k = n}^\infty \ov{A_k}\right) = 0.
+        \end{gather*}
+         Значит, $P(B) = 1$. \qedhere
+    \end{enumerate}
+ \end{proof}
+
+ \begin{corollary}[Закон 0 и 1 Колмогорова] Пусть $A_1, A_2, \ldots$ независимы в совокупности. Тогда вероятность того, что наступило бесконечное количество событий из $A$ равно $0$ или $1$.
+ \end{corollary}
+
+ \begin{example}
+     Рассмотрим бесконечную орлянку: ОРРРРОРРООРР\ldots
+
+     Посчитаем вероятность того, что <<OPPO>> встретилось бесконечное число раз. Событие $A_k$ --- эта последовательность встретилась, причём начиная с позиции $k$. Тогда $A_1, A_5, A_9, \ldots$ независимы в совокупности.
+     $P(A_k) = p^2q^2$, $\sum_{n = 1}^\infty P(A_{4n+1}) = +\infty$. Тогда по лемме <<ОРРО>> случилось бесконечное число раз с вероятностью 1.
+ \end{example}
+
+

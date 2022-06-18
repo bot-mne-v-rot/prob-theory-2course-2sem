@@ -1,0 +1,53 @@
+\section{Следствия формулы обращения. Сумма независимых нормальных случайных величин}
+
+\begin{corollary}
+    \enewline
+         \begin{enumerate}
+             \item Если $\phi_\xi = \phi_\eta$, то $P_\xi = P_\eta$.
+    
+             \item Если модуль характеристической функции суммируем ---  $\intt_\mathbb{R}\abs{\phi_\xi(t)}\dd t < + \infty$, то $P_\xi$ имеет плотность и, более того, 
+             $$p_\xi(x) = \frac{1}{2\pi} \int\limits_\mathbb{R}e^{-itx}\phi_\xi(t)\dd t.$$
+    
+            Эта формула называется \textit{преобразованием Фурье}, а обратная ей (определение характеристической функции) \textit{обратным преобразование Фурье}.
+         \end{enumerate}
+     \end{corollary}
+    \begin{proof}
+    \enewline
+    \begin{enumerate}
+        \item Пусть $A= \{x\in\mathbb{R}\mid P(\xi = x) > 0\}$. $A$~--- не более чем счётное, так как в точках из $A$ функция распределения $F_\xi$ имеет скачки.
+                       Тогда $\phi_\xi$ однозначно определяет $P(a\le\xi\le b)$, если $a, b\notin A$ (это из утверждения теоремы). Поймём, что она определяет и всё остальное распределение тоже.
+                       $F_\xi(b) = \underset{n\rightarrow+\infty}{\lim} P(a_n\le\xi\le b)$,
+                       где $a_n \searrow -\infty$, $a_n\notin A$ однозначно определяется $\phi_\xi$ ($b \notin A$).
+                       Пусть $b\in A$, возьмем $b_n \searrow b$, $b_n \notin A$. Тогда, так как функция распределения непрерывна справа, то $F_\xi(b) = \underset{n\rightarrow+\infty}{\lim} F_\xi(b_n)$ также однозначно определяется $\phi_\xi$.
+                       Итого, однозначно определили $P_\xi$.
+        \item Поймём что при данных условиях интеграл из формулы обращения (\ref{eq:formula_obr}) сходится абсолютно. 
+                   $$\abs*{\frac{e^{-iat} - e^{-ibt}}{it}\phi_\xi(t)} = \abs*{\frac{e^{-iat} - e^{-ibt}}{t}}\abs{\phi_\xi(t)} \le M\abs{\phi_\xi(t)}.$$
+                      Последнее верно, так как $\frac{e^{-iat} - e^{-ibt}}{t}$ --- ограниченная функция, поскольку она непрерывная и стремится к нулю при $t \to \pm\infty$.
+    \begin{equation*}\label{eq:preobfur} \tag{$\spadesuit$}
+        \int\limits_a^b p_\xi(x)\dd x = \frac{1}{2\pi}\int\limits_a^b\int\limits_\mathbb{R}e^{-itx}\phi_\xi(t)\dd t\dd x.
+    \end{equation*}
+        Подынтегральное выражение не превосходит по модулю $\abs{\phi_\xi(t)}$ --- суммируемая по условию. Значит можем применить теорему Фубини и в (\ref{eq:preobfur}) поменять порядок интегрирования.
+        \begin{align*}
+            \frac{1}{2\pi}\int\limits_a^b\int\limits_\mathbb{R}e^{-itx}\phi_\xi(t)\dd t\dd x &= \frac{1}{2\pi}\int\limits_\mathbb{R}\int\limits_a^b e^{-itx}\phi_\xi(t)\dd x\dd t = \frac{1}{2\pi}\int\limits_\mathbb{R}\phi_\xi(t) \frac{e^{-itx}}{-it}\Bigg|_a^b\dd t \\&=\frac{1}{2\pi}\int\limits_\mathbb{R}\frac{e^{-iat} - e^{-ibt}}{it}\phi_\xi(t)\dd t = P(a\le\xi\le b).
+        \end{align*}
+         Чтобы было верно последнее равенство, то есть формула обращения, нужно условие $P(\xi = a) = P(\xi = b) =0$. Поймем, что при условии следствия не может быть $P(\xi = c) > 0$; пусть $a_n\nearrow c$, $b_n\searrow c$ ($a_n, b_n \in A$), тогда
+                       $$P(\xi = c) = \lim\limits_{n \to +\infty} P(a_n \le \xi\le b_n)  =
+                           \lim\limits_{n \to +\infty} \int\limits_{a_n}^{b_n}p_\xi(x)\dd x \le (b_n-a_n)C \rightarrow 0.$$ \qedhere
+    \end{enumerate}
+    \end{proof}
+    
+    
+     \begin{theorem}
+         Пусть $\xi_k\sim \mathcal{N}(a_k, \sigma_k^2)$~--- независимые случайные величины и $\eta = a_0 + \underset{k = 1}{\overset{n}{\sum}}c_k\xi_k$, причем хотя бы одна $c_k\neq 0$.
+         Тогда $$\eta\sim \mathcal{N}(a_0 + \underset{k = 1}{\overset{n}{\sum}}c_ka_k,  \underset{k = 1}{\overset{n}{\sum}} c_k^2\sigma_k^2).$$
+     \end{theorem}
+    
+     \begin{proof}
+        Рассмотрим характеристическую функцию $\nu$.
+        \begin{align*}
+            \phi_\eta(t) &= e^{ita_0}\phi_{\xi_1}(c_1t)\cdot\ldots\cdot\phi_{\xi_n}(ct_n) = e^{ita_0}e^{ic_1ta_1 - \frac{c_1^2t_1^2\sigma_1^2}{2}}\cdot\ldots \\&= e^{it(a_0 + \ldots + a_nc_n)} e^{\frac{-t^2(c_1^2\sigma_1^2 + \ldots + c_n^2\sigma_n^2)}{2}} = e^{iat - \frac{\sigma^2t^2}{2}}.
+        \end{align*}
+    Это характеристическая функция $\mathcal{N}(a, \sigma^2)$,  где 
+         $$a = a_0 + \ldots + a_n c_n, \ \sigma^2 = c_1^2\sigma_1^2 + \ldots + c_n^2\sigma_n^2.$$
+     \end{proof}
+    

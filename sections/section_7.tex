@@ -1,0 +1,280 @@
+\section{Математическое ожидание и дисперсия}
+
+ \begin{definition} Пусть $\xi \colon \Om \to \R$ --- случайная величина, являющаяся суммируемой функцией. Тогда её \textit{математическим ожиданием} называется.
+     $\EE \xi = \int\limits_\Omega \xi \dd P.$ 
+ \end{definition}
+
+ \begin{properties}[матожидания]
+\enewline
+     \begin{enumerate}
+         \item Линейность : $\EE (a\xi +b\eta) = a\EE _\xi + b\EE _\eta$;
+         \item Если $\xi \ge0$ с вероятностью $1$, то $\EE \xi\ge0$;
+         \item Если $\xi\ge\eta$ с вероятностью $1$, то $\EE \xi\ge \EE \eta$;
+         \item $\EE \xi = \intt_\mathbb{R}x\dd P_\xi(x)$;
+         \item Если $f\colon \mathbb{R}\rightarrow \mathbb{R}$ такая, что прообразы борелевских множеств --- борелевские, то
+               $$\EE f(\xi) = \int\limits_\mathbb{R}f(x)\dd P_\xi(x).$$
+         \item Если $f: \mathbb{R}^n\rightarrow \mathbb{R}$ такая, что прообразы борелевских --- борелевские, то
+
+               $$\EE f(\xi_1, \ldots, \xi_n) = \int\limits_{\mathbb{R}^n}f(x_1, \ldots, x_n)\dd P_{\xi_1, \ldots, \xi_n}(x_1, \ldots, x_n).$$
+
+
+         \item Если $\xi$ и $\eta$ независимы, то 
+         $$\EE (\xi\eta) = \EE \xi \EE \eta.$$
+
+
+         \item Если $\xi \ge 0$, то 
+         $$\EE \xi=\int\limits_0^{+\infty} P(\xi\ge t)\dd t.$$ 
+
+
+         \item Неравенства Гёльдера для матожидания. Если $p, q > 1$ и $\frac{1}{p}+\frac{1}{q} = 1$, то 
+         $$\EE \abs{\xi\eta} \le (\EE \abs{\xi}^p)^\frac{1}{p}(\EE \abs{\eta}^q)^\frac{1}{q}.$$
+
+         \item Неравенство Ляпунова. Если $0<r<s$, то
+         $$(\EE \abs{\xi}^r)^\frac{1}{r} \le (\EE \abs{\xi}^s)^\frac{1}{s}.$$ 
+
+
+         \item Неравенство Маркова. Пусть $\xi\ge0$. Тогда
+         $$P(\xi\ge t) \le \frac{\EE \xi^p}{t^p}\fwhere p, t > 0.$$
+
+     \end{enumerate}
+ \end{properties}
+ 
+ \begin{proof}
+ Пункты 1-4 очевидно доказываются из определения(по свойствам интеграла).
+ \begin{enumerate}
+     
+     \item[5.] Частный случай 6-го пункта.
+     \item[6.] Воспользуемся стандартной схемой доказательства из теории меры.
+     
+    Докажем для простых. Пусть $f=\mathbbm{1}_A$. Тогда
+    \begin{align*}
+        \EE f(\xi_1, \ldots, \xi_n) &= \int\limits_\Omega \mathbbm{1}_A (\xi_1(\omega), \ldots, \xi_n(\omega))\dd P(\omega) \\&=
+                       P((\xi_1, \ldots, \xi_n)\in A) = P_{\xi_1, \ldots, \xi_n}(A) \\&= \int\limits_\mathbb{R}\mathbbm{1}_A\dd P_{\xi_1, \ldots, \xi_n}.
+    \end{align*}
+    По линейности верно для простых функций. Приблизим произвольную функцию $f$ простыми:
+     $$\int\limits_\Omega f_k(\xi_1, \ldots, \xi_n)\dd P = \int\limits_{\mathbb{R}^n} f_k(x) \dd P_{\xi_1, \ldots, \xi_n}(x)\fwhere \text{$f_k$ --- простые,}$$
+    и перейдём к пределу по теореме Беппо Леви.
+     \item[7.] Воспользуемся предыдущим пунктом для $f(x, y) = xy$:
+     \begin{align*}\EE (\xi\eta) &= \int\limits_{\mathbb{R}^2}xy\dd P_{\xi,\eta}(x, y) = [\text{поскольку они независимы}] \\&=  \int\limits_{\mathbb{R}^2}xy\dd P_\xi(x)\dd P_\eta(y) =
+                       \int\limits_\mathbb{R} x\dd P_\xi(x)\int\limits_\mathbb{R}y\dd P_\eta(y) = \EE \xi \EE \eta.
+     \end{align*}
+                 
+
+     \item[8.]  В теории меры была такая теорема: Если $(X, \mathcal{A}, \mu)$ --- пространство с $\sigma$-конечной мерой и $f\ge0$ измеримая,
+                   то 
+                   $$\int\limits_X f \dd\mu = \int\limits_0^{\infty}\mu X\{f\ge t\}\dd t.$$
+     \item[9.] Прямое следствие из неравенства Гёльдера(для интегралов).
+     \item[10.]  $$\EE \abs{\xi}^r = \EE \abs{\xi}^r\cdot 1 \le (\EE (\abs{\xi}^r)^\frac{s}{r})^\frac{r}{s}(\EE 1^q)^\frac{1}{q} = (\EE \abs{\xi}^s)^{\frac{r}{s}}.$$
+     \item[11.] Прямое следствие из неравенства Чебышёва(из теории меры). \qedhere
+ \end{enumerate}
+ \end{proof}
+ 
+     Если $\xi$ и $\eta$ не независимы, то может оказаться $\EE (\xi\eta) \neq \EE \xi \EE \eta$. Пример : пусть $\xi$ принимает значение из $\{-1, 1\}$ равновероятно, $\eta = \xi$. Тогда
+     $\EE (\xi\eta) = \EE \xi^2 = 1$, но $\EE \xi = \EE \eta = 0$.
+
+
+ \begin{definition}\textit{Дисперсией} случайной величины $\xi$ называется
+     $$\DD \xi = \EE (\xi - \EE \xi)^2.$$
+ \end{definition}
+
+ \begin{properties}[дисперсии]
+\enewline
+     \begin{enumerate}
+         \item $\DD \xi\ge0$ и если $\DD \xi = 0$, то $P(\xi = c) = 1$, где $c$ --- некоторая константа. 
+         \item $\DD \xi = \EE \xi^2 - (\EE \xi)^2$.
+
+               
+         \item $\DD (c \cdot \xi) = c^2\DD \xi$ (в частности, $\DD \xi = \DD (-\xi)$).
+
+
+         \item Если $\xi$ и $\eta$ независимы, то $\DD (\xi+\eta) = \DD \xi+\DD \eta$.
+
+
+         \item $\EE \abs{\xi - \EE \xi}\le \sqrt{\DD \xi}$.
+
+
+         \item Неравенство Чебышёва при $t > 0$.
+               $$P(\abs{\xi - \EE \xi} \ge t)\le \frac{\DD \xi}{t^2}.$$
+               
+
+     \end{enumerate}
+ \end{properties}
+
+\begin{proof}
+\begin{enumerate}
+    \item Очевидно из определения;
+    \item По определению
+    $$\DD \xi = \EE (\xi - \EE \xi)^2 = \EE (\xi^2 - 2\xi \EE \xi + (\EE \xi)^2) = \EE \xi^2 - 2(\EE \xi)^2 + (\EE \xi)^2 = \EE \xi^2 - (\EE \xi)^2.$$
+
+    \item      Очевидно из определения;            
+             
+
+    \item Воспользуемся свойством матожидания для произведения независимых величин:
+    \begin{align*}
+        \DD (\xi+\eta) &= \EE (\xi +\eta)^2 - (\EE (\xi +\eta))^2 \\&= \EE \xi^2 + 2\EE \xi\eta + \EE \eta^2 - (\EE \xi + \EE \eta)^2 \\&= \EE \xi^2 + \EE \eta^2 - (\EE \xi)^2 - (\EE \eta)^2.
+    \end{align*}
+                   
+            
+               
+    
+            
+        \item Пусть $\eta =\xi - \EE \xi$, тогда по неравенству Ляпунова
+        $$\EE \abs{\eta} \le (\EE \abs{\eta}^2)^\frac{1}{2}.$$
+              
+              
+        \item Из предыдущего свойства
+               	 $$P(\eta\ge t) \le \frac{\EE \eta^2}{t^2}.$$ \qedhere
+               	 \end{enumerate}
+               \end{proof}
+ \begin{examples}
+
+     \begin{enumerate}
+         \item Пусть $\xi\sim\mathcal{U}[0, 1]$. Тогда
+         \begin{gather*}
+             \EE \xi = \int\limits_\mathbb{R}x\dd P_\xi = \int\limits_0^1x\dd x = \frac{x^2}{2}\Bigg|_0^1  = \frac{1}{2}.\\
+             \EE \xi^2 = \int\limits_\mathbb{R}x^2\dd P_\xi(x) = \int\limits_0^1 x^2\dd x = \frac{x^3}{3}\Bigg|_0^1 = \frac{1}{3}.\\
+             \DD \xi = \EE \xi^2 - (\EE \xi)^2 = \frac{1}{12}.
+         \end{gather*}
+
+
+         \item Пусть $\xi\sim\mathcal{U}[a, b]$. Нетрудно заметить, что $\xi = (b-a)\eta + a$, где $\eta\sim\mathcal{U}[0, 1]$. Тогда
+         \begin{gather*}
+             \EE \xi = \EE ((b-a)\eta + a) = (b-a)\EE \eta + a = \frac{a+b}{2}.\\
+             \DD \xi = \DD ((b-a)\eta + a) = (b-a)^2\DD \eta = \frac{(b-a)^2}{12}.
+         \end{gather*}
+
+
+         \item Пусть $\xi\sim\mathcal{N}(0, 1)$. Тогда
+               $$\EE \xi = \int\limits_\mathbb{R}x\dd P_\xi(x) = \int\limits_\mathbb{R} x\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}\dd x = 0,$$ поскольку функция нечётная.
+               $$\DD \xi = \EE \xi^2 = \frac{1}{\sqrt{2\pi}}\int\limits_\mathbb{R}x^2e^{-\frac{x^2}{2}}\dd x = -\frac{1}{\sqrt{2\pi}}\int\limits_\mathbb{R}x\dd\left(e^{-\frac{x^2}{2}}\right)= \frac{1}{\sqrt{2\pi}} \int\limits_\mathbb{R} e^{-\frac{x^2}{2}}\dd x = 1.$$ 
+
+         \item Пусть $\xi\sim\mathcal{N}(a, \sigma^2)$. Поймём, что
+               $\xi = \sigma\eta + a$, где $\eta \sim \mathcal{N}(0, 1)$.
+              Пусть $\xi' = \sigma\eta$. Тогда
+              \begin{align*}
+                  F_{\xi'}(x) &= \int\limits_{-\infty}^x\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{t^2}{2\sigma^2}}\dd t
+                    = [t = \sigma s] \\&= \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{\frac{x}{\sigma}}e^{-\frac{s^2}{2}}\dd s =
+                   F_\eta\left(\frac{x}{\sigma}\right),
+              \end{align*}
+               то есть $$\xi' = \sigma\eta \sim \mathcal{N}(0, \sigma^2).$$
+            Аналогично доказывается вторая часть, и тогда
+            \begin{gather*}
+                \EE \xi = \EE (\sigma\eta +a) = \sigma \EE \eta + a = a.\\
+                \DD \xi = \DD (\sigma\eta + a) = \sigma^2.
+            \end{gather*}
+           
+     \end{enumerate}
+ \end{examples}
+
+ \begin{definition}
+    \textit{Ковариацией} случайных величин $\xi$ и $\eta$ называется
+     $$\cov(\xi, \eta) = \EE ((\xi - \EE \xi)(\eta - \EE \eta)).$$
+ \end{definition}
+
+ \begin{properties}[ковариации]
+\enewline
+     \begin{enumerate}
+
+         \item $\cov(\xi, \xi) = \DD \xi$.
+
+
+         \item $\cov(\xi, \eta) = \EE (\xi\eta) - \EE \xi \EE \eta$.
+
+
+         \item $\DD (\xi + \eta) = \DD \xi + \DD \eta + 2\cov(\xi, \eta)$.
+
+         \item $\DD (\overset{n}{\underset{k = 1}{\sum}}\xi_k) = \overset{n}{\underset{k = 1}{\sum}}\DD \xi_k + \underset{i\neq k}{\sum}\cov(\xi_i, \xi_k) =
+                   \overset{n}{\underset{k = 1}{\sum}}\DD \xi_k + 2\underset{i < k}{\sum}\cov(\xi_i, \xi_k)$.
+
+         \item Если $\xi$ и $\eta$ независимые, то $\cov(\xi, \eta) = 0$.
+
+         \item $\cov(\xi, \eta) = \cov(\eta, \xi)$.
+
+
+         \item $\cov(c\xi, \eta) = c\cdot \cov(\xi, \eta)$.
+
+
+         \item $\cov(\xi_1+\xi_2, \eta) = \cov(\xi_1, \eta) + \cov(\xi_2, \eta)$.
+     \end{enumerate}
+ \end{properties}
+
+Сделаем несколько важных замечаний.
+
+     \begin{enumerate}
+         \item Дисперсия и ковариация могут не существовать (например, если не определено матожидание). Для существования ковариации надо, чтобы $\EE \xi^2 < +\infty$ и $\EE \eta^2 < +\infty$ (а дисперсия --- частный случай ковариации).
+
+         \item Из $\cov(\xi, \eta) = 0$ не следует независимость этих величин.
+
+               Например, пусть $\Omega = \{0, \frac{\pi}{2}, \pi\}$, каждое значение равновероятно. Возьмём
+               $\xi = \sin\omega$, $\eta = \cos\omega$. Тогда 
+               \begin{gather*}
+                   \xi\eta\equiv 0, \ \EE (\xi\eta) = 0, \ \EE \eta = 0;\\
+                   \cov(\xi, \eta) = \EE (\xi\eta) - \EE \xi \EE \eta = 0.
+               \end{gather*}
+               Но они не являются независимыми:
+               $$P(\xi = 1, \eta = 1) = 0 \neq P(\xi = 1)P(\xi = 1) = \frac{1}{9}.$$
+     \end{enumerate}
+
+ \begin{definition}\textit{Коэффициентом корреляции} случайных величин $\xi$ и $\eta$ называется
+     $$\rho(\xi, \eta) = \frac{\cov(\xi, \eta)}{\sqrt{\DD \xi}\sqrt{\DD \eta}}.$$
+ \end{definition}
+Очевидно, это значение лежит на отрезке $[-1, 1]$.
+ \begin{definition}
+     Случайные величины, для которых $\cov(\xi, \eta) = 0$ называются \textit{некоррелированными}.
+ \end{definition}
+
+ \begin{example} Пусть $G(V, \EE )$ --- граф, в котором $\abs{V} = n$,  $\abs{\EE} = \frac{nd}{2}$, где $d\ge1$. Тогда в $G$ можно выбрать $\frac{n}{2d}$ попарно несоединенных друг с другом вершин.
+ \end{example}
+     \begin{proof}
+         Рассмотрим случайное подмножество вершин $S$, причём вероятность вхождения вершины в него равно $p$. Рассмотрим подграф на вершинах $S$. Если $xy \in \EE $, то обозначим за $\xi_{xy} =1$, если $x, y\in S$, и 0 иначе. 
+         
+        Пусть $\xi$ --- количество ребер в подграфе на вершинах из $S$. Тогда $\xi = \underset{xy\in \EE }{\sum}\xi_{xy}$. Обозначим
+         $\eta = \#S$, очевидно $\EE \eta = np$. Пусть $\eta_x = 1$ если $x\in S$ и 0 иначе, тогда
+         \begin{gather*}
+             \eta = \underset{x\in V}{\sum}\eta_x, \ \EE \eta = \underset{x\in V}{\sum} \EE \eta_x = \sum p = np;\\
+             \EE \xi = \underset{xy\in \EE }{\sum} \EE \xi_{xy} = \underset{xy\in \EE }{\sum} P(x, y \in S) = \sum p^2  = \frac{p^2 nd}{2};\\
+             \EE (\eta - \xi) = np - \frac{p^2nd}{2}.
+         \end{gather*}
+         Хотим максимизировать это значение, для этого возьмем $p = \frac{1}{d}$ и получим $\frac{n}{2d}$.
+     \end{proof}
+
+
+
+
+ \begin{definition}
+     $\EE \xi^k = \int\limits_\mathbb{R}x^k \dd P_\xi(x)$ --- \textit{$k$-й момент} случайной величины. 
+     $\EE \abs{\xi}^k$--- \textit{$k$-й абсолютный момент}. 
+     $\EE ((\xi - \EE \xi)^k)$ --- \textit{$k$-й центральный момент}.
+ \end{definition}
+
+Легко заметить, что дисперсия --- 2-й центральный момент.
+
+
+ \begin{theorem}[Харди-Рамануджана]
+    Пусть $\nu(k)$ --- количество простых в разложении $k$, тогда если $\omega(n) \rightarrow +\infty$, то $$P(\abs{\nu(k) - \ln\ln n} > \omega(n)\sqrt{\ln\ln n}) \rightarrow 0 .$$
+ \end{theorem}
+
+ \begin{proof}
+     Обозначим $t = \omega(n)\sqrt{\ln\ln n}$.
+     Рассмотрим $$\xi_p(k) = \begin{cases}1, &\mbox{$k\divby p$}  \\ 0, &\mbox{иначе} \end{cases}, \ \text{где $p$ --- простое.}$$
+     Возьмём
+     $M = n^{\frac{1}{10}}$ и обозначим
+     \begin{gather*}
+         \xi = \underset{p\le M}{\sum} \xi_p, \ 0\le \nu(k) - \xi(k)\le 10;\\
+         \EE _{\xi_p} = \frac{[\frac{n}{p}]}{n} = \frac{1}{p} + O\left(\frac{1}{n}\right);\\
+         \EE _\xi = \sum \EE _{\xi_p} = \underset{p\le M}{\sum}\frac{1}{p} + O\left(\frac{M}{n}\right) = \underset{p\le M}{\sum}\frac{1}{p} + O(1) = \ln\ln M + O(1) = \ln\ln n + O(1).\\
+         \DD \xi = \sum \DD \xi_p + \sum \cov(\xi_p, \xi_q);\\
+         \DD \xi_p = \EE \xi_p^2 - (\EE \xi_p)^2 = \EE \xi_p - (\EE \xi_p)^2 = \frac{1}{p} - \frac{1}{p^2} + O(\frac{1}{n});\\
+     \cov(\xi_p, \xi_q) = \EE \xi_p\xi_q - \EE \xi_p\EE \xi_q = P(k\divby pq) - \frac{[\frac{n}{p}]}{n}\frac{[\frac{n}{q}]}{n} = \frac{[\frac{n}{pq}]}{n} = \frac{[\frac{n}{p}]\cdot[\frac{n}{q}]}{n}.
+     \end{gather*}
+    С одной стороны,
+    $$\frac{[\frac{n}{p}]\cdot[\frac{n}{q}]}{n}\ge \frac{\frac{n}{pq} - 1}{n} - \frac{\frac{n}{p}\frac{n}{q}}{n^2} = -\frac{1}{n}.$$
+    С другой
+$$\frac{[\frac{n}{p}]\cdot[\frac{n}{q}]}{n} \le \frac{\frac{n}{pq}}{n} - \frac{(\frac{n}{p} - 1)(\frac{n}{q} - 1)}{n} = \frac{1}{n}\left(\frac{1}{p} + \frac{1}{q}\right).$$
+     То есть 
+     $$2\sum \cov \ge -\frac{M^2}{n} = O(1) \fand 2\sum \cov \le \frac{1}{n} \sum \left(\frac{1}{p} + \frac{1}{q}\right)\le 2\frac{M}{n}\sum \frac{1}{p} = O(1).$$
+     Таким образом,
+     $$\DD \xi = \sum \left(\frac{1}{p} - \frac{1}{p^2}\right) + O(1) = \sum\frac{1}{p} + O(1) = \ln\ln n + O(1).$$
+     Теперь применим неравенство Чебышёва:
+    $$P(\abs{\xi - E\xi} \ge t)\le \frac{\DD\xi}{t^2} = \frac{\ln \ln n + O(1)}{\omega^2(n)\ln\ln n} \rightarrow 0.$$
+ \end{proof}

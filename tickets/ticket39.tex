@@ -1,0 +1,63 @@
+\section{Центральная предельная теорема в форме Линденберга (без доказательства). Центральная предельная теорема в форме Ляпунова. Оценки на скорость сходимости}
+
+\begin{theorem}[Центральная предельная теорема в форме Линденберга] Пусть
+    $\xi_1, \xi_2, \ldots$ ~--- независимые случайные величины.
+    $a_k = \EE \xi_k$, $\sigma_k^2 =  \DD\xi_k > 0$, $S_n = \xi_1 + \ldots + \xi_n$. Обозначим
+    $$\text{Lind}(\e, n)= \frac{1}{ \DD_n^2} \sum\limits_{k=1} ^ n  \EE f(\xi_k - a_k),$$
+    где
+    \begin{gather*}
+        \DD_n^2 = \sum\limits_{k=1} ^ n \sigma_k^2, \ f(x) = x^2\mathbbm{1}_{\{\abs{x}\ge \e  \DD_n\}}(x).
+    \end{gather*}
+   Тогда, если $\text{Lind}(\e, n) \to 0$ при $n\rightarrow \infty$ при всех $\e > 0$, то
+   $$P(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x)\rightrightarrows \Phi.$$
+\end{theorem}
+
+\begin{exercise}
+    Проверьте, что для независимых одинаково распределенных случайных величин с конечной дисперсией выполняется условие Линденберга
+\end{exercise}
+
+\begin{theorem}[Центральная предельная теорема в форме Ляпунова] Пусть
+    $\xi_1, \xi_2, \ldots$ ~--- независимые случайные величины.
+    $a_k = \EE \xi_k$, $\sigma_k^2 :=  \DD\xi_k > 0$, $S_n := \xi_1 + \ldots + \xi_n$. Обозначим
+ $$L(\delta, n)=\frac{1}{ \DD_n^{2+\delta}} \sum\limits_{k=1} ^ n  \EE \abs{\xi_k - a_k}^{2+\delta}\fwhere \DD_n^2 = \sum\limits_{k=1} ^ n \sigma_k^2.$$
+   Тогда, если
+    $L(\delta, n) \to 0$ при $n \to \infty$ при некотором $\delta > 0$, то
+    $$P(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x)\rightrightarrows \Phi.$$
+\end{theorem}
+
+\begin{proof}
+    Докажем, что из теоремы в форме Линденберга следует теорема в форме Ляпунова, то есть надо показать, что из условия Ляпунова следует условие Линденберга.
+    \begin{align*}
+        \text{Lind}(\e, n) &= \frac{1}{ \DD_n^2} \sum\limits_{k=1} ^ n  \EE ((\xi_k - a_k)^2\mathbbm{1}_{\{\abs{\xi_k - a_k}\ge \e \DD_n\}}(\xi_k - a_k)) \\&\le \frac{1}{ \DD_n^2} \sum\limits_{k=1} ^ n  \EE ((\xi_k - a_k)^2(\frac{\abs{\xi_k - a_k}}{\e \DD_n})^\delta) \\&= \frac{1}{\e^\delta}\frac{1}{ \DD_n^{2+\delta}} \sum\limits_{k=1} ^ n  \EE \abs{\xi_k - a_k}^{2+\delta} \\&= \frac{L(\delta, n)}{\e^\delta}\underset{n\rightarrow \infty}{\rightarrow} 0.
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    Пусть $0<\delta \le 1$. Тогда в условии центральной предельной теоремы в форме Ляпунова.
+$$\underset{\sup x\in \mathbb{R}}{\sup} \abs*{(P(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x) - \Phi}\le C_\delta L(\delta, n).$$
+\end{theorem}
+
+\begin{remark}
+    Пусть случайные величины $\xi_i$ независимы и одинаково распределены, $a = \EE \xi_1$, $\sigma^2 =  \DD \xi_1$, $ \DD_n^2 = n\sigma^2$. Тогда
+    $$L(\delta, n) = \frac{1}{(\sqrt{n}\sigma)^{2+\delta}}n\EE \abs{\xi_1 -a}^{2+\delta} = \frac{1}{n^{\frac{\delta}{2}}}\cdot \frac{1}{\sigma^{2+\delta}}\EE \abs{\xi_1 - a}^{2+\delta}.$$
+\end{remark}
+
+\begin{theorem}[Берри-Эссеена]
+Пусть $\xi_1, \xi_2, \ldots$ ~--- независимые и одинаково распределенные случайные величины;$\EE \xi_1 = a$. Тогда 
+$$\abs*{P(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x) - \Phi} \le \frac{C\EE \abs{\xi_1 - a_1}^3}{\sqrt{n}\sigma^3}.$$
+\end{theorem}
+
+
+\begin{theorem}[Хартмана — Витнера, ``закон повторного логарифма"]
+Пусть $\xi_1, \xi_2, \ldots$ ~--- независимые и одинаково распределенные случайные велbчины, $\EE \xi_1 = 0$, $ \DD\xi_1 =\sigma^2 > 0$.
+    Тогда 
+    \begin{gather*}
+        \varlimsup_{n \to \infty} \frac{S_n}{\sqrt{2n\ln\ln n}} = \sigma;\\
+        \varliminf_{n \to \infty} \frac{S_n}{\sqrt{2n\ln\ln n}} = -\sigma.
+    \end{gather*}
+\end{theorem}
+
+\begin{theorem}[Штрассена]
+    Любая точка из $[-\sigma, \sigma]$ ~--- предельная точка последовательности $\frac{S_n}{\sqrt{2n\ln\ln n}}$.
+\end{theorem}
+

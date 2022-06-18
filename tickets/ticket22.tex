@@ -1,0 +1,16 @@
+\section{Выбор двудольного подграфа с большим количеством ребер}
+
+\begin{example} Пусть $G(V, \EE )$ --- граф, в котором $\abs{V} = n$,  $\abs{\EE} = \frac{nd}{2}$, где $d\ge1$. Тогда в $G$ можно выбрать $\frac{n}{2d}$ попарно несоединенных друг с другом вершин.
+\end{example}
+    \begin{proof}
+        Рассмотрим случайное подмножество вершин $S$, причём вероятность вхождения вершины в него равно $p$. Рассмотрим подграф на вершинах $S$. Если $xy \in \EE $, то обозначим за $\xi_{xy} =1$, если $x, y\in S$, и 0 иначе. 
+        
+       Пусть $\xi$ --- количество ребер в подграфе на вершинах из $S$. Тогда $\xi = \underset{xy\in \EE }{\sum}\xi_{xy}$. Обозначим
+        $\eta = \#S$, очевидно $\EE \eta = np$. Пусть $\eta_x = 1$ если $x\in S$ и 0 иначе, тогда
+        \begin{gather*}
+            \eta = \underset{x\in V}{\sum}\eta_x, \ \EE \eta = \underset{x\in V}{\sum} \EE \eta_x = \sum p = np;\\
+            \EE \xi = \underset{xy\in \EE }{\sum} \EE \xi_{xy} = \underset{xy\in \EE }{\sum} P(x, y \in S) = \sum p^2  = \frac{p^2 nd}{2};\\
+            \EE (\eta - \xi) = np - \frac{p^2nd}{2}.
+        \end{gather*}
+        Хотим максимизировать это значение, для этого возьмем $p = \frac{1}{d}$ и получим $\frac{n}{2d}$.
+    \end{proof}

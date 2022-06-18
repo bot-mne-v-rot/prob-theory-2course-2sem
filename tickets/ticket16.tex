@@ -1,0 +1,61 @@
+\section{Свертки мер. Свертки мер, имеющих плотность}
+
+В этом паграфе $\mu$ и $\nu$ --- конечные меры на борелевских подмножествах $\mathbb{R}$.
+    
+     \begin{definition} \textit{Сверткой мер} $\mu$ и $\nu$ называется
+         $$\mu * \nu(A) = \int\limits_\mathbb{R} \mu(A - x) \dd\nu(x).$$
+     \end{definition}
+
+     \begin{properties}[свёртки мер]
+    \enewline
+         \begin{enumerate}
+
+             \item $\mu * \nu(A) = \intt_{\mathbb{R}^2}\mathbbm{1}_{A}(x+y) \dd\mu(x)\dd\nu(y)$;
+
+             \item $\mu*\nu = \nu*\mu$;
+
+             \item $(\mu_1*\mu_2)*\mu_3 (A)  = \intt_{\mathbb{R}^3}\mathbbm{1}(x_1+x_2+x_3)\dd\mu_1(x_1)\dd\mu_2(x_2)\dd\mu_3(x_3) = \mu_1*(\mu_2*\mu_3) (A)$;
+
+             \item $\mu_1*\mu_2*\ldots*\mu_n (A)  = \intt_{\mathbb{R}^n}\mathbbm{1}(x_1+x_2+\ldots +x_n)\dd\mu_1(x_1)\dd\mu_2(x_2)\ldots \dd\mu_n(x_n)$;
+
+             \item $(c\mu)*\nu = c\cdot\mu*\nu$;
+
+             \item $(\mu_1+\mu_2)*\nu = \mu_1 * \nu + \mu_2 * \nu$;
+
+             \item Пусть $\delta_a$ --- мера, такая что $\delta_a(\{a\}) = 1$ и $\delta_a(\{\mathbb{R}\setminus \{a\}\}) = 0$. Тогда
+                   $\mu*\delta_0 = \mu$ (то есть $\delta_0$ --- единица с точки зрения свертки).
+
+                   
+         \end{enumerate}
+     \end{properties}
+     
+      \begin{proof}
+\enewline
+         \begin{enumerate}
+             \item По определению свёртки
+             \begin{align*}
+                 \mu * \nu(A) &= \int\limits_\mathbb{R} \mu(A - x) \dd\nu(x) \\&= \int\limits_{\mathbb{R}}\int\limits_\mathbb{R} \mathbbm{1}_{A - y}(x) \dd\mu(x)\dd\nu(y) \\&= \int\limits_{\mathbb{R}^2}\mathbbm{1}_A (x + y) \dd\mu(x)\dd\nu(y).
+             \end{align*}
+             \item[] Пункты 2-6 очевидно следуют из определения и пункта 1.
+             \item[7.] По определению свёртки
+             $$\mu*\delta_0 (A) = \int\limits_\mathbb{R} \mu(A - x)d\delta_0(x) =  \mu (A - 0) = \mu A.$$ \qedhere
+         \end{enumerate}
+                       
+\end{proof}
+
+     \begin{theorem}
+         Пусть $p_\mu$ и $p_\nu$ --- плотности мер $\mu$ и $\nu$ относительно меры Лебега $\lambda$.
+         Тогда $\mu*\nu$ имеет плотность
+         $$p(t) = \int\limits_\mathbb{R} p_\mu (t - x) p_\nu (x) \dd x.$$
+         Это называется \textit{свёрткой функцией}.
+     \end{theorem}
+
+     \begin{proof}
+        Надо проверить, что 
+        $$\mu*\nu(A) = \int\limits_A p(t)\dd t.$$ 
+        По определению $p(t)$
+        \begin{align*}
+            \int\limits_A p(t)\dd t &= \int\limits_A\int\limits_\mathbb{R} p_\mu(t - x)p_\nu(x)\dd x\dd t \\&= \int\limits_{\mathbb{R}^2}\mathbbm{1}_A(t)p_\mu(t-x)p_\nu(x) \dd x\dd t \\&= \int\limits_{\mathbb{R}^2}\mathbbm{1}_A(x+y)p_\mu(y)p_\nu(x)\dd x\dd y \\&= \int\limits_{\mathbb{R}^2} \mathbbm{1}_A(x+y) \dd\mu(y)\dd\nu(x) = \mu*\nu(A).
+        \end{align*}
+       
+     \end{proof}

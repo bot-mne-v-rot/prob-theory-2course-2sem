@@ -1,0 +1,33 @@
+\section{Скорость вырождения ветвящегося процесса в критическом случае}
+
+\begin{theorem}
+    Если $m = \EE \eta_1 = 1$, $0 < b= \DD\eta_1$, $q_n$~--- вероятность вырождения к $n$-му шагу, $\gamma_n = q_{n+ 1} - q_n$~--- вероятность
+    вырождения точно на $n$-м шаге. Тогда 
+    $$\gamma_n \sim \frac{2}{bn^2} \fand 1-q_n\sim \frac{2}{bn}.$$
+\end{theorem}
+
+\begin{proof}
+    Заведем вспомогательную функцию $g(x) = 1- G(1-x)$. $g(0) = 0$ (так как $G^\prime(1) = 1$)
+   \begin{gather*}
+       g^\prime(x) = G^\prime(1-x); \\
+       g'(0) = m = 1;\\
+       g^{\prime \prime}(x) = -G^{\prime \prime}(1-x);\\
+       g^{\prime \prime}(0) = -G^{\prime \prime}(1) = -b,
+   \end{gather*}
+поскольку
+       \begin{gather*}
+           b = \DD\eta_1 = G^{\prime \prime}(1) + G^\prime(1) - (G^\prime(1))^2 = G^{\prime \prime}(1).\\
+           g(x) = x-\frac{bx^2}{2} + o(x^2);\\
+           p_n = 1-q_n;\\ 
+           g(p_n) = p_{n+1};\\
+           \gamma_n = q_{n + 1} -q_n = p_n - p_{n+1};\\
+       \end{gather*}.
+    Пусть $a_n= \frac{1}{p_n}$. Тогда
+    $$a_{n+1} - a_n = \frac{1}{p_{n+1}} -\frac{1}{p_n} = \frac{p_n - p_{n+1}}{p_{n+1}p_n} = \frac{p_n - g(p_n)}{p_ng(p_n)} = \frac{\frac{b}{2}p_n^2 + o(p_n^2)}{p_n(p_n - \frac{bp_n^2}{2} + o(p_n^2))}\sim \frac{b}{2}.$$
+   И тогда по теореме Штольца.
+   \begin{gather*}
+       a_n\sim\frac{bn}{2} \Ra p_n \sim \frac{2}{bn}.\\
+       \gamma_n = p_n - p_{n + 1} = p_np_{n+1} (a_{n+1} - a_n )\sim p_n^2\frac{b}{2} \sim \left(\frac{2}{bn}\right)^2\frac{b}{2} = \frac{2}{bn^2}.
+   \end{gather*}
+\end{proof}
+

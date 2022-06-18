@@ -1,0 +1,19 @@
+\section{Независимость функций от независимых случайных величин}
+
+\begin{theorem}
+    Пусть $\xi_i$ --- независимые случайные величины, функции $f_j \colon \mathbb{R}^{n_j} \rightarrow \mathbb{R}$ измеримы относительно борелевской $\sigma$-алгебры.
+    Тогда величины $f_1(\xi_1, \ldots, \xi_{n_1})$, $f_2(\xi_{n_1 + 1}, \ldots, \xi_{n_2})$, $\ldots$ независимы.
+\end{theorem}
+
+\begin{proof} Покажем, что $f(\xi_1, \ldots, \xi_n)$ и $g(\eta_1, \ldots, \eta_m)$ независимы, если величины $\xi_1, \ldots, \xi_n$, $\eta_1, \ldots, \eta_m$ независимы; общий случай делается аналогично.
+    Надо проверить независимость событий $\{f(\xi_1, \ldots, \xi_n)\in A\}$ и $\{g(\eta_1, \ldots, \eta_m)\in B\}$.
+   \begin{gather*}
+       \{f(\xi_1, \ldots, \xi_n)\in A\} = \{(\xi_1, \ldots, \xi_n)\in \overline{A}\}\fwhere \overline{A} = f^{-1}(A); \\
+       \{g(\eta_1, \ldots, \eta_m)\in B\} = \{(\eta_1, \ldots, \eta_m)\in \overline{B}\} \fwhere \overline{B} = f^{-1}(B);\\
+       \end{gather*}
+       Надо доказать, что
+      $$ P((\xi_1,\ldots, \xi_n)\in \overline{A})\cdot P((\eta_1, \ldots, \eta_m)\in\overline{B}) = P((\xi_1, \ldots, \xi_n, \eta_1, \ldots, \eta_m)\in \overline{A}\times\overline{B}).$$
+    То есть надо доказать равенство мер, заданых на борелевских множествах, значит достаточно проверить это равенство на ячейках:
+    $$P((\xi_1, \ldots, \xi_n)\in (a, b]) = P(\xi_1\in(a_1, b_1])\cdot\ldots\cdot P(\xi_n\in (a_n, b_n]).$$
+   Аналогично расписываем две другие вероятности и получаем равенство. 
+\end{proof}

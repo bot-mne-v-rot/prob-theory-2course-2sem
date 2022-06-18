@@ -1,0 +1,164 @@
+\section{Условные математические ожидания}
+
+ \begin{definition}
+    Пусть $(\Omega, \mathcal{F}, P)$ ~--- вероятностное пространство. $\mathcal{A}\subset\mathcal{F}$ ---
+     $\sigma$-алгебра; $\xi$ ~--- случайная величина, $\EE |\xi| < +\infty$.
+     Тогда случайная величина $\eta = \EE (\xi | \mathcal{A})$ --- \textit{математическое ожидание при условии} $\mathcal{A}$, если
+     \begin{enumerate}
+         \item $\eta$ измерима относительно $\mathcal{A}$;
+         \item $\forall A\in\mathcal{A} \quad \EE (\xi \mathbbm{1}_A) = \EE (\eta\mathbbm{1}_A)$.
+     \end{enumerate}
+ \end{definition}
+
+ \begin{example}
+     $\mathcal{A} = \{\emptyset, \Omega\}$, $\eta = \const$, $\EE \xi = \EE (\const) = \const$.
+ \end{example}
+
+ \begin{theorem}\label{th:uslsuch}
+     Условное матожидание $\EE (\xi | \mathcal{A})$ существует и единственно в следующем смысле: если $\eta_1$ и $\eta_2$ ~--- условные матожидания, то они равны почти наверное.
+ \end{theorem}
+
+ \begin{proof}
+     Докажем единственность. Пусть
+     $A = \{\eta_1 > \eta_2\} \in\mathcal{A}$. Тогда
+     \begin{multline*}
+         \EE (\eta_1\mathbbm{1}_A) = \EE (\xi\mathbbm{1}_A) = \EE (\eta_2\mathbbm{1}_A) \Ra \EE ((\eta_1 - \eta_2)\mathbbm{1}_A) = 0 \\ \Ra P((\eta_1-\eta_2)\mathbbm{1}_A = 0) = 1 \Ra P(\eta_1 > \eta_2 ) = 0.
+     \end{multline*}
+   Аналогичное доказательство для $ \{\eta_1 < \eta_2\}$, значит $P(\eta_1 = \eta_2) = 1$.
+
+    Докажем существование. Пусть
+     $\mu_\pm A = \EE (\xi_\pm\mathbbm{1}_A)\ge 0$ --- меры на $\mathcal{A}$ (это меры, так как $\EE $ счетно аддитивно).
+     Если $P(A) = 0$, то $\mu_\pm A = 0$, то есть эти меры абсолютно непрерывна относительно $P$.
+     По теореме Радона-Никодима существует функция $\omega_\pm \ge 0$, измеримая относительно $\mathcal{A}$ и суммируемая, такая что 
+     $$\mu_\pm A = \int_A \omega_\pm \dd P =
+         \int_\Omega \omega_\pm \mathbbm{1}_A \dd P.$$
+    Тогда
+    $$\EE (\xi_\pm \mathbbm{1}_A) = \EE (\omega_\pm \mathbbm{1}_A) \Ra \EE (\xi \mathbbm{1}_A) = \EE ((\omega_{+} - \omega_{-})\mathbbm{1}_A),$$ 
+    значит функция $ \omega_{+} - \omega_{-}$ подходит.
+ \end{proof}
+
+ \begin{properties}[условных матожиданий]
+\enewline
+     \begin{enumerate}
+         \item $\EE (c|\mathcal{A}) = c$;
+         \item $\EE (\xi | \mathcal{A})$ линейно;
+         \item  Если $\mathcal{A}_1 \subset \mathcal{A}_2$, то $\EE (\xi | \mathcal{A}_1) = \EE (\EE (\xi | \mathcal{A}_2) | \mathcal{A}_1)$ почти наверное.
+         \item $\EE \xi = \EE (\EE (\xi | \mathcal{A}))$;
+         \item Если $\xi $ измеримо относительно $\mathcal{A}$, то $\EE (\xi | \mathcal{A}) = \xi$;
+         \item Если $\xi \le \eta$, то $\EE (\xi | \mathcal{A})\le \EE (\eta | \mathcal{A})$;
+
+     \end{enumerate}
+ \end{properties}
+ 
+  \begin{proof}
+\enewline
+     \begin{enumerate}
+         \item Очевидно из определения;
+         \item Очевидно из определения;
+         \item  Надо показать, что $\eta = = \EE (\EE (\xi | \mathcal{A}_2) | \mathcal{A}_1)$ подходит под условие условного матожидания, то есть она измерима относительно $\mathcal{A}_1$
+                   (что сразу следует из определения $\eta$) и $\EE (\eta\mathbbm{1}_{A}) = \EE (\xi\mathbbm{1}_{A}) \quad \forall A \in \mathcal{A}$. Докажем второе; по определению 
+                   $$\EE (\eta\mathbbm{1}_A) = \EE (\EE (\xi | \mathcal{A}_2)\mathbbm{1}_A) = \EE (\xi\mathbbm{1}_{A}).$$
+                   Последнее равенство верно так как $A\in\mathcal{A}_2$.
+        \item Подставим в 3-й пункт $\mathcal{A}_1 = \{\emptyset, \Omega\}$ и $\mathcal{A}_2 = \mathcal{A}$).
+          \item   Нужно проверить, что $\forall A\in\mathcal{A}$ $\EE (\xi\mathbbm{1}_A) = \EE (\EE (\xi | \mathcal{A})\mathbbm{1}_A)$, ну а в
+                   случае $\EE (\xi |\mathcal{A}) = \xi$ и проверять нечего.
+         \item  Если $\xi \ge 0$, то $\EE (\xi | \mathcal{A}) \ge 0$. Вспомним, как мы находили условное матожидание в теореме о его существовании(\ref{th:uslsuch}), а именно как сумму неотрицательных величин. \qedhere
+
+     \end{enumerate}
+ \end{proof}
+ 
+ Приведём важный пример условного матожидания. 
+
+ \begin{example}[Условное матожидание относительно разбиения]
+    Пусть $\Omega = \bigsqcup A_k$, а $\mathcal{A}$ --- натянутая на $A_k$ $\sigma$-алгебра.
+    Тогда условное матожидание
+     $\EE (\xi | \mathcal{A})$ ---- случайная величина  и из определения $\mathcal{A}$ понятно, что они должны быть константными на $A_k$, значит $\EE (\xi | \mathcal{A}) = \sum c_k \mathbbm{1}_{A_k}$. Тогда
+     $$\EE (\xi \mathbbm{1}_A) = \EE (\sum c_k \mathbbm{1}_{A_k} \mathbbm{1}_A) \quad \forall A\in \mathcal{A}.$$ Подставим $A = A_n$:
+     $$\EE (\xi\mathbbm{1}_{A_n}) = \EE (\sum c_k \mathbbm{1}_{A_k} \mathbbm{1}_{A_n}) = c_n P(A_n) \Ra  c_n = \frac{\EE (\xi\mathbbm{1}_{A_n})}{P(A_n)}.$$
+     Итого
+     $$\EE (\xi | \mathcal{A}) = \sum \frac{\EE (\xi\mathbbm{1}_{A_k})}{P(A_k)} \mathbbm{1}_{A_k}.$$
+ \end{example}
+
+ \begin{definition}
+     \textit{Условная вероятность относительно} $\mathcal{A}$ --- это
+     $$P(B | \mathcal{A} ) = \EE (\mathbbm{1}_B | \mathcal{A}).$$
+ \end{definition}
+
+ \begin{definition}
+     Пусть $\eta$ --- случайная величина; $\sigma(\eta)$ --- $\sigma$-алгебра, натянутая на множества $\{\eta \le c\}$. Тогда \textit{условным матождианием относительно случайной величины} $\eta$ называется
+     $$\EE (\xi | \eta) = \EE (\xi | \sigma(\eta)).$$
+ \end{definition}
+
+ \begin{example}
+     Пусть $\eta$ --- дискретная случайная величина, $\{\eta = y_k\}$ ~--- измеримы, где $\{y_k\}$ ~--- значения $\eta$. Тогда
+     $$\EE (\xi | \eta) = \sum \frac{\EE (\xi \mathbbm{1}_{\{\eta = y_k\}})}{P(\{\eta = y_k\})} \mathbbm{1}_{\{\eta = y_k\}} =
+         \sum \EE (\xi | \eta = y_k)\mathbbm{1}_{\{\eta = y_k\}}.$$
+ \end{example}
+
+ \begin{example}
+     Пусть $N, \xi_1, \xi_2, \ldots$ --- независимые случайные величины, $\xi_1, \xi_2, \ldots$ одинаково распределены, $\EE \xi_1 = a$; обозначим
+     $S = \xi_1 + \ldots + \xi_N$. Найдем $\EE S$:
+     \begin{align*}
+         \EE S &= \EE (\EE (S | N)) = \EE (\sum \EE (S | N = n)\mathbbm{1}_{\{N = n\}}) = \sum \EE (S | N = n) P(N = n) \\&= \sum \EE (\xi_1 + \ldots + \xi_n) P(N = n) = \sum na P(N = n) =
+         a\sum nP(N= n) = a\EE N.
+     \end{align*}
+
+ \end{example}
+
+ \begin{exercise}
+     Найдите $\DD S$, если известно $\DD\xi_1, \DD N, \EE \xi_1, \EE N$.
+ \end{exercise}
+
+ \begin{example}
+    Пусть случайные величины $N, \xi_1, \xi_2, \ldots$ принимают натуральные значения.
+     $G$ ~--- производящая функция $N$, $F$ ~--- производящая функция $\xi_1$. Найдем производящую функцию для $S$:
+     \begin{align*}
+         \EE z^S &= \EE (\EE (z^S | N)) = \sum \EE (z^S | N = n)P(N = n) = \sum \EE (z^{\xi_1 + \ldots + \xi_n}) P(N = n) \\&=
+         \sum \EE z^{\xi_1}\cdot\ldots\cdot \EE z^{\xi_n} P(N = n) = \sum (F(z))^n P(N= n) = G(F(z)).
+     \end{align*}
+    
+ \end{example}
+
+\begin{remark}[геометрическая интерпретация]
+ Рассмотрим $\xi$, такие что $\EE \xi^2 < +\infty$. Они образуют пространство $L^2(\Omega, \mathcal{F}, P)$; возьмём $\s$-алгебру $\mathcal{A} \subset\mathcal{F}$. Условные матожидания живут в пространстве $L^2(\Omega, \mathcal{A}, P)\subset L^2(\Omega, \mathcal{F}, P)$. Тогда 
+ условное матожидание $\EE (\xi |\mathcal{A} )$ --- проекция $\xi$ на $L^2(\Omega, \mathcal{A}, P)$.
+\end{remark}
+
+
+ \begin{proof} Нужно доказать, что
+    $$\xi- \EE (\xi | \mathcal{A} ) \perp L^2(\Omega, \mathcal{A}, P).$$ 
+    Достаточно проверить на $\mathbbm{1}_A$ для $A\in\mathcal{A}$, то есть проверить, что
+     $$\EE ((\xi - \EE (\xi | \mathcal{A}))\mathbbm{1}_A) = 0,$$ что равносильно тому, что
+     $$\EE (\xi \mathbbm{1}_A) = \EE (\EE (\xi | \mathcal{A})\mathbbm{1}_A,$$
+     а что в свою очередь является определением.
+ \end{proof}
+
+ \begin{theorem}
+ \enewline
+     \begin{enumerate}
+         \item Если $\xi, \eta$ независимы, то $\EE (\xi | \eta) = \EE \xi$
+         \item Если $\eta$ измерима относительно $\mathcal{A}$, то $\EE (\xi\eta | \mathcal{A}) = \eta \EE (\xi | \mathcal{A})$
+     \end{enumerate}
+ \end{theorem}
+
+
+ \begin{proof}
+ \enewline
+     \begin{enumerate}
+         \item Проверим, что $\EE \xi$ подходит, то есть то, что 
+         $$\EE (\EE \xi\mathbbm{1}_A) = \EE (\xi \mathbbm{1}_A) \quad \forall A\in \sigma(\eta).$$
+               $\sigma(\eta)$ натянута на $\{\eta \le c\}$, достаточно проверить для $A = \{\eta \le c\}$.
+               Надо показать, что
+               $$\EE (\EE \xi\mathbbm{1}_A) = \EE \xi \EE \mathbbm{1}_A = \EE (\xi\mathbbm{1}_A)$$ 
+               Первое верно, так как $\mathbbm{1}_A$ --- константа, а второе 
+               верно, если $\xi $ и $\mathbbm{1}_A$ независимы, то есть когда события $\{\xi \le a\}$ и $\{\mathbbm{1}_A \le b\}$ независимы (заметим, что это верно, поскольку $\{\mathbbm{1}_A \le c\} = \emptyset$ или $A = \{\eta \le c\}$).
+
+         \item Докажем по стандартной схеме(проверяем для индикаторной функции, по линейности верно для простых, приближаем произвольную простыми и переход к пределу по теореме Леви).
+         Проверяем для $\eta = \mathbbm{1}_B$ при $B \in \mathcal{A}$. Надо проверить, что
+               $$\EE (\xi\mathbbm{1}_B | \mathcal{A}) = \mathbbm{1}_B \EE (\xi | \mathcal{A}),$$ то есть то, что 
+               $\mathbbm{1}_B \EE (\xi | \mathcal{A})$ подходит, что равносильно тому, что для любого $A\in \mathcal{A}$ у нас есть равенство
+               $$\EE (\mathbbm{1}_B \EE (\xi | \mathcal{A}) \mathbbm{1}_A) = \EE (\xi \mathbbm{1}_B\mathbbm{1}_A).$$
+               Оно есть, так как 
+               $$\EE (\mathbbm{1}_B \EE (\xi | \mathcal{A}) \mathbbm{1}_A)  = \EE (\EE (\xi | \mathcal{A} ) \mathbbm{1}_{A\cap B}) = \EE (\xi\mathbbm{1}_{A\cap B}) = \EE (\xi \mathbbm{1}_B\mathbbm{1}_A).$$ \qedhere
+     \end{enumerate}
+ \end{proof}

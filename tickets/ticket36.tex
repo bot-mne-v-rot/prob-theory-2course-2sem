@@ -1,0 +1,75 @@
+\section{Теорема о сходимости по распределению (7 $\Rightarrow$ 1)}
+
+\begin{theorem}
+    $7 \Ra 1$ ($\phi_n \to \phi$ поточечно $\Ra \xi_n \to \xi$ по распределению
+\end{theorem}
+
+\begin{proof}
+    Возьмем $\eta_\sigma \sim \mathcal{N}(0, \sigma^2)$, не зависящую от $\xi_1, \xi_2, \dots$\
+    
+    Для независимых величин хар. функция - произведение хар. функций.
+    \[ 
+       \phi_{\xi_n + \eta_\sigma}(t) = \phi_n(t) \phi_{\eta_\sigma}(t) = \phi_n(t)e^{\frac{-\sigma^2t^2}{2}}
+    \]
+    
+    $\phi$ для нормального распределения мы уже считали, поэтому смогли написать.
+    
+    $|\phi_n(t)| \leq 1$, поэтому можно написать:
+    
+    \[|\phi_{\xi_n + \eta_\sigma}(t)| \leq e^{\frac{-\sigma^2t^2}{2}}\]
+    В частности, интеграл от этой хар. функции сходится.\\
+    
+    Пусть $G_n(x) := F_{\xi_n + \eta_\sigma}$. Это непрерывная функция: мы доказывали, что если к произвольному распределению прибавить непрерывное, то результатом будет непрерывное.\\
+    
+    Напишем формулу обращения (из-за непрерывности можно выбирать любые $a,\ b$):
+    
+    \[ G_n(b) - G_n(a) = \frac{1}{2\pi} \int_{\mathbb{R}} \frac{e^{-iat}-e^{-ibt}}{2i}\phi_n(t) e^{\frac{-\sigma^2 t^2}{2}}\ dt \]
+    
+    Написали сразу интеграл а не предел, потому что интеграл от $e^\frac{-\sigma^2t^2}{2}$ сходится, а остальной множитель ограничен. Значит весь интеграл сходится. В частности, есть суммируемая мажоранта, поэтому можно перейти к пределу под знаком интеграла (теорема Лебега):
+    
+    \[
+       \frac{1}{2\pi} \int_{\mathbb{R}} \frac{e^{-iat}-e^{-ibt}}{2i}\phi_n(t) e^{\frac{-\sigma^2 t^2}{2}}\ dt \to
+       \frac{1}{2\pi} \int_{\mathbb{R}} \frac{e^{-iat}-e^{-ibt}}{2i}\phi(t) e^{\frac{-\sigma^2 t^2}{2}}\ dt = G(b) - G(a)
+    \]
+    
+    Получили $G_n(b) - G_n(a) \to G(b) - G(a)$ для всех $a,\ b$. Следовательно, $G_n(x) \to G(x)$ поточечно. (Также обсуждали, что сходимость разностей равносильна сходимости поточечной)\\
+    
+    Осталось доказать сходимость $F_n$. Пусть $x$ - точка непрерывности $F$, и $\varepsilon > 0$. Возьмем из непрерывности $\delta > 0$, такое что $|F(x \pm 2\delta) - F(x)| < \varepsilon$.
+    
+    $F_n(x) = P(\xi_n \leq x)$. 
+    
+    \[ \{\xi_n \leq x\} \subset \{\xi_n + \eta_\sigma \leq x + \delta \} \cup \{ |\eta_\sigma| \geq \delta\}\]
+
+    $P(|\eta_\sigma| \geq \delta) \leq \frac{\mathbb{D} \eta_\sigma}{\delta^2} = \frac{\sigma^2}{\delta^2}$ - неравенство Чебышева.
+    
+    $G_n \to G$ поточечно, поэтому $G_n(x + \delta) < G(x+\delta) + \varepsilon$
+    
+    Теперь можно написать
+    
+    \[  F_n(x) = P(\xi_n \leq x) \leq P(\xi_n + \eta_\sigma \leq x + \delta) + P(|\eta_\sigma| \geq \delta) \leq G_n(x+\delta) + \frac{\delta^2}{\sigma^2} \leq G(x+\delta) + \varepsilon +  \frac{\delta^2}{\sigma^2} \leq
+    \]
+    
+    Аналогично оценим $G$:
+    
+    \[ \{\xi + \eta_\sigma \leq x + \delta\} \subset \{\xi \leq x + 2\delta \} \cup \{ |\eta_\sigma| \geq \delta\}
+    \]
+    
+    Продолжим неравенство
+    
+    \[ < F(x + 2\delta) + 2\frac{\delta^2}{\sigma^2} + \varepsilon < F(x) + 2\varepsilon + 2\frac{\delta^2}{\sigma^2}
+    \]
+    
+    
+    Оценка снизу получается аналогично, надо рассмотреть
+    
+    $\{\xi_n \leq n\} \supset \{\xi_n + \eta_\sigma \leq x - \delta\} \setminus \{|\eta_\sigma| \geq \delta\}$\\
+    
+    Получим такую оценку:
+    
+    $F_n(x) > F(x) - 2\varepsilon - 2\frac{\delta^2}{\sigma^2}$
+    
+    Порядок выбора маленьких величин: сначала $\varepsilon$, по нему $\delta$, по нему $\sigma$. После этого выбора все $G_n$ зафиксированы, как и рассматриваемая точка, и можно переходить к пределу по $n$ и выбрать такое $N$, что $|G_n(x+\delta) - G(x + \delta)| < \varepsilon$, аналогично для $x-\delta$ .
+    
+    Теперь $2\varepsilon + \frac{2\sigma^2}{\delta^2} < 4\varepsilon$, что и требовалось доказать.
+    
+\end{proof}

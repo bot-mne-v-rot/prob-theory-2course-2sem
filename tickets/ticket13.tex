@@ -1,0 +1,59 @@
+\section{Примеры вероятностных распределений}
+
+\begin{examples}[различных распределений]
+    \enewline
+        \begin{enumerate}
+            \item Распределение Бернулли ($\xi\sim \text{Bern}(p)$).
+                   \begin{gather*}
+                       0\le p\le 1, \ \xi \colon \Om \to \{0, 1\},  \\
+                       P(\xi = 0) = 1 - p,\ P(\xi = 1) = p.
+                   \end{gather*}
+   
+            \item Биномиальное распределение ($\xi\sim \text{Binom}(p)$).
+            \begin{gather*}
+                \xi \colon \Omega \rightarrow \{0,1, \ldots, n\}, \\
+                P(\xi = k) = \binom{n}{k}p^k(1-p)^{n - k}.
+            \end{gather*}
+   
+            \item Распределение Пуассона ($\xi \sim \text{Pois}(\lambda)$).
+            \begin{gather*}
+                \lambda > 0, \ \xi \colon \Omega\rightarrow\{0, 1, 2, \ldots\},\\
+                P(\xi = n) = \frac{\lambda^n e^{-\lambda}}{n!}.
+            \end{gather*}
+       
+   
+            \item Геометрическое распределение ($\xi\sim \text{Geom}(p)$).
+            \begin{gather*}
+                0< p < 1, \ \xi \colon \Omega\rightarrow \{1, 2, 3, \ldots\}, \\
+                P(\xi = n) = p(1-p)^{n - 1}.
+            \end{gather*}
+   
+            \item Дискретное равномерное распределение.
+            \begin{gather*}
+                \xi \colon \Omega\rightarrow \{a+1, \ldots, b\},\\
+                P(\xi = n) = \frac{1}{b - a}.
+            \end{gather*}
+       
+            \item Непрерывное равномерное распределение ($\xi \sim \mathcal{U}[a, b]$).
+            \begin{gather*}
+                \xi \colon \Omega\rightarrow [a, b],\\
+                p_\xi (t) = \frac{1}{b - a}\mathbbm{1}_{[a, b]}(t).
+            \end{gather*}
+   
+            \item Нормальное распределение ($\xi\sim \mathcal{N}(a, \sigma^2)$).
+            \begin{gather*}
+                a\in\mathbb{R}, \ \sigma > 0.\\
+                p_\xi (t) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(t-a)^2}{2\sigma^2}}.
+            \end{gather*}
+   
+                  Для $\xi\sim\mathcal{N}(0, 1)$ это называется стандартным нормальным распределением. Нетрудно заметить, что функция распределения для такой величины равна $\Phi(x)$.
+   
+            \item Экспоненциальное распределение ($\xi\sim \text{Exp}(\lambda)$).
+            \begin{gather*}
+                \lambda > 0, \ \xi \colon \Omega \rightarrow [0, +\infty), \\
+                p_\xi (t) =\lambda e^{-\lambda t}\mathbbm{1}_{[0, +\infty)}(t).
+            \end{gather*}
+        \end{enumerate}
+    \end{examples}
+   
+   

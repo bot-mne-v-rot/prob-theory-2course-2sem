@@ -1,0 +1,60 @@
+\section{Различные виды сходимости последовательности случайных величин. Связь между схо- димостями}
+
+\begin{definition}
+    \enewline
+         \begin{itemize}
+             \item $\xi_n$ сходится к $\xi$ \textit{почти наверное} (\textit{с вероятностью 1}), если
+                   $$P(\{\omega \in \Omega \mid \lim\xi_k(\omega) = \xi(\omega)\}) = 1$$ (то же самое, что и сходимость почти везде).
+    
+             \item $\xi_n$ сходится к $\xi$ \textit{в среднем порядка} $r > 0$, если 
+             $$\EE \abs{\xi_n - \xi}^r\rightarrow 0.$$
+    
+             \item $\xi_n$ сходится к $\xi$ \textit{по вероятности}, если 
+             $$\forall \e > 0 \ P(\abs{\xi_n - \xi} > \e)\rightarrow 0$$ 
+             (то же самое, что и сходимость по мере).
+    
+             \item $\xi_n$ сходится к $\xi$ \textit{по распределению}, если $F_{\xi_n}$ сходится $F_\xi$ во всех точках непрерывности $F_\xi$.
+         \end{itemize}
+     \end{definition}
+    
+    ``Иерархия" сходимостей следующая:
+    
+    \begin{itemize}
+        \item  $1\Ra 3$. Из теории меры по теореме Лебега (в обратную сторону неверно, смотри пример в там же);
+        \item $2\Ra 3$. Применим неравенство Маркова:
+        $$P(\abs{\xi_n - \xi} >\e) = P(\abs{\xi_n - \xi}^r> \e^r)  \le  \frac{\EE \abs{\xi_n - \xi}^r}{\e^r} \rightarrow 0.$$
+        \item  $1\nRightarrow 2$ (и, следовательно, $3\nRightarrow 2$).  Пример: $\Omega = [0, 1]$.
+        $$\xi_n = n^\frac{1}{r}\mathbbm{1}_{[0, \frac{1}{n})} \rightarrow \xi \equiv 0,$$ но
+     $\EE {\xi_n}^r = 1$.
+     \item  $2\nRightarrow 1$ (и, значит, $3\nRightarrow 1$).
+     Например,
+     \begin{gather*}
+         \xi_{n, k} = \mathbbm{1}_{[\frac{k}{n}, \frac{k + 1}{n}]};\\
+         \EE \xi_{n, k}^r = \frac{1}{n}\rightarrow 0,
+     \end{gather*}
+     но сходимости почти везде нет.
+        \item  $3\Ra 4$. 
+    \end{itemize}
+    
+    Докажем последнее.
+    
+     \begin{proof}
+     \begin{gather*}
+         \{\xi_n\le x\} \subset \{\xi\le x+\e\}\cup \{\abs{\xi_n - \xi}\ge \e\}; \\
+         F\xi_n (x) = P(\xi_n\le x) \le P(\xi\le x+\e) +P(\abs{\xi_n - \xi}\ge\e) = F_\xi(x + \e) + P(\abs{\xi_n - \xi}\ge \e); \\
+         \varlimsup_{n\rightarrow +\infty} F_{\xi_n}(x) = F_\xi (x + \e) +
+             \underset{n\rightarrow +\infty}{\lim} P(\abs{\xi_n - \xi}\ge\e) = F_\xi(x+\e). \label{eq:ier1}\tag{$*$}\\
+        \{\xi_n \le x\} \supset \{\xi\le x - \e\}\cap \{\abs{\xi_n - \xi}< \e\};\\
+        \{\xi_n >x\}\subset \{\xi > x - \e\} \cup \{\abs{\xi_n - \xi} \ge\e\};\\
+        P(\xi_n > x) \le P(\xi > x-\e) + P(\abs{\xi_n - \xi}\ge\e); \\
+        1 - F_{\xi_n}(x)\le 1-F_\xi(x-\e) +P(\abs{\xi_n - \xi}\ge\e);\\
+        F_{\xi_n}(x) \ge F_\xi (x - \e) + P(\abs{\xi_n - \xi}\ge\e);\\
+        \varliminf_{n \to +\infty} F_{\xi_n}(x)  \ge F_\xi (x-\e).\label{eq:ier2}\tag{$**$}
+     \end{gather*}
+        По непрерывности имеем, что
+        $$\forall \delta > 0 \ F_\xi(x) - \delta \le F_\xi (x - \e) , \ F_\xi(x+\e) < F_\xi(x) + \delta.$$
+         Итого, из непрерывности,  $(*)$ и $(**)$ получаем $$\forall \delta > 0 \ F_\xi(x) - \delta \le F_\xi (x - \e)\le
+             \varliminf F_{\xi_n}(x) \le \varlimsup F_{\xi_n}(x) \le F_\xi(x+\e) < F_\xi(x) + \delta.$$
+        Значит, предел существует и верно
+        $$\lim F_{\xi_n}(x) = F_\xi (x).$$
+     \end{proof}

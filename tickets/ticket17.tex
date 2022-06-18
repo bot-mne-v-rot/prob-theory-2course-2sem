@@ -1,0 +1,41 @@
+\section{Распределение суммы независимых случайных величин. Примеры}
+
+\begin{theorem}
+
+    Пусть $\xi$ и $\eta$ независимые случайные величины. Тогда $P_{\xi + \eta} = P_\xi * P_\eta$.
+ \end{theorem}
+
+ \begin{proof}
+    По определению распределения
+    \begin{align*}
+        P_{\xi + \eta}(A) &= P(\xi + \eta \in A) = P((\xi, \eta) \in B) = P_{(\xi, \eta)}(B) \\&=\int\limits_{\mathbb{R}^2}\mathbbm{1}_B (x, y) \dd P_{(\xi, \eta)}(x, y) = \int\limits_{\mathbb{R}^2}\mathbbm{1}_B(x, y)\dd P_{\xi}(x) \dd P_\eta(y) \\&=\int\limits_{\mathbb{R}^2}\mathbbm{1}_A(x + y)\dd P_{\xi}(x) \dd P_\eta(y) = P_\xi * P_\eta (A).
+    \end{align*}
+    
+ \end{proof}
+
+ \begin{examples}
+\enewline
+     \begin{enumerate}
+         \item Свертка с дискретным распределением. Дискретное распределение можно описать как  $\nu = \sum p_x \delta_x$ (вес на нагрузку в точке).
+        \begin{gather*}
+            \mu*\nu = \sum p_x\mu*\delta_x;\\
+            \mu*\delta_a(A) = \int\limits_\mathbb{R}\mu(A- x)d\delta_a(x) = \mu(A-a).\\
+            \mu*\nu(A) = \sum p_x\mu*\delta_x(A) = \sum p_x\mu(A-x).
+        \end{gather*}
+
+         \item Если меры $\mu$ и $\nu$ с нагрузками в $\mathbb{N}\cup \{0\}$, то
+\begin{gather*}
+    \nu = \sum q_n\delta_n, \ \mu = \sum p_n\delta_n;\\
+    \mu*\nu(A) = \overset{\infty}{\underset{n = 0}{\sum}} q_n\mu(A-n), \quad A = \{k\}, \ k\in\mathbb{Z}; \\
+    \mu*\nu(\{k\}) = \overset{k}{\underset{n = 0}{\sum}}q_np_{k - n}.
+\end{gather*}
+     
+
+         \item Пусть величины $\xi_1 \sim \text{Pois}(\lambda_1)$ и $\xi_2 \sim \text{Pois}(\lambda_2)$ независимые. Тогда
+               для $\xi_1$ веса равны $\frac{e^{-\lambda_1}\lambda_1^n}{n!}$, для $\xi_2$ веса равны $\frac{e^{-\lambda_2}\lambda_2^n}{n!}$.
+
+               Для $\xi_1+ \xi_2$ веса будут равны $$\overset{n}{\underset{k = 0}{\sum}}\frac{e^{-\lambda_1}\lambda_1^k}{k!}\frac{e^{-\lambda_2}\lambda_2^{n - k}}{(n - k)!} = \frac{e^{-\lambda_1 - \lambda_2}}{n!}\overset{n}{\underset{k = 0}{\sum}}\binom{n}{k} \lambda_1^k\lambda_2^{n - k} = \frac{e^{-(\lambda_1+\lambda_2)}}{n!}(\lambda_1+\lambda_2)^n.$$
+
+               Итого получили, что $\xi_1+\xi_2\sim \text{Pois}(\lambda_1+\lambda_2)$.
+     \end{enumerate}
+ \end{examples}

@@ -1,0 +1,48 @@
+\section{Локальная теорема Муавра–Лапласа. Пример}
+
+
+\begin{theorem}[Локальная предельная теорема Муавра-Лапласа]
+    Пусть $0 < p < 1,\; q = 1 - p$. $T$ --- некоторое число. Обозначим $x = \frac{k - np}{\sqrt{npq}}$, причём $k$ меняется так, что $\abs{x}\le T$ при $n \rightarrow +\infty$.
+    Тогда 
+    $$P(S_n = k) \underset{n\rightarrow +\infty}{\sim} \frac{e^{-\frac{x^2}{2}}}{\sqrt{2\pi npq}} \ \text{равномерно по $k$}.$$
+\end{theorem}
+
+\begin{proof}
+   Пусть $n \to \infty$. Из условий
+    $$np + T\sqrt{npq} \ge k = np + x\sqrt{npq} \ge np - T\sqrt{npq}.$$
+    Тогда $ k\rightarrow +\infty$ верно из 2-го неравенства и $n - k \rightarrow +\infty$ из 1-го (если из $n$ вычесть $np + T\sqrt{npq}$,
+    то это будет стремится к $+\infty$).
+    Обозначим
+    $$\alpha = \frac{k}{n} = p + x\sqrt{\frac{pq}{n}} \rightarrow p \fand \beta = \frac{n - k}{n} = 1 - \alpha = q - x\sqrt{\frac{pq}{n}} \rightarrow q.$$
+   Тогда
+   \begin{align*}
+       P(S_n = k) &= \binom{n}{k}p^kq^{n- k} \sim \frac{n^ne^{-n}\sqrt{2\pi n}p^kq^{n - k}}{k^ke^{-k}\sqrt{2\pi k}(n - k)^{n - k}e^{k - n}\sqrt{2\pi(n - k)}} \\&=
+        \frac{p^kq^{n - k}}{(\frac{k}{n})^k (1 - \frac{k}{n})^{n - k}\sqrt{2\pi n}\sqrt{\frac{k}{n}(1 - \frac{k}{n})}} \\&\sim
+        \frac{p^kq^{n - k}}{\alpha^k\beta^{n - k}\sqrt{2\pi npq}}.
+   \end{align*}
+   Надо доказать, что
+    $$\frac{p^kq^{n - k}}{\alpha^k\beta^{n - k}} \overset{}{\sim} e^{-\frac{x^2}{2}},$$
+что равносильно тому, что
+    \begin{gather*}
+    k\ln\left(\frac{\alpha}{p}\right) + (n - k)\ln\left(\frac{\beta}{q}\right) \overset{}{\sim} \frac{x^2}{2}.\\
+       \frac{\alpha}{p} = 1 + x\sqrt{\frac{q}{np}}, \  \ln\left(\frac{\alpha}{p}\right) = x\sqrt{\frac{q}{np}} - x^2 \frac{q}{2np}
+        + O\left(\frac{1}{n^\frac{3}{2}}\right).\\
+        \frac{\beta}{q} = 1 - x\sqrt{\frac{pq}{n}}, \  \ln\left(\frac{\beta}{q}\right) = -x\sqrt{\frac{p}{nq}} - x^2 \frac{p}{2nq}
+        + O\left(\frac{1}{n^\frac{3}{2}}\right).
+   \end{gather*}
+    Итого, подставив, получаем
+   \begin{align*}
+       k\ln\left(\frac{\alpha}{p}\right) + (n - k)\ln\left(\frac{\beta}{q}\right) &= (np + x\sqrt{npq})\left(x\sqrt{\frac{q}{np}} - x^2 \frac{q}{2np}
+        + O\left(\frac{1}{n^\frac{3}{2}}\right)\right) \\& \quad\quad + (nq - \sqrt{npq})\left(-x\sqrt{\frac{p}{nq}} - x^2 \frac{p}{2nq}
+        + O\left(\frac{1}{n^\frac{3}{2}}\right)\right) \\&= x\sqrt{npq} + x^2q - x^2\frac{q}{2} + O\left(\frac{1}{\sqrt{n}}\right) \\& \quad\quad - x\sqrt{npq}
+        +x^2p-x^2\frac{p}{2} + O\left(\frac{1}{\sqrt{n}}\right) \\&= \frac{x^2}{2} + O\left(\frac{1}{\sqrt{n}}\right).
+   \end{align*}
+  
+
+\end{proof}
+
+\begin{example}На рулетке 37 секторов --- 18 красных и 18 черных и 1 зелёный. Игрок участвует в $n = 222$ раундах. Посчитаем шанс ``отбить"":
+    $$P(S_{222} = 111) = \binom{222}{111}(\frac{18}{37})^{111}(\frac{19}{37})^{111} \approx 0,0493228\ldots.$$
+    Теорема Муавра-Лапласа дает нам оценку
+   $$ P(S_{222} = 111)\approx \frac{e^{-\frac{(k - np)^2}{2npq}}}{\sqrt{2\pi npq}}\approx 0,0493950\ldots.$$
+\end{example}

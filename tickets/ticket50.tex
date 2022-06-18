@@ -1,0 +1,26 @@
+\section{Теорема Пойя о возвращении}
+
+\begin{theorem}[Пойя о возвращении]
+    Такое случайное блуждание на $\mathbb{Z}^d$ возвратно если и только если $d = 1$ или $2$.
+\end{theorem}
+
+\begin{proof}
+    Для $d = 1$ и $p = \frac{1}{2d} = \frac{1}{2}$ доказали в теореме \ref{th:Zvoz}. 
+
+   Докажем для $d = 2$. Пусть $\vv{\xi_n}$ ~--- случайное блуждание вдоль в $\Z^2$, а $\eta_n$ и $\widetilde{\eta_n}$ --- блуждания вдоль прямых $y=x$ и $y = -x$, они независимы. Тогда
+$$P(\vv{\xi_{2n}} = 0)= P(\eta_{2n} = 0, \widetilde{\eta_{2n}} = 0) = P(\eta_{2n} = 0)P( \widetilde{\eta_{2n}} = 0)=
+        \left(\binom{2n}{n}\frac{1}{4^n}\right)^2 \sim \frac{1}{\pi n},$$ поэтому ряд $\sum P(\vv{\xi_{2n}} = 0)$ расходится и по критерию блуждание возвратно.
+
+ 
+
+       Пусть $d = 3$.
+       Тогда
+       \begin{align*}
+           p_{00}(2n) &= \sum\limits_{k + j \le n} \binom{2n}{k,k,j,j, n - j - k, n-j-k} \frac{1}{6^{2n}} \\&=
+        \binom{2n}{n}\frac{1}{6^{2n}}\sum\limits_{k + j\le n}\left(\binom{n}{k,j,n-j-k}\right)^2 \le \left[\sum\limits_{k + j\le n}\binom{n}{k,j,n-j-k} = 3^n\right] \\&\le \binom{2n}{n}\frac{1}{6^{2n}}3^n\cdot\max\binom{n}{k,j,n-j-k} \sim \left[\max \sim 3^n \frac{3\sqrt{3}}{2\pi n}\right] \\&\sim \frac{4^n}{\sqrt{\pi n}}\frac{1}{4^n3^n3^n}3^n3^n\frac{3\sqrt{3}}{2\pi n} \\&= \frac{3\sqrt{3}}{2}\frac{1}{(\pi n)^{\frac{3}{2}}}
+       \end{align*}
+   Итого ряд сходящийся и возвратности нет.
+    
+   
+    Пусть $d \ge 4$. Делаем проекцию c $\Z^d$ на $\mathbb{Z}^3$ и она будет невозвратной, но тогда и исходная очевидно тоже, иначе противоречие с невозвратностью для проекции.
+\end{proof}

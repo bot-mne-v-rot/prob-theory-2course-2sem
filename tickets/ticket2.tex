@@ -1,0 +1,24 @@
+\section{Условная вероятность. Мотивировка, определение и свойства. Пример}
+
+\begin{definition} \textit{Условная вероятность}. Пусть $A \neq \emptyset, \ P(A) > 0$. Тогда вероятность $B$ при условии $A$ --- это
+    $$P(B|A) = \frac{\#(A\cap B)}{\#A} = \frac{\#(A\cap B)/\#\Om}{\#A/\#\Om} = \frac{P(A\cap B)}{P(A)}.$$
+\end{definition}
+
+\begin{properties}[условной вероятности]
+\enewline
+    \begin{enumerate}
+        \item $P(A|A) = 1$.
+             Если $A \subset B$, то $P(B|A) = 1$.
+        \item $P(\emptyset|A) = 0$;
+        \item Если $B \cap C = \emptyset$, то
+              $$P(B \cup C| A) = P(B|A)+P(C|A).$$
+    \end{enumerate}
+\end{properties}
+
+
+\begin{proof} Докажем пункт 3.
+\begin{align*}
+    P(B\cup C| A) &= \frac{P((B \cup C)\cap A)}{P(A)} = \frac{P((B \cap A)\cup(C \cap A))}{P(A)} \\&= \frac{P(A\cap B)+P(C\cap A)}{P(A)} = P(B|A) + P(C|A).
+\end{align*}
+    
+\end{proof}

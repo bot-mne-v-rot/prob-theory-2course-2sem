@@ -1,0 +1,57 @@
+\section{Случайная величина. Распределение случайной величины. Свойства функций распределения}
+
+\begin{definition}
+    Пусть $(\Omega, \mathcal{F}, P) $ --- вероятностное пространство.
+    \textit{Случайной величиной} называется измеримая функция $\xi\colon \Omega \rightarrow \mathbb{R}$.
+\end{definition}
+
+
+\begin{definition}\textit{Распределение случайной величины} $P_\xi(A)$ --- это мера на борелевских подмножествах, определённая следующим образом:
+    $$P_\xi(A) = P(\xi \in A) =  P(\{\omega\in\Om\mid \xi(\omega) \in A\}).$$
+\end{definition}
+
+Докажем корректность определения. Знаем, достаточно определить $P$ на ячейках: 
+$$P_\xi(a, b] = P(a < \xi \le b) =
+        P(\xi \le b) - P(\xi\le a).$$
+Такие слагаемые определены, так как $\xi$ --- измеримая. Очевидно, эти функции однозначно задают распределение. Определим их.
+
+\begin{definition} \textit{Функцией распределения} случайной величины называется 
+    $$F_\xi(x) = P(\xi\le x).$$
+\end{definition}
+
+\begin{definition}
+    $\xi, \eta$ имеют \textit{одинаковое распределение}, если $P_\xi = P_\eta$.
+\end{definition}
+
+Отметим, что это равносильно равенству $P(\xi \le b) = P(\eta \le b)$  для всех $b$.
+
+\begin{properties}[функции распределения]
+\enewline
+    \begin{enumerate}
+        \item $F_\xi$ нестрого монотонно возрастает;
+        \item $0\le F_\xi \le 1$;
+        \item ${\lim}_{n\rightarrow -\infty} F_\xi (x) = 0$ и ${\lim}_{n\rightarrow +\infty} F_\xi (x) = 1$;
+        \item $F_\xi$ непрерывна справа;
+        \item $P(\xi < x) = {\lim}_{y\rightarrow x-}  F_\xi(y)$;
+        \item $F_\xi$ непрерывна в точке $x_0$ равносильно тому, что $P(\xi = x_0) = 0$;
+        \item $F_{\xi + c} (x) = F_\xi (x - c)$;
+        \item $F_{c\xi} (x) = F_\xi(\frac{x}{c})$ при  $c > 0$; \qedhere
+    \end{enumerate}
+\end{properties}
+
+\begin{proof}
+\enewline
+   \begin{enumerate}
+   \item[3.] Пусть $x_n\searrow -\infty$. Тогда множества $\{\xi \le x_n\}$ вложены, значит можем применить следующее свойство меры:
+   $$\lim_{n\rightarrow -\infty} F_\xi (x) = \lim_{n \to \infty} F_{\xi}(x_n) = \underset{n\rightarrow \infty}{\lim} P(\xi\le x_n) = P \left(\overset{\infty}{\underset{n = 1}{\bigcap}} \{\xi\le x_n\}\right) = P(\varnothing) = 0.$$
+   \item[4.]Проверим непрерывность в точке $x_0$, пусть $x_n\searrow x_0$.
+                  Тогда 
+                  $$\lim_{x \to \ x_0} F_\xi(x) = \underset{x\rightarrow\infty}{\lim} F_\xi (x_n)= \underset{x\rightarrow\infty}{\lim} P(\xi \le x_n) =
+                      P\left(\overset{\infty}{\underset{n = 1}{\bigcap}} \{ \xi\le x_n\}\right) = P(\xi\le x_0).$$
+   \item[5.] Пусть $x_n \nearrow x$, тогда
+   $$\lim_{y\rightarrow x-} F_\xi(y)= \lim_{n \to \infty} F_\xi(x_n) = \lim P(\xi\le x_n) = P\left(\overset{\infty}{\underset{n = 1}{\bigcup}} \{\xi\le x_n\}\right) = P(\xi < x).$$ \qedhere
+   \end{enumerate}
+\end{proof}
+   
+   Также заметим, что если функция $F$ обладает свойствами 1--4 то это функция распределения для некоторой случайной величины, так как можем определить вероятностную меру как $\mu((a, b]) = F(b) - F(a)$(знаем, что это мера, из теории меры).
+

@@ -1,0 +1,48 @@
+\section{Формула обращения}
+
+\begin{theorem}[формула обращения]
+    Пусть $a < b$ такие, что $P(\xi = a) = P(\xi = b) = 0$.
+    Тогда 
+    \begin{equation*}\label{eq:formula_obr}\tag{$\dagger$}
+        P(a\le \xi\le b) =  \underset{T\rightarrow+\infty}{\lim}\frac{1}{2\pi}\int\limits_{-T}^T \frac{e^{-iat} - e^{-ibt}}{it}\phi_\xi(t) \dd t.
+    \end{equation*}
+\end{theorem}
+   
+   Заметим, что интеграл $\intt_{-\infty}^{\infty}$ может расходится, а сходится должен только в смысле главного значения.
+
+\begin{proof}
+\textsl{Шаг 1.} Пусть $\xi = \frac{a+b}{2} + \frac{b - a}{2}\eta$.
+    Тогда $\xi\in [a, b] \iff\eta\in [-1, 1]$.
+   \begin{align*}
+   \phi_\xi(t) = e^{i\frac{a + b}{2}t}\phi_\eta(\frac{b-a}{2}t);\\
+   \phi_\xi(t) = e^{i\frac{a + b}{2}t}\phi_\eta(\frac{b-a}{2}t).\\
+       \int\limits_{-T}^T \frac{e^{-iat} -e^{-ibt}}{it}\phi_\xi(t)\dd t &= \int\limits_{-T}^T \frac{e^{-iat} -e^{-ibt}}{it}e^{i\frac{a + b}{2}t}\phi_\eta(\frac{b-a}{2}t)\dd t \\&=\int\limits_{-T}^T \frac{e^{-i(\frac{a-b}{2})t}e^{-i(\frac{b-a}{2})t}}{it}\phi_\eta(\frac{b-a}{2}t)\dd t = [u = \frac{b-a}{2}t] \\ &= \int\limits_{-T(\frac{b-a}{2})}^{T(\frac{b -a}{2})}\frac{e^{iu} - e^{-u}}{iu}\phi_\eta(u)\dd u. \label{eq:obr1}\tag{$*$}
+   \end{align*}
+  
+Если (\ref{eq:obr1}) равна $2\pi P(-1\le \eta \le 1) = 2\pi P(a\le \xi\le b)$, то доказали. Таким образом свели к частному случаю ($a=-1$, $b=1$).
+
+
+    \textsl{Шаг 2.} Пусть $a = -1$, $b = 1$.
+    \begin{equation*}
+        \underset{T\rightarrow+\infty}{\lim} \int\limits_{-T}^T \frac{e^{it} - e^{-it}}{it}\int\limits_\mathbb{R}e^{itx}\dd P_\xi(x)\dd t.\label{eq:obr2}\tag{$**$}
+    \end{equation*}
+    Для подынтегрального выражения верно
+    $$\abs*{e^{itx} \frac{e^{it} - e^{-it}}{it}} = \abs*{\frac{e^{it} - e^{-it}}{it}}\le M,$$
+    значит есть суммируемость и можем применить теорему Фубини, поменяв интегралы местами. Продолжим (\ref{eq:obr2}) равенством:
+    \begin{equation*}
+        \underset{T\rightarrow+\infty}{\lim} \int\limits_\mathbb{R}\int\limits_{-T}^T \frac{e^{it} - e^{-it}}{it}\int\limits_\mathbb{R}e^{itx}\dd P_\xi(x)\dd t = \underset{T\rightarrow+\infty}{\lim}\int\limits_\mathbb{R}\Phi_T(x)\dd P_\xi(x). \label{eq:obr3}\tag{$***$}
+    \end{equation*}
+   Рассмотрим функция под интегралом.
+   \begin{align*}
+       \Phi_T(x) &= \int\limits_{-T}^T e^{itx}\frac{e^{it} - e^{-it}}{it}\dd t = \int\limits_{-T}^T\int\limits_{-1}^1 e^{itx}e^{iut}\dd u\dd t = [\text{по теореме Фубини}] \\&=  \int\limits_{-1}^1\int\limits_{-T}^T e^{it(x+u)}\dd t\dd u \int\limits_{-1}^1 \frac{e^{i(x+u)t}}{(x+u)i}\Bigg|_{-T}^T\dd u = 2\int\limits_{-1}^1 \frac{\sin((x+u)T)}{(x+u)}\dd u = [v= (x+u)T] \\&= \int\limits_{(x-1)T}^{(x+1)T} \frac{2\sin v}{v}\dd v = F((x+1)T) - F((x - 1) T).
+   \end{align*}
+    Функция $F(y) = \intt_0^y \frac{2\sin v}{v}\dd v$ непрерывна на $\mathbb{R}$ и имеет предел в $\pm\infty$, значит это ограниченная функция, значит есть суммируемая мажоранта(константа) и в (\ref{eq:obr3}) можно воспользоваться теоремой Лебега и поменять местами предел и интеграл. Осталось понять, чему равен $\lim_{T \to +\infty}F((x+1)T) - F((x - 1) T)$.
+    Если $x>1$, то $x+1, x - 1>0$, значит аргументы стремятся к $+\infty$, следовательно $ F(\ldots) \rightarrow \pi$, итого получаем, что всё выражение стремится к пределу. Аналогично при $x<1$ будет $x+1, x - 1>0$, значит аргументы будут стремится к $-\infty$, $ F(\ldots) \rightarrow \pi$ и снова предел равен нулю. Если $x\in (-1, 1)$, тогда $\lim = 2\pi$. 
+    
+    Продолжим (\ref{eq:obr3}) равенством:
+    \begin{align*}
+        \underset{T\rightarrow+\infty}{\lim}\int\limits_\mathbb{R}\Phi_T(x)\dd P_\xi(x) &= \int\limits_\mathbb{R}\underset{T\rightarrow+\infty}{\lim}\Phi_T(x)\dd P_\xi(x) \\&= \int\limits_\mathbb{R}2\pi \mathbbm{1}_{[-1, 1]}(x)\dd P_\xi (x) = 2\pi P(-1\le \xi\le 1),
+    \end{align*}
+     что и требовалось доказать.
+\end{proof}
+

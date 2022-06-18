@@ -1,0 +1,118 @@
+\section{Центральная предельная теорема}
+
+ \begin{theorem}[Центральная предельная теорема в форме Поля Леви\footnote{Лев\'и}] Пусть
+     $\xi_1, \ldots$ независимые одинаково распределенные случайные величины. $a= \EE \xi_1$,
+     $\sigma^2 =  \DD\xi_1$, $S_n = \xi_1 + \ldots + \xi_n$.
+     Тогда 
+     $$P\left(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x\right) = P\left(\frac{S_n - na}{\sqrt{n}\sigma} \le x\right) \rightrightarrows \Phi =\frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{u^2}{2}}\dd u.$$
+ \end{theorem}
+
+ \begin{proof} Обозначим
+     $$\phi(t) = \phi_{\xi_1 - a}(t) = 1-\frac{\sigma^2t^2}{2} + o(t^2).$$
+     Равенство верно, поскольку у нас есть дисперсия, то характеристическая функция дважды дифференцируема, поэтому есть формула через матожидание и дисперсию для неё.
+    Пусть
+     $$\phi_n(t) = \phi_{\frac{S_n - na}{\sqrt{n}\sigma}}(t) = \phi_{S_n - an} (\frac{t}{\sqrt{n}\sigma}).$$
+    Тогда
+     $$S_n - an = (\xi_1 - a) + \ldots + (\xi_n - a),$$
+     и, так как $\xi_i$ независимы, то
+     $$\phi_{S_n - an}\left(\frac{t}{\sqrt{n}\sigma}\right) = \left(\phi\left(\frac{t}{\sqrt{n}\sigma}\right)\right)^n = \left(1 - \frac{t^2}{2n} +o\left(\frac{t^2}{n}\right)\right)^n = \left(1 - \frac{t^2}{2n} +o\left(\frac{1}{n}\right)\right)^n \rightarrow e^{-\frac{t^2}{2}}.$$
+    Значит, $\frac{S_n - na}{\sqrt{n}\sigma} \rightarrow\mathcal{N}(0, 1)$ по распределению, следовательно, поскольку предельная функция непрерывна, то сходимость будет равномерной.
+ \end{proof}
+
+ \begin{corollary}[теорема Муавра-Лапласа] Пусть
+     $\xi_1, \ldots$ --- независимые испытания Бернулли с вероятностью успеха $p\in (0, 1)$, $S_n = \underset{i = 1}{\overset{n}{\sum}} \xi_i$.
+     Тогда $$P\left(\frac{S_n - np}{\sqrt{npq}}\le x\right) \rightrightarrows \Phi(x).$$
+ \end{corollary}
+
+ \begin{proof}
+     $\EE \xi_1 = p$, $ \DD\xi_1 = pq$, подставим в теорему.
+ \end{proof}
+
+ \begin{theorem}[Пуассона]
+     Пусть 
+     \begin{gather*}
+         P(\xi_{nk} = 1) = p_{nk}, \ P(\xi_{nk} = 0) = 1- p_{nk} = q_{nk};\\
+         a_n = \underset{1\le k\le n}{\max} p_{nk}\underset{n\rightarrow\infty}{\rightarrow} 0, \ p_{n1} +\ldots + p_{nn}\rightarrow \lambda > 0;
+     \end{gather*}
+    события $\xi_{nk}$ независимы при фиксированном $n$.
+     Тогда 
+     $$P(S_n = m)\underset{n\rightarrow\infty}{\rightarrow} \frac{e^{-\lambda} \lambda^m}{m!},$$
+     где $S_n = \xi_{n1} + \ldots + \xi_{nn}$.
+ \end{theorem}
+
+ \begin{proof} Докажем методом характеристических функций.
+     $$\phi_{\xi_{nk}}(t) = \EE e^{it\xi_{nk}} = p_{nk}e^{it} + 1 - p_{nk}.$$
+    Надо доказать, что характеристическая функция
+     $\phi_{S_n}(t)$
+     стремится к $e^{\lambda(e^{it} - 1)}$  (так называемая характеристическая функция Пуассона), и тогда равенство из теоремы очевидно верно.
+      $$\phi_{S_n}(t) = \prod\limits_{k=1} ^ n \phi_{\xi_{nk}}(t) = \prod\limits_{k=1} ^ n (1+p_{nk}(e^{it} - 1)),$$
+     Прологарифмируем, тогда надо показать, что
+     $$\sum \ln(1+p_{nk}(e^{it} - 1)) \to \lambda (e^{it} - 1).$$
+    Распишем левую часть:
+     $$\sum \ln(1+p_{nk}(e^{it} - 1)) = \sum((p_{nk}(e^{it} - 1)) + O(p_{nk}^2)) \rightarrow  \lambda (e^{it} - 1) + \sum\limits_{k=1} ^ n O(p_{nk} ^ 2).$$
+    Оценим второе слагаемое:
+     $$\sum\limits_{k=1} ^ n O(p_{nk} ^ 2) \le \sum\limits_{k=1} ^ n O(a_np_{nk}) = a_n O\left(\sum p_{nk}\right) \le Ca_n \rightarrow 0.$$
+
+ \end{proof}
+
+ \begin{theorem}[Центральная предельная теорема в форме Линденберга] Пусть
+     $\xi_1, \xi_2, \ldots$ ~--- независимые случайные величины.
+     $a_k = \EE \xi_k$, $\sigma_k^2 =  \DD\xi_k > 0$, $S_n = \xi_1 + \ldots + \xi_n$. Обозначим
+     $$\text{Lind}(\e, n)= \frac{1}{ \DD_n^2} \sum\limits_{k=1} ^ n  \EE f(\xi_k - a_k),$$
+     где
+     \begin{gather*}
+         \DD_n^2 = \sum\limits_{k=1} ^ n \sigma_k^2, \ f(x) = x^2\mathbbm{1}_{\{\abs{x}\ge \e  \DD_n\}}(x).
+     \end{gather*}
+    Тогда, если $\text{Lind}(\e, n) \to 0$ при $n\rightarrow \infty$ при всех $\e > 0$, то
+    $$P(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x)\rightrightarrows \Phi.$$
+ \end{theorem}
+
+ \begin{exercise}
+     Проверьте, что для независимых одинаково распределенных случайных величин с конечной дисперсией выполняется условие Линденберга
+ \end{exercise}
+
+ \begin{theorem}[Центральная предельная теорема в форме Ляпунова] Пусть
+     $\xi_1, \xi_2, \ldots$ ~--- независимые случайные величины.
+     $a_k = \EE \xi_k$, $\sigma_k^2 :=  \DD\xi_k > 0$, $S_n := \xi_1 + \ldots + \xi_n$. Обозначим
+  $$L(\delta, n)=\frac{1}{ \DD_n^{2+\delta}} \sum\limits_{k=1} ^ n  \EE \abs{\xi_k - a_k}^{2+\delta}\fwhere \DD_n^2 = \sum\limits_{k=1} ^ n \sigma_k^2.$$
+    Тогда, если
+     $L(\delta, n) \to 0$ при $n \to \infty$ при некотором $\delta > 0$, то
+     $$P(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x)\rightrightarrows \Phi.$$
+ \end{theorem}
+
+ \begin{proof}
+     Докажем, что из теоремы в форме Линденберга следует теорема в форме Ляпунова, то есть надо показать, что из условия Ляпунова следует условие Линденберга.
+     \begin{align*}
+         \text{Lind}(\e, n) &= \frac{1}{ \DD_n^2} \sum\limits_{k=1} ^ n  \EE ((\xi_k - a_k)^2\mathbbm{1}_{\{\abs{\xi_k - a_k}\ge \e \DD_n\}}(\xi_k - a_k)) \\&\le \frac{1}{ \DD_n^2} \sum\limits_{k=1} ^ n  \EE ((\xi_k - a_k)^2(\frac{\abs{\xi_k - a_k}}{\e \DD_n})^\delta) \\&= \frac{1}{\e^\delta}\frac{1}{ \DD_n^{2+\delta}} \sum\limits_{k=1} ^ n  \EE \abs{\xi_k - a_k}^{2+\delta} \\&= \frac{L(\delta, n)}{\e^\delta}\underset{n\rightarrow \infty}{\rightarrow} 0.
+     \end{align*}
+ \end{proof}
+
+ \begin{theorem}
+     Пусть $0<\delta \le 1$. Тогда в условии центральной предельной теоремы в форме Ляпунова.
+$$\underset{\sup x\in \mathbb{R}}{\sup} \abs*{(P(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x) - \Phi}\le C_\delta L(\delta, n).$$
+ \end{theorem}
+
+ \begin{remark}
+     Пусть случайные величины $\xi_i$ независимы и одинаково распределены, $a = \EE \xi_1$, $\sigma^2 =  \DD \xi_1$, $ \DD_n^2 = n\sigma^2$. Тогда
+     $$L(\delta, n) = \frac{1}{(\sqrt{n}\sigma)^{2+\delta}}n\EE \abs{\xi_1 -a}^{2+\delta} = \frac{1}{n^{\frac{\delta}{2}}}\cdot \frac{1}{\sigma^{2+\delta}}\EE \abs{\xi_1 - a}^{2+\delta}.$$
+ \end{remark}
+
+ \begin{theorem}[Берри-Эссеена]
+Пусть $\xi_1, \xi_2, \ldots$ ~--- независимые и одинаково распределенные случайные величины;$\EE \xi_1 = a$. Тогда 
+$$\abs*{P(\frac{S_n - \EE S_n}{\sqrt{ \DD S_n}}\le x) - \Phi} \le \frac{C\EE \abs{\xi_1 - a_1}^3}{\sqrt{n}\sigma^3}.$$
+ \end{theorem}
+
+
+ \begin{theorem}[Хартмана — Витнера, ``закон повторного логарифма"]
+Пусть $\xi_1, \xi_2, \ldots$ ~--- независимые и одинаково распределенные случайные велbчины, $\EE \xi_1 = 0$, $ \DD\xi_1 =\sigma^2 > 0$.
+     Тогда 
+     \begin{gather*}
+         \varlimsup_{n \to \infty} \frac{S_n}{\sqrt{2n\ln\ln n}} = \sigma;\\
+         \varliminf_{n \to \infty} \frac{S_n}{\sqrt{2n\ln\ln n}} = -\sigma.
+     \end{gather*}
+ \end{theorem}
+
+ \begin{theorem}[Штрассена]
+     Любая точка из $[-\sigma, \sigma]$ ~--- предельная точка последовательности $\frac{S_n}{\sqrt{2n\ln\ln n}}$.
+ \end{theorem}
+

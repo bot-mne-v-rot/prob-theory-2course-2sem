@@ -1,0 +1,113 @@
+\section{Производящие функции}
+
+Определим комплекснозначные случайные величины.
+
+ \begin{definition}
+     $\xi\colon \Omega\rightarrow\mathbb{C}$ --- \textit{случайная величина}, если $\Re\xi$ и $\Im\xi$~--- вещественнозначные случайные величины;
+     $\xi = \Re\xi + i\Im\xi$, $\EE \xi = \EE (\Re\xi) + i\EE (\Im\xi)$.
+ \end{definition}
+
+ \begin{properties}[комплекснозначной случайной величины]
+\enewline
+     \begin{enumerate}
+         \item Комплексная линейность;
+                
+
+         \item $\abs{\EE \xi} \le \EE \abs{\xi}$;
+
+               
+     \end{enumerate}
+ \end{properties}
+
+\begin{proof}
+ \enewline
+     \begin{enumerate}
+         \item Докажем, что $\EE (i\xi) = i\EE \xi$. Пусть $\xi = \zeta + i\eta$, где $\zeta, \eta\colon \Omega\rightarrow\mathbb{R}$. Тогда
+               $$\EE (i\xi) = \EE (i\zeta - \eta) = i\EE \zeta - \EE \eta = i(\EE \zeta + i\EE \eta) = i\EE \xi.$$
+               \item Возьмем $c=\frac{\overline{\EE \xi}}{\abs{\EE \xi}}$, тогда $\abs{c} = 1$, $\EE (c\xi) = \abs{\EE \xi}$.
+               $$\EE \abs{\xi} = \EE \abs{c\xi} \ge \EE \abs{\Re(c\xi)} \ge \EE (\Re(c\xi)) = \Re \EE (c\xi) = \abs{\EE \xi}.$$
+               \qedhere
+     \end{enumerate}
+\end{proof}
+ \begin{definition} \textit{Ковариацией комплекснозначных} случайных величин $\xi$ и $\eta$ называется
+     $$\cov (\xi, \eta) = \EE ((\xi -\EE \xi)\overline{(\eta - \EE \eta)}).$$
+ \end{definition}
+ 
+ Понятно, что для величин, принимающих вещественное значение определение не изменилось.
+ 
+ Также заметим, что сохранилось равенство
+ $$\DD\xi = \cov (\xi, \xi).$$
+
+ \begin{definition}
+     Пусть $\xi \colon \Omega\rightarrow \mathbb{N}_0$ --- случайная величина. Тогда её \textit{производящей функцией} называется
+     $$G_\xi(z)= \overset{\infty}{\underset{n = 0}{\sum}} P(\xi = n)z^n.$$
+ \end{definition}
+
+ \begin{properties}[производящей функции]
+\enewline
+     \begin{enumerate}
+         \item $G_\xi(z) = \EE z^\xi$;
+
+         \item $G_\xi(1) = 1$ и ряд сходится в единичном круге.
+
+         \item $G_\xi'(1) = \EE \xi$;
+
+         \item $\EE \xi^2 = G_\xi''(1) + G_\xi'(1)$;
+
+         \item $\DD\xi = G_\xi''(1) + G_\xi'(1) - (G_\xi'(1))^2$;
+
+         \item Если $\xi$ и $\eta$ независимы, то $G_{\xi + \eta}(z) = G_\xi(z)\cdot G_\eta(z)$.
+
+            
+     \end{enumerate}
+ \end{properties}
+ \begin{proof}
+  \enewline
+  \begin{enumerate}
+      \item $\xi$ действует в неотрицательные числа, так что
+      $$\EE z^\xi = \int_\mathbb{R} z^x \dd P_\xi(x) = \overset{\infty}{\underset{n = 0}{\sum}} P(\xi = n)z^n.$$
+      \item Подставим $1$ в определение, получим сумму вероятностей всех возможных событий, что равняется единице. Коэффициенты --- некоторые вероятности, --- неотрицательны, так что в единичном круге есть сходимость.
+      \item По определению
+      \begin{gather*}
+          G_\xi'(z) = \overset{\infty}{\underset{n = 1}{\sum}}nP(\xi = n)z^{n - 1};\\
+          G_\xi'(z) = \overset{\infty}{\underset{n = 1}{\sum}}nP(\xi = n),
+      \end{gather*}
+      что в точности равно $\EE \xi$.
+      \item По определению
+       $$G_\xi''(z) = \overset{\infty}{\underset{n = 1}{\sum}}n(n - 1)P(\xi = n)z^{n - 2}$$
+       Пользуясь предыдущим пунктом, получим
+       $$G_\xi''(1) + G_\xi'(1) = \overset{\infty}{\underset{n = 1}{\sum}}n^2P(\xi = n),$$
+       что в точности равно $\EE \xi^2$.
+       \item По свойствам дисперсии $\DD \xi = \EE \xi^2 - (\EE \xi)^2$. Подставим два предыдущих пункта.
+       \item Рассмотрим $G(z) = G_\xi(z)\cdot G_\eta(z)$. Это свёртка последовательностей. Коэффициент при $n$-ой степени равен  $c_n = P(\xi = 0)P(\eta = n) + P(\xi =1 )P(\eta = n - 1) + \ldots + P(\xi = n)P(\eta = 0) = P(\xi + \eta = n)$, а значит $G(z) = G_{\xi + \eta}(z)$. \qedhere
+  \end{enumerate}
+ \end{proof}
+
+
+     \begin{examples}
+
+         \begin{enumerate}
+             \item Равномерное распределение. Пусть $\xi$ равновероятно  принимает значения из $\{0, 1, \ldots n-1\}$. Тогда 
+                   $$G_\xi = \frac{1+z+\ldots + z^{n-1}}{n} = \frac{1-z^n}{n(1-z)}.$$
+                   Чтобы было удобнее работать, сделаем замену $z = 1 + t$:
+                   $$G_\xi(1+t) = \frac{(1+t)^n - 1}{nt} = \frac{1}{n}\binom{n}{1} + \frac{1}{n}\binom{n}{2}t+\frac{1}{n}\binom{n}{3}t^2\ldots.$$
+                   И тогда можем вычислить
+                   \begin{gather*}
+                       G_\xi'(1) = \frac{n- 1}{2};\\
+                       G_\xi''(1) = \frac{(n - 1)(n-2)}{3};\\
+                       \DD\xi = \frac{n^2 - 1}{12}.
+                   \end{gather*}
+
+             \item Задача Галилея. Бросается три кубика, какова вероятность что сумма очков равна 10?.
+                Пусть $\xi_i$ --- количество очков на $i$-м кубике.
+                   \begin{gather*}
+                       G_{\xi_i}(z) = \frac{z+z^2+\ldots + z^6}{6} = \frac{z(1-z^6)}{6(1-z)};\\
+                       G_{\xi_1 + \xi_2 + \xi_3}(z) = (G_\xi(z))^3 =  \frac{z^3(1-z^6)^3}{6^3(1-z)^3} = \frac{1}{6^3}z^3(1-3z^6 + 3z^{12} -z^{18})
+                       \overset{\infty}{\underset{n = 0}{\sum}} \binom{n+2}{n}z^n;\\
+                   \end{gather*}
+                    По определению производящей функции коэффициент при $z_{10}$ --- это $P(\xi_1 + \xi_2 + \xi_3 = 10)$, как раз то, что мы ищем.
+                   $$P(\xi_1 + \xi_2 + \xi_3 = 10) = \frac{1}{6^3} \left(\binom{9}{7} - \binom{3}{1}\right) = \frac{1}{8}.$$
+         \end{enumerate}
+     \end{examples}
+
+

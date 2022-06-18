@@ -1,0 +1,143 @@
+\section{Случайные величины}
+
+ \begin{definition}
+     Пусть $(\Omega, \mathcal{F}, P) $ --- вероятностное пространство.
+     \textit{Случайной величиной} называется измеримая функция $\xi\colon \Omega \rightarrow \mathbb{R}$.
+ \end{definition}
+
+
+ \begin{definition}\textit{Распределение случайной величины} $P_\xi(A)$ --- это мера на борелевских подмножествах, определённая следующим образом:
+     $$P_\xi(A) = P(\xi \in A) =  P(\{\omega\in\Om\mid \xi(\omega) \in A\}).$$
+ \end{definition}
+
+Докажем корректность определения. Знаем, достаточно определить $P$ на ячейках: 
+$$P_\xi(a, b] = P(a < \xi \le b) =
+         P(\xi \le b) - P(\xi\le a).$$
+Такие слагаемые определены, так как $\xi$ --- измеримая. Очевидно, эти функции однозначно задают распределение. Определим их.
+
+\begin{definition} \textit{Функцией распределения} случайной величины называется 
+     $$F_\xi(x) = P(\xi\le x).$$
+ \end{definition}
+ 
+ \begin{definition}
+     $\xi, \eta$ имеют \textit{одинаковое распределение}, если $P_\xi = P_\eta$.
+ \end{definition}
+
+Отметим, что это равносильно равенству $P(\xi \le b) = P(\eta \le b)$  для всех $b$.
+
+ \begin{properties}[функции распределения]
+ \enewline
+     \begin{enumerate}
+         \item $F_\xi$ нестрого монотонно возрастает;
+         \item $0\le F_\xi \le 1$;
+         \item ${\lim}_{n\rightarrow -\infty} F_\xi (x) = 0$ и ${\lim}_{n\rightarrow +\infty} F_\xi (x) = 1$;
+         \item $F_\xi$ непрерывна справа;
+         \item $P(\xi < x) = {\lim}_{y\rightarrow x-}  F_\xi(y)$;
+         \item $F_\xi$ непрерывна в точке $x_0$ равносильно тому, что $P(\xi = x_0) = 0$;
+         \item $F_{\xi + c} (x) = F_\xi (x - c)$;
+         \item $F_{c\xi} (x) = F_\xi(\frac{x}{c})$ при  $c > 0$; \qedhere
+     \end{enumerate}
+ \end{properties}
+ 
+ \begin{proof}
+ \enewline
+    \begin{enumerate}
+    \item[3.] Пусть $x_n\searrow -\infty$. Тогда множества $\{\xi \le x_n\}$ вложены, значит можем применить следующее свойство меры:
+    $$\lim_{n\rightarrow -\infty} F_\xi (x) = \lim_{n \to \infty} F_{\xi}(x_n) = \underset{n\rightarrow \infty}{\lim} P(\xi\le x_n) = P \left(\overset{\infty}{\underset{n = 1}{\bigcap}} \{\xi\le x_n\}\right) = P(\varnothing) = 0.$$
+    \item[4.]Проверим непрерывность в точке $x_0$, пусть $x_n\searrow x_0$.
+                   Тогда 
+                   $$\lim_{x \to \ x_0} F_\xi(x) = \underset{x\rightarrow\infty}{\lim} F_\xi (x_n)= \underset{x\rightarrow\infty}{\lim} P(\xi \le x_n) =
+                       P\left(\overset{\infty}{\underset{n = 1}{\bigcap}} \{ \xi\le x_n\}\right) = P(\xi\le x_0).$$
+    \item[5.] Пусть $x_n \nearrow x$, тогда
+    $$\lim_{y\rightarrow x-} F_\xi(y)= \lim_{n \to \infty} F_\xi(x_n) = \lim P(\xi\le x_n) = P\left(\overset{\infty}{\underset{n = 1}{\bigcup}} \{\xi\le x_n\}\right) = P(\xi < x).$$ \qedhere
+    \end{enumerate}
+ \end{proof}
+    
+    Также заметим, что если функция $F$ обладает свойствами 1--4 то это функция распределения для некоторой случайной величины, так как можем определить вероятностную меру как $\mu((a, b]) = F(b) - F(a)$(знаем, что это мера, из теории меры).
+
+
+ \begin{definition}
+    Случайная величина $\xi$ --- \textit{дискретная}(или говорят, что она имеет \textit{дискретное распределение}), если
+     $$\xi \colon \Omega \rightarrow Y,$$
+     где множество $Y$ не более, чем счётно.
+ \end{definition}
+В дискретном вероятностном пространстве распределение устроено следующим образом:
+  $$P_\xi(A) = \underset{k: y_k\in A}{\sum} P(\xi = y_k).$$
+  Таким образом, распределение полностью определяется вероятностями $P(\xi = y_k)$.
+
+ \begin{definition}Случайная величина имеет \textit{непрерывное распределение}, если её функция распределения непрерывна.
+ \end{definition}
+Как мы уже знаем, это равносильно тому, что  $\forall x\in\mathbb{R}$  $P(\xi = x) = 0$.
+ \begin{definition}Случайная величина $\xi$ имеет \textit{абсолютно непрерывное распределение}, если у её функции распределения есть плотность относительно меры Лебега, то есть $p_\xi (t) \ge 0$ измеримая по Лебегу такая, что
+     $$P_\xi(A) = \int_A p_\xi(t)\dd t.$$
+ \end{definition}
+ 
+Понятно, что для функция распределения такой величины считается как 
+     $$F_\xi (x) = \int_{-\infty}^x p_\xi (t) \dd t.$$
+
+ \begin{properties}[плотности распределения]
+ \enewline
+     \begin{enumerate}
+         \item $P(\xi\in A) = P_\xi(A) = \intt_A p_\xi (t) \dd t$;
+         \item $F_\xi(x) = \intt_{-\infty}^x p_\xi(t) \dd t$;
+         \item Если $t_0$ --- точка непрерывности $p_\xi$, то
+               $p_\xi(t_0) = F_\xi'(t_0)$ (на самом деле равенство есть почти везде, так как монотонно возрастающая функция дифференцируема почти везде);
+     \end{enumerate}
+ \end{properties}
+
+ \begin{examples}[различных распределений]
+ \enewline
+     \begin{enumerate}
+         \item Распределение Бернулли ($\xi\sim \text{Bern}(p)$).
+                \begin{gather*}
+                    0\le p\le 1, \ \xi \colon \Om \to \{0, 1\},  \\
+                    P(\xi = 0) = 1 - p,\ P(\xi = 1) = p.
+                \end{gather*}
+
+         \item Биномиальное распределение ($\xi\sim \text{Binom}(p)$).
+         \begin{gather*}
+             \xi \colon \Omega \rightarrow \{0,1, \ldots, n\}, \\
+             P(\xi = k) = \binom{n}{k}p^k(1-p)^{n - k}.
+         \end{gather*}
+
+         \item Распределение Пуассона ($\xi \sim \text{Pois}(\lambda)$).
+         \begin{gather*}
+             \lambda > 0, \ \xi \colon \Omega\rightarrow\{0, 1, 2, \ldots\},\\
+             P(\xi = n) = \frac{\lambda^n e^{-\lambda}}{n!}.
+         \end{gather*}
+    
+
+         \item Геометрическое распределение ($\xi\sim \text{Geom}(p)$).
+         \begin{gather*}
+             0< p < 1, \ \xi \colon \Omega\rightarrow \{1, 2, 3, \ldots\}, \\
+             P(\xi = n) = p(1-p)^{n - 1}.
+         \end{gather*}
+
+         \item Дискретное равномерное распределение.
+         \begin{gather*}
+             \xi \colon \Omega\rightarrow \{a+1, \ldots, b\},\\
+             P(\xi = n) = \frac{1}{b - a}.
+         \end{gather*}
+    
+         \item Непрерывное равномерное распределение ($\xi \sim \mathcal{U}[a, b]$).
+         \begin{gather*}
+             \xi \colon \Omega\rightarrow [a, b],\\
+             p_\xi (t) = \frac{1}{b - a}\mathbbm{1}_{[a, b]}(t).
+         \end{gather*}
+
+         \item Нормальное распределение ($\xi\sim \mathcal{N}(a, \sigma^2)$).
+         \begin{gather*}
+             a\in\mathbb{R}, \ \sigma > 0.\\
+             p_\xi (t) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(t-a)^2}{2\sigma^2}}.
+         \end{gather*}
+
+               Для $\xi\sim\mathcal{N}(0, 1)$ это называется стандартным нормальным распределением. Нетрудно заметить, что функция распределения для такой величины равна $\Phi(x)$.
+
+         \item Экспоненциальное распределение ($\xi\sim \text{Exp}(\lambda)$).
+         \begin{gather*}
+             \lambda > 0, \ \xi \colon \Omega \rightarrow [0, +\infty), \\
+             p_\xi (t) =\lambda e^{-\lambda t}\mathbbm{1}_{[0, +\infty)}(t).
+         \end{gather*}
+     \end{enumerate}
+ \end{examples}
+

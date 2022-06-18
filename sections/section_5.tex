@@ -1,0 +1,101 @@
+\section{Совместное распределение}
+
+ \begin{definition}
+    Пусть $A$ --- борелевское из $R^n$, 
+     $\vv{\xi} = (\xi_1, \ldots, \xi_n) \colon \Omega \rightarrow \mathbb{R}^n$. Тогда \textit{совместным (многомерным) распределением} этих величин называется 
+     $$P_{\vv{\xi}}(A) = P(\vv{\xi} \in A).$$
+ \end{definition}
+
+Как и в случае с одномерным, многомерное распределение определеяется значением на ячейках:
+     $$P_{\vv{\xi}}(a, b] = P(\vv{\xi} \in (a, b]) = P(a_1 < \xi_1 \le b_1, \ldots, a_n < \xi_n \le b_n).$$
+
+
+     Отметим, что $P_{\overset{\rightarrow}{\xi}}$ определяет $P_{\xi_k}$, но не наоборот:
+     $$A\subset\mathbb{R}; \  P_{\xi_1}(A) = P(\xi_1\in A) = P(\vv{\xi}\in A\times\mathbb{R}^{n - 1}) = P_{\vv{\xi}} (A\times\mathbb{R}^{n - 1}).$$
+
+
+В другую сторону: рассмотрим величины $\xi_1$ и $\xi_2$ такие, что $P(\xi_i = 0) = P(\xi_i = 1) = \frac{1}{2}$.
+     Если $\xi_1 = \xi_2$, то у нас 2 события с вероятностью $\frac{1}{2}$ ---  $(0, 0)$ и $(1, 1)$.
+     Если же они независимы (например, подбрасывание монеток), то 4 события с вероятностью $\frac{1}{4}$.
+     То есть, получили разные совместные распределения.
+
+
+ \begin{definition}
+     Случайные величины $\xi_1, \ldots, \xi_n$ \textit{независимы}, если 
+     для любых множеств $A_1, \ldots, A_n \subset \mathbb{R}$ случайные события
+     $\{\xi_1\in A_1\}, \ldots, \{\xi_n \in A_n\}$ независимы.
+ \end{definition}
+
+\begin{remark}
+    Если случайные величины $\xi_1, \ldots, \xi_n$ независимы, то
+    \begin{gather*}
+        P(\xi_1\in A_1, \ldots, \xi_n\in A_n) = P(\xi_1\in A_1)\cdot\ldots\cdot P(\xi_n\in A_n), \\
+        P_{\vv{\xi}}(A_1\times\ldots\times A_n) = P_{\xi_1}(A_1)\cdot\ldots\cdot P_{\xi_n} (A_n).
+    \end{gather*}
+\end{remark}
+    
+
+
+ \begin{theorem}
+     Независимость величин $\xi_1, \ldots, \xi_n$ равносильно тому, что $P_{\vv{\xi}}$ --- произведение мер $P_{\xi_1}, \ldots, P_{\xi_n}$.
+ \end{theorem}
+
+ \begin{proof}
+     Достаточно доказать равенство на ячейках:
+     $$P_{\vv{\xi}}(a, b] = P_{\xi_1}((a_1, b_1])\cdot\ldots\cdot P_{\xi_n}((a_n, b_n]).$$
+     Из замечания выше видно, что оно есть.
+ \end{proof}
+
+ \begin{definition} \textit{Совместной функцией распределения} вектора величин $\vv{\xi} \colon \Omega \rightarrow \mathbb{R}^n$ называется
+     $$F_{\vv{\xi}}(\vv{x}) = P(\xi_1 \le x_1, \ldots, \xi_n \le x_n).$$
+ \end{definition}
+
+ \begin{definition}\textit{Совместная плотность распределения} вектора величин $\vv{\xi}$ --- это такая функция $p_{\vv{\xi}}(\vv{t})$, измеримая в $\mathbb{R}^n$ (если она существует), что
+     $$P_{\vv{\xi}}(A) =\int\limits_A p_{\vv{\xi}}(\vv{t})\dd\lambda_n(\vv{t}).$$
+ \end{definition}
+
+ Как и в случае с одномерной плотностью, нетрудно понять, что
+     $$F_{\vv{\xi}}(\vv{x}) =
+         \int\limits_{-\infty}^{x_1}\ldots\int\limits_{-\infty}^{x_n}p_{\vv{\xi}}(\vv{t})\dd t_n\ldots \dd t_1.$$
+
+ \begin{corollary}
+     \begin{enumerate}
+         \item $\xi_1, \ldots, \xi_n$ --- независимые $\iff$ $F_{\vv{\xi}}(\vv{x}) = F_{\xi_1}(x_1)\ldots F_{\xi_n}(x_n)$.
+
+          
+
+         \item Пусть $\xi_1, \ldots, \xi_n$ --- абсолютно непрерывные случайные величины.
+               Тогда $\xi_1, \ldots, \xi_n$ независимы тогда и только тогда, когда $p_{\vv{\xi}}(\vv{t}) = p_{\xi_1}(t_1)\cdot\ldots\ldots p_{\xi_n}(t_n)$.
+
+      
+     \end{enumerate}
+ \end{corollary}
+ 
+ \begin{proof}
+ \enewline
+ \begin{enumerate}
+       
+                      \item[2.]   $\Longleftarrow$. По определению
+                      $$P_{\vv{\xi}} (A_1\times\ldots\times A_n) = \int\limits_{A_1\times\ldots\times A_n} p_{\vv{\xi}}(\vv{t}) \dd\lambda_n(t) = \int\limits_{A_1\times\ldots\times A_n} p_{\xi_1}(t_1)\dd t_1\cdot\ldots\cdot p_{\xi_n}(t_n)\dd t_n.$$
+                   По теореме Фубини-Тонелли это равно произведению интегралов:
+                   \begin{align*}
+                       \int\limits_{A_1\times\ldots\times A_n} p_{\xi_1}(t_1)\dd t_1\cdot\ldots\cdot p_{\xi_n}(t_n)\dd t_n &= \int\limits_{A_1} p_{\xi_1}(t_1)\dd t_1 \cdot\ldots\cdot \int\limits_{A_n} p_{\xi_n}(t_n)\dd t_n \\&= P_{\xi_1}(A_1)\cdot\ldots\cdot P_{\xi_n}(A_n).
+                   \end{align*}
+                   
+
+                   $\Ra$. Проверим, что
+                   $p_{\xi_1}(t_1)\cdot\ldots\cdot p_{\xi_n}(t_n)$ --- совместная плотность.
+                   Для этого докажем равенство на ячейках, то есть проверим равенство
+                   $$P_{\vv{\xi}} (a, b] =
+                       \underset{(a, b]}{\int} p_{\xi_1}(t_1)\cdot\ldots\cdot p_{\xi_n}(t_n) \dd\lambda_n.$$
+                    С одной стороны,
+                    $$P_{\vv{\xi}} (a, b] = \overset{n}{\underset{k = 1}{\prod}} P_{\xi_k} (a_k, b_k].$$
+                    С другой, по теореме Тонелли,
+                    $$\underset{(a, b]}{\int} p_{\xi_1}(t_1)\cdot\ldots\cdot p_{\xi_n}(t_n) \dd\lambda_n =
+                       \overset{n}{\underset{k = 1}{\prod}}  \underset{(a_k, b_k]}{\int} p_{\xi_k}(t_k) \dd t_k.$$
+                    Осталось показать, что $\intt_{(a_k, b_k]}p_{\xi_k}(t_k) \dd t_k = P_{\xi_k} (a_k, b_k]$, ну а это является определением плотности. \qedhere
+ \end{enumerate}
+ \end{proof}
+
+ 
+

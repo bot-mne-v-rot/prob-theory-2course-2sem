@@ -1,0 +1,51 @@
+\section{Математическое ожидание. Свойства (до математического ожидания произведения включительно)}
+
+
+\begin{definition} Пусть $\xi \colon \Om \to \R$ --- случайная величина, являющаяся суммируемой функцией. Тогда её \textit{математическим ожиданием} называется.
+    $\EE \xi = \int\limits_\Omega \xi \dd P.$ 
+\end{definition}
+
+\begin{properties}[матожидания]
+\enewline
+    \begin{enumerate}
+        \item Линейность : $\EE (a\xi +b\eta) = a\EE _\xi + b\EE _\eta$;
+        \item Если $\xi \ge0$ с вероятностью $1$, то $\EE \xi\ge0$;
+        \item Если $\xi\ge\eta$ с вероятностью $1$, то $\EE \xi\ge \EE \eta$;
+        \item $\EE \xi = \intt_\mathbb{R}x\dd P_\xi(x)$;
+        \item Если $f\colon \mathbb{R}\rightarrow \mathbb{R}$ такая, что прообразы борелевских множеств --- борелевские, то
+              $$\EE f(\xi) = \int\limits_\mathbb{R}f(x)\dd P_\xi(x).$$
+        \item Если $f: \mathbb{R}^n\rightarrow \mathbb{R}$ такая, что прообразы борелевских --- борелевские, то
+
+              $$\EE f(\xi_1, \ldots, \xi_n) = \int\limits_{\mathbb{R}^n}f(x_1, \ldots, x_n)\dd P_{\xi_1, \ldots, \xi_n}(x_1, \ldots, x_n).$$
+
+
+        \item Если $\xi$ и $\eta$ независимы, то 
+        $$\EE (\xi\eta) = \EE \xi \EE \eta.$$
+    \end{enumerate}
+\end{properties}
+
+\begin{proof}
+Пункты 1-4 очевидно доказываются из определения(по свойствам интеграла).
+\begin{enumerate}
+    
+    \item[5.] Частный случай 6-го пункта.
+    \item[6.] Воспользуемся стандартной схемой доказательства из теории меры.
+    
+   Докажем для простых. Пусть $f=\mathbbm{1}_A$. Тогда
+   \begin{align*}
+       \EE f(\xi_1, \ldots, \xi_n) &= \int\limits_\Omega \mathbbm{1}_A (\xi_1(\omega), \ldots, \xi_n(\omega))\dd P(\omega) \\&=
+                      P((\xi_1, \ldots, \xi_n)\in A) = P_{\xi_1, \ldots, \xi_n}(A) \\&= \int\limits_\mathbb{R}\mathbbm{1}_A\dd P_{\xi_1, \ldots, \xi_n}.
+   \end{align*}
+   По линейности верно для простых функций. Приблизим произвольную функцию $f$ простыми:
+    $$\int\limits_\Omega f_k(\xi_1, \ldots, \xi_n)\dd P = \int\limits_{\mathbb{R}^n} f_k(x) \dd P_{\xi_1, \ldots, \xi_n}(x)\fwhere \text{$f_k$ --- простые,}$$
+   и перейдём к пределу по теореме Беппо Леви.
+    \item[7.] Воспользуемся предыдущим пунктом для $f(x, y) = xy$:
+    \begin{align*}\EE (\xi\eta) &= \int\limits_{\mathbb{R}^2}xy\dd P_{\xi,\eta}(x, y) = [\text{поскольку они независимы}] \\&=  \int\limits_{\mathbb{R}^2}xy\dd P_\xi(x)\dd P_\eta(y) =
+                      \int\limits_\mathbb{R} x\dd P_\xi(x)\int\limits_\mathbb{R}y\dd P_\eta(y) = \EE \xi \EE \eta.
+    \end{align*}
+\end{enumerate}
+\end{proof}
+
+    Если $\xi$ и $\eta$ не независимы, то может оказаться $\EE (\xi\eta) \neq \EE \xi \EE \eta$. Пример : пусть $\xi$ принимает значение из $\{-1, 1\}$ равновероятно, $\eta = \xi$. Тогда
+    $\EE (\xi\eta) = \EE \xi^2 = 1$, но $\EE \xi = \EE \eta = 0$.
+

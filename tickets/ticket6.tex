@@ -1,0 +1,56 @@
+\section{Теоремы Пуассона и Прохорова (вторая без доказательства). Пример}
+
+\begin{theorem}[Пуассона]\label{th:puas}
+    Пусть $p_n$ ~--- вероятность успеха в $n$-ой схеме Бернулли, $n\cdot p_n \rightarrow \lambda$;
+    $S_n$ ~--- количество успехов, тогда при $k = o(\sqrt{n})$, $k = o(\frac{1}{n\cdot p_n - \lambda})$ верно
+    $$P(S_n = k) \rightarrow \frac{\lambda^k}{k!}e^{-\lambda}.$$
+\end{theorem}
+\begin{lemma}
+        $$(1-a_1)\cdot(1-a_2)\cdot\ldots\cdot (1-a_n) \ge 1 - a_1 - \ldots - a_n \fwhere 0 < a_1, \ldots, a_n < 1.$$
+    \end{lemma}
+    \begin{proof}
+        Индукция по $n$.
+    \end{proof}
+\begin{corollary}
+        $$\binom{n}{k} \underset{n\rightarrow\infty}{\sim} \frac{n^k}{k!}\fpri k = o(\sqrt{n}).$$
+    \end{corollary}
+   
+    \begin{proof}
+    С одной стороны,
+        $$\binom{n}{k} = \frac{n\cdot(n - 1) \ldots (n - k + 1)}{k!} \le \frac{n^k}{k!}.$$
+С другой стороны, по лемме имеем, что
+$$\binom{n}{k} = \frac{n^k}{k!}\cdot(1\cdot (1 - \frac{1}{n})\ldots(1 - \frac{k - 1}{n}))
+            \ge \frac{n^k}{k!}\cdot (1 - \frac{1}{n} - \ldots - \frac{k -1}{n}) = \frac{n^k}{k!}\cdot (1 - \frac {k(k - 1)}{2n})
+            \rightarrow \frac{n^k}{k!}.$$
+    \end{proof}
+
+\begin{proof}[Доказательство теоремы \ref{th:puas}(Пуассона)]
+   По следствию из леммы получаем, что
+    $$P(S_n = k) = \binom{n}{k}p_n^k(1-p_n)^{n - k} \sim \frac{n^k}{k!}p_n^k(1-p_n)^{n - k} \sim
+        \frac{\lambda^k}{k!}(1 - p_n)^{n - k}.$$
+   Осталось показать, что
+    $$(1 - p_n)^{n - k} \overset{?}{\sim} e^{-\lambda},$$
+    а это равносильно тому, что
+    $$(n - k)\ln(1-p_n) \overset{?}{\sim} -\lambda.$$
+   Это верно, поскольку $n - k \sim n$ и $\ln(1-p_n) \sim -p_n$, а по условию $np_n \sim \lambda$.
+\end{proof}
+
+\begin{theorem}[Прохорова]
+Пусть вероятность в $n$-й схеме равна $\frac{\lambda}{n}$. Тогда
+    $$\sum_{k = 0}^\infty \abs*{\, P(S_n = k) - \frac{\lambda^k}{k!}e^{-\lambda}\,} \le \frac{2\lambda}{n}\min\{2, \lambda\}.$$
+\end{theorem}
+
+\begin{example} Модель --- рулетка: есть целые числа от $0$ до $36$. Игрок играет $n=111$ раундов, каждый раз ставит одну монетку (считаем, что число монет неограниченно), если угадывает, то получает выигрыш в 37 раз больше, то есть 37 монеток. Понятно, что для того, чтобы ``отбить" все потраченные монетки, нужно выиграть 3 раза. Посчитаем вероятность этого. Очевидно, если игрок ставит равновероятно, то вероятность выигрыша в раунде равна $p=\frac{1}{37}$.
+   Посчитаем напрямую:
+    $$P(S_{111} = 3) = \binom{111}{3}\left(\frac{1}{37}\right)^3\left(1-\frac{1}{37}\right)^{111-3} \approx 0,2271\ldots.$$ 
+
+    Если воспользуемся теоремой Пуассона, то получим оценку
+    $$P(S_{111} = 3) \approx 0,224\ldots.$$
+    
+   Также оценим шанс выигрыша(``выйти в плюс``):
+   \begin{align*}
+       P(\text{win}) &= 1 - P(S_n = 0) - P(S_n = 1) - P(S_n = 2) - P(S_n = 3) \\&\approx
+        1 - e^{-3} - 3e^{-3} - \frac{9}{2}e^{-3} - \frac{9}{2}e^{-3} \\&= 1 - 13e^{-3}\approx 0,352\ldots.
+   \end{align*}
+  
+\end{example}

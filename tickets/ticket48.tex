@@ -1,0 +1,106 @@
+\section{Классификация состояний цепи Маркова. Критерий возвратности. Теорема солидарности}
+
+\begin{definition}
+    Состояние $b$ \textit{достижимо} из состояния $a$, если $p_{ab}(n) > 0 $ для некоторого $n$.
+
+    Два состояния называются \textit{сообщающимися}, если $a$ достижимо из $b$, а $b$ достижимо из $a$.
+
+    Состояние $a$ --- \textit{существенное}, если для любого $b$, достижимого из $a$, следует, что $a$ достижимо из $b$.
+\end{definition}
+
+\begin{exercise}
+    Докажите, что в любой конечной цепи существует хотя бы одно существенное состояние.
+\end{exercise}
+
+Обозначим 
+$$f_a(n)= P(\xi_n = a, \xi_{n - 1}\neq a, \ldots, \xi_1\neq a| \xi_0 = a),$$ то есть вероятность того, что мы впервые вернёмся в $a$ за $n$ шагов.
+
+\begin{definition}
+    Если $\sum_{n = 1}^{\infty}f_a(n) = 1$, то $a$ --- \textit{возвратное} состояние.
+
+    Если $\sum_{n = 1}^{\infty}f_a(n) < 1$, то $a$ --- \textit{невозвратное} состояние.
+\end{definition}
+
+\begin{definition}
+    Если $p_{aa}(n) \to 0$ при $n \to \infty$, то $a$ --- \textit{нулевое} состояние.
+\end{definition}
+
+Введём обозначение
+    $$F_a = \sum \limits_{n = 1}^{\infty}f_a(n).$$
+
+
+\begin{theorem}[критерий возвратности]
+    Состояние $a$ ~--- возвратно тогда и только тогда, когда $P_a = +\infty$, где 
+    $$P_a = \sum \limits_{n = 1}^{\infty}p_{aa}(n),$$ а если $a$ невозвратно, то 
+    $$F_a = \frac{P_a}{1+P_a}.$$
+\end{theorem}
+
+\begin{proof}
+    Считаем, что $f_a(0) = 0 $ и $p_{aa}(0) = 1$. Заведём производящая функции
+    \begin{gather*}
+        \mathcal{P}(z) = \sum \limits_{n = 0}^{\infty} p_{aa}(n)z^n; \\
+    \mathcal{F}(z) =
+        \sum \limits_{n = 0}^{\infty} f_a(n)z^n.
+    \end{gather*}
+    Тогда нетрудно понять, что $F_a = \mathcal{F}(1)$ и $P_a = \mathcal{P}(1) - 1$.Также поймём, что 
+    $$p_{aa}(n) = \sum\limits_{k = 0}^{n} f_a(k)p_{aa}(n - k) .$$
+   Тогда верно
+   \begin{align*}
+       \mathcal{P}(z) - 1 &= \sum\limits_{n = 1}^\infty p_{aa}(n)z^n = \sum\limits_{n = 1}^\infty\sum\limits_{k = 1}^n f_a(k)p_{aa}(n - k)z^n \\&=
+        \sum\limits_{k = 0}^\infty f_a(k)z^k\sum\limits_{m = 0}^\infty p_{aa}(m)z^m = \mathcal{F}(z)\mathcal{P}(z).
+   \end{align*}
+    Таким образом,
+    $$\mathcal{P}(z) = 1 + \mathcal{F}(z)\mathcal{P}(z),$$
+    и, следовательно,
+    \begin{equation*}\label{eq:kritvoz}\tag{$*$}
+        \mathcal{F}(z) = \frac{\mathcal{P}(z) - 1}{\mathcal{P}(z)}.
+    \end{equation*}
+  
+
+    Если ряд $\sum p_{aa}$ сходится, то по теореме Абеля
+    $$\underset{\to 1-}{\lim} \mathcal{P}(z) =P_a.$$
+
+    Если ряд $\sum p_{aa} = +\infty$, то 
+    $$\underset{z\to 1-}{\lim} \mathcal{P}(z) =P_a = +\infty$$
+    (упражнение). Таким образом, равенство есть всегда, и можем перейти к пределу в (\ref{eq:kritvoz}):
+   $$F_a = \underset{z\to 1-}{\lim} \mathcal{F}(z) = \underset{z\to 1-}{\lim}\frac{\mathcal{P}(z) - 1}{\mathcal{P}(z)} =\frac{P_a}{P_a + 1} \begin{cases}
+   < 1, &  P_a < +\infty;\\
+   = 1, & \text{иначе}.
+   \end{cases}$$
+
+\end{proof}
+
+\begin{corollary}
+    Невозвратное состояние является нулевым.
+\end{corollary}
+
+\begin{proof}
+    Если $a$ невозвратно, то ряд $\sum p_{aa}$ сходится, а значит
+    $p_{aa}(h) \to 0$ при $h\to \infty$, то есть $a$ ~--- нулевое.
+\end{proof}
+
+\begin{theorem}[солидарности]
+    Сообщающиеся состояния возвратны/невозвратны (нулевые/ненулевые) одновременно.
+\end{theorem}
+
+\begin{proof}
+    Пусть $a$, $b$ --- сообщающиеся состояния, то есть по определению $p_{ab}(i) > 0$, $p_{ba}(j) > 0$ для некоторых $i, j$. Тогда
+    $$p_{bb}(i + j + k) \ge p_{ba}(j)p_{aa}(k)p_{ab}(i).$$
+    
+    Если $b$ ~--- нулевое, то 
+    $$p_{bb}(i + j + k)\underset{k\to +\infty}{\to} 0\Ra p_{aa}(k)\Ra 0,$$
+    то есть $a$ --- тоже нулевое.
+    
+    Если $a$ ~--- возвратное, то 
+    $$\sum\limits_{k=1} ^ {+\infty} p_{aa}(k) = + \infty \Ra  +\infty =
+        \sum\limits_{k=1} ^ {+\infty} p_{ba}(j)p_{aa}(k)p_{ab}(i) \le \sum\limits_{k=1} ^ {+\infty} p_{bb}(i + j + k),$$
+    то есть $b$ ~--- возвратное по критерию.
+\end{proof}
+
+\begin{example}[управление запасами]
+    Максимальное количество товаров на складе равно $s$.
+    Если на складе $\le s$, то заказываем до максимума.
+    Cпрос в $n$-й момент времени $\eta_n$ ~--- независимо одинаково распределённые случайные величины. Тогда последовательность величин
+    $$\xi_{n + 1} = \begin{cases} \xi_n -\eta_{n + 1}, \xi_n > s;
+    \\ S - \eta_{n + 1}, \mbox{ иначе.} \end{cases}$$ будет цепью Маркова.
+\end{example}

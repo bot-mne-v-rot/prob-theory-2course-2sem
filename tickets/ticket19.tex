@@ -1,0 +1,35 @@
+\section{Математическое ожидание. Свойства (неравенства Гёльдера, Ляпунова и Маркова). Медиана. Примеры}
+
+\begin{properties}[матожидания]
+    \enewline
+        \begin{enumerate}   
+            \item Если $\xi \ge 0$, то 
+            $$\EE \xi=\int\limits_0^{+\infty} P(\xi\ge t)\dd t.$$ 
+    
+    
+            \item Неравенства Гёльдера для матожидания. Если $p, q > 1$ и $\frac{1}{p}+\frac{1}{q} = 1$, то 
+            $$\EE \abs{\xi\eta} \le (\EE \abs{\xi}^p)^\frac{1}{p}(\EE \abs{\eta}^q)^\frac{1}{q}.$$
+    
+            \item Неравенство Ляпунова. Если $0<r<s$, то
+            $$(\EE \abs{\xi}^r)^\frac{1}{r} \le (\EE \abs{\xi}^s)^\frac{1}{s}.$$ 
+    
+    
+            \item Неравенство Маркова. Пусть $\xi\ge0$. Тогда
+            $$P(\xi\ge t) \le \frac{\EE \xi^p}{t^p}\fwhere p, t > 0.$$
+    
+        \end{enumerate}
+    \end{properties}
+
+
+    \begin{proof}
+        Пункты 1-4 очевидно доказываются из определения(по свойствам интеграла).
+        \begin{enumerate}
+            \item[8.]  В теории меры была такая теорема: Если $(X, \mathcal{A}, \mu)$ --- пространство с $\sigma$-конечной мерой и $f\ge0$ измеримая,
+            то 
+            $$\int\limits_X f \dd\mu = \int\limits_0^{\infty}\mu X\{f\ge t\}\dd t.$$
+            \item[9.] Прямое следствие из неравенства Гёльдера(для интегралов).
+            \item[10.]  $$\EE \abs{\xi}^r = \EE \abs{\xi}^r\cdot 1 \le (\EE (\abs{\xi}^r)^\frac{s}{r})^\frac{r}{s}(\EE 1^q)^\frac{1}{q} = (\EE \abs{\xi}^s)^{\frac{r}{s}}.$$
+            \item[11.] Прямое следствие из неравенства Чебышёва(из теории меры). \qedhere
+        \end{enumerate}
+        \end{proof}
+        

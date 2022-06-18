@@ -1,0 +1,39 @@
+\section{Математическое ожидание для комплекснозначных случайных величин. Свойства. Ковариация}
+
+Определим комплекснозначные случайные величины.
+
+ \begin{definition}
+     $\xi\colon \Omega\rightarrow\mathbb{C}$ --- \textit{случайная величина}, если $\Re\xi$ и $\Im\xi$~--- вещественнозначные случайные величины;
+     $\xi = \Re\xi + i\Im\xi$, $\EE \xi = \EE (\Re\xi) + i\EE (\Im\xi)$.
+ \end{definition}
+
+ \begin{properties}[комплекснозначной случайной величины]
+\enewline
+     \begin{enumerate}
+         \item Комплексная линейность;
+                
+
+         \item $\abs{\EE \xi} \le \EE \abs{\xi}$;
+
+               
+     \end{enumerate}
+ \end{properties}
+
+\begin{proof}
+ \enewline
+     \begin{enumerate}
+         \item Докажем, что $\EE (i\xi) = i\EE \xi$. Пусть $\xi = \zeta + i\eta$, где $\zeta, \eta\colon \Omega\rightarrow\mathbb{R}$. Тогда
+               $$\EE (i\xi) = \EE (i\zeta - \eta) = i\EE \zeta - \EE \eta = i(\EE \zeta + i\EE \eta) = i\EE \xi.$$
+               \item Возьмем $c=\frac{\overline{\EE \xi}}{\abs{\EE \xi}}$, тогда $\abs{c} = 1$, $\EE (c\xi) = \abs{\EE \xi}$.
+               $$\EE \abs{\xi} = \EE \abs{c\xi} \ge \EE \abs{\Re(c\xi)} \ge \EE (\Re(c\xi)) = \Re \EE (c\xi) = \abs{\EE \xi}.$$
+               \qedhere
+     \end{enumerate}
+\end{proof}
+ \begin{definition} \textit{Ковариацией комплекснозначных} случайных величин $\xi$ и $\eta$ называется
+     $$\cov (\xi, \eta) = \EE ((\xi -\EE \xi)\overline{(\eta - \EE \eta)}).$$
+ \end{definition}
+ 
+ Понятно, что для величин, принимающих вещественное значение определение не изменилось.
+ 
+ Также заметим, что сохранилось равенство
+ $$\DD\xi = \cov (\xi, \xi).$$

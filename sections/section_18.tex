@@ -1,0 +1,83 @@
+\section{Процесс восстановления}
+ \begin{definition}
+ Пусть $\xi_1, \xi_2, \ldots$ --- независимые одинаково распределенные неотрицательные случайные величины --- времена работы приборов. Как только один прибор
+ ломается, покупается новый. Обозначим $S_0 = 0$, $S_n = \xi_1 + \ldots + \xi_n$~--- моменты восстановления приборов.
+
+Введём обозначения
+ $\Phi_n(t) = P(S_n \le t)$ --- функция распределения, $\nu(t)$ --- количество задействованных приборов к моменту $t$.
+ Нетрудно заметить, что $\nu(t) = n$, если $S_{n - 1}\le t < S_n$. И
+ тогда $P(\nu(t) = n)  = P(S_{n - 1}\le t < S_n) = \Phi_{n - 1}(t) - \Phi_n(t)$
+    
+    Функция
+     $\mathcal{N}(t) = \EE \nu(t)$ называется \textit{функция восстановления}.
+ \end{definition}
+
+ \begin{remark}
+\enewline
+     \begin{enumerate}
+         \item По определению
+         \begin{align*}
+             \mathcal{N}(t) &= \sum\limits_{n=1} ^ {+\infty} nP(\nu(t) = n) = \sum\limits_{n=1} ^ {+\infty} n(\Phi_{n - 1}(t) - \Phi_n(t)) \\&=
+                   \Phi_{0}(t) - \Phi_1(t) +2 \Phi_{1}(t) - 2\Phi_2(t) + \ldots = \sum\limits_{n=0} ^ {+\infty} \Phi_n(t).
+         \end{align*}
+        
+
+         \item Если $\xi_k$ целозначные, то
+         \begin{gather*}
+             \Phi_n(t) = \sum\limits_{k \le t} P(S_n = k);\\
+             \mathcal{N}(t) =\sum \limits_{n = 0}^{\infty} \Phi_n(t) = \sum \limits_{n = 0}^{\infty} \sum \limits_{k \le t} P(S_n = k) = 
+               \sum \limits_{k \le t} \sum \limits_{n = 0}^{\infty}  P(S_n = k).
+         \end{gather*}
+         Обозначим
+               $$q_k = \sum \limits_{n = 0}^{\infty}  P(S_n = k).$$
+     \end{enumerate}
+ \end{remark}
+
+ \begin{example} Пусть
+     $P(\xi_k = 1) = p>0$, $P(\xi_k = 0) =  q = 1-p < 1$. Тогда
+     $$q_k = \sum\limits_{n=0} ^ {+\infty} P(S_n = k) = \sum\limits_{n=0} ^ {+\infty} \binom{n}{k} p^kq^{n - k} = \left(\frac{p}{q}\right)^k\sum\limits_{n=0} ^ {+\infty}
+         \binom{n}{k}q^n \le \left(\frac{p}{q}\right)^k\sum\limits_{n=0} ^ {+\infty} n^kq^n.$$ Последний ряд сходится при $q \neq 1$
+     (по признаку Даламбера), значит все $q_k$ конечны, а тогда $\mathcal{N}(t)$ конечно при всех $t$.
+ \end{example}
+
+ \begin{theorem}
+     Если $P(\xi_1 = 0 ) < 1$, то функция восстановления $\mathcal{N}(t)$ конечна при всех $t$.
+ \end{theorem}
+
+ \begin{proof}
+ \begin{gather*}
+     \lim\limits_{m\rightarrow +\infty} P(\xi_1\le\tfrac{1}{m}) = P(\xi_1 = 0) < 1; \\
+     \{0\} = \bigcap\limits_{m=1} ^ {+\infty} \left[0, \frac{1}{m}\right].
+ \end{gather*}
+     Выберем $m$, так что $q= P(\xi_1\le \frac{1}{m}) < 1$.
+    \begin{gather*}
+        \wt{\xi_k} = \begin{cases}
+        0, & \xi_k \le \frac{1}{m};\\
+        1, & \xi_k > \frac{1}{m}.
+        \end{cases}\\
+        P(\wt{\xi_k} = 0) = q;\\
+        P(\wt{\xi_k} = 1) = p = 1-q.
+    \end{gather*}
+    \begin{align*}
+        \wt{\xi_k}\le m\xi_k &\Ra \wt{S_n} \le mS_n \Ra \{S_n \le t\} \subset\{\wt{S_n}\le mt\}
+        \\&\Ra \Phi_n(t) = P(S_n\le t) \le P(\wt{S_n} \le mt) = \wt{\Phi}_n(mt) \\&\Ra \mathcal{N}(t) =
+         \sum\limits_{n=0} ^ {+\infty} \Phi_n(t) \le \sum\limits_{n=0} ^ {+\infty} \wt{\Phi}_n(mt) = \wt{\mathcal{N}}(nt)
+    \end{align*}
+    --- эта функция конечна по примеру выше.
+ \end{proof}
+
+ \begin{definition}
+     Дискретная случайная величина имеет \textit{решетчатое распределение}, если существует $a\in\mathbb{R}$ и $h>0$, такие что $\xi(\Omega) \in a+h\mathbb{Z}$ с
+     вероятностью 1. Максимальное такое $h$~--- \textit{шаг решетки}.
+ \end{definition}
+
+
+ \begin{theorem}[восстановления]
+    Пусть $\mathcal{N}(t+s) - \mathcal{N}(t) \rightarrow \frac{s}{\EE \xi_1}$. Тогда
+     если $\xi_1$ нерешетчатая, то это верно для всех $s\in\mathbb{R}$, а если решетчатая, то для $s$ вида $hm$, где $m\in\mathbb{Z}$.
+ \end{theorem}
+
+ \begin{corollary}
+     $$\frac{\mathcal{N}(t)}{t}\rightarrow \frac{1}{\EE \xi_1}.$$
+ \end{corollary}
+

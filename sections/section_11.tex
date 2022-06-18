@@ -1,0 +1,169 @@
+\section{Теорема о сходимости по распределению}
+
+ \begin{theorem}
+    Пусть $\xi_1, \xi_2, \ldots$ последовательность случайных величин, $F_1, F_2, \ldots$~--- их функции распределения, $\phi_1, \phi_2, \ldots$~--- их характеристические функции. Тогда следующие условия равносильны:
+
+     \begin{enumerate}
+         \item $\xi_n \rightarrow \xi$ по распределению;
+
+         \item  Для любого открытого $ U \subset\mathbb{R}$ верно $$\varliminf_{n\rightarrow+\infty} P(\xi_n\in U ) \ge P(\xi\in U ).$$
+
+         \item Для любого замкнутого $A\subset\mathbb{R}$ верно
+         $$\varlimsup_{n\rightarrow+\infty} P(\xi_n\in A) \le P(\xi\in A).$$
+
+         \item Для любого борелевского регулярного множества $B$ (то есть $P(\xi \in \Cl B \setminus \Int B) = 0$) верно
+         $$\lim_{n\rightarrow+\infty}P(\xi_n\in B) = P(\xi \in B).$$
+
+         \item Для любого борелевского регулярного множества $B$ верно
+         $$\lim_{n\rightarrow+\infty} \EE \mathbbm{1}_B(\xi_n) = \EE \mathbbm{1}_B(\xi).$$
+
+         \item Для любой ограниченной непрерывной на $\R$ функции $f$ верно
+         $$\lim_{n\rightarrow+\infty} \EE f(\xi_n) = \EE f(\xi).$$
+
+         \item $\phi_n\rightarrow \phi$ поточечно;
+     \end{enumerate}
+ \end{theorem}
+
+ \begin{proof}
+    $ $\medskip
+    
+     $3 \Ra 2$. Возьмём $ U = \mathbb{R}\setminus A$, тогда
+    $P(\xi_n\in U ) = 1 - P(\xi_n\in A)$ и
+    $$\varliminf_{n\rightarrow+\infty} P(\xi_n\in U ) = 1 - \varlimsup_{n\rightarrow+\infty} P(\xi_n\in A) \ge 1-P(\xi\in A) = P(\xi\in U ).$$
+    
+    $2 \Ra 3$. Аналогично предыдущему.
+
+     $4 \Ra 5$. Понятно, что $P(\xi_n\in B) = \EE \mathbbm{1}_B(\xi_n)$ и $P(\xi \in B) = \EE \mathbbm{1}_B(\xi)$, так что
+     $$\lim_{n\rightarrow+\infty}P(\xi_n\in B)= \lim_{n\rightarrow+\infty} \EE \mathbbm{1}_B(\xi_n) = \EE \mathbbm{1}_B(\xi)  = P(\xi \in B).$$
+
+    $5 \Ra 4$. Аналогично предыдущему.
+    
+     $6 \Ra 7$. 
+     $$\phi_\xi(t) = \EE e^{it\xi} = \EE (\cos(\xi t)) + i\EE (\sin(\xi t)).$$
+
+     $2$ + $3 \Ra 4$. Пусть $A=\Cl B$, $ U  = \Int B$ $P(\xi\in A\setminus  U ) = 0$. Тогда
+     $$\varlimsup P(\xi_n\in B) \le \varlimsup P(\xi_n\in A) \le P(\xi \in A) = P(\xi\in B) \le \varliminf P(\xi_n \in A) \le \varliminf P(\xi_n \in B).$$
+    Значит, предел существует и он равен $P(\xi\in B)$.
+
+     $1 \Ra 2$. Про открытое знаем, что
+     \begin{gather*}
+          U  = \bigsqcup\limits_{k=1} ^ {+\infty} (a_k, b_k]\fwhere P(\xi = a_k) = P(\xi = b_k) = 0.\\
+         P(\xi_n\in (a_k, b_k]) = F_n(b_k) - F_n(a_k)\rightarrow F(b_k) - F(a_k) = P(\xi \in (a_k, b_k]);
+     \end{gather*}
+     Получаем, что
+     \begin{align*}
+         P(\xi_n\in U )& \ge P(\xi_n\in \bigsqcup\limits_{k=1} ^ m (a_k, b_k]) = \sum\limits_{k=1} ^ m P(\xi_n\in (a_k, b_k]) \\& \underset{m\rightarrow \infty}{\rightarrow}\sum\limits_{k=1} ^ m P(\xi\in(a_k, b_k]) = P(\xi\in \bigsqcup\limits_{k=1} ^ m(a_k, b_k]);
+     \end{align*}
+    Возьмём нижний предел:
+     $$ \varliminf  P(\xi_n\in U ) \ge \varliminf  P(\xi_n\in \bigsqcup\limits_{k=1} ^ m  (a_k, b_k]) = \lim \ldots =
+         P(\xi\in \bigsqcup\limits_{k=1} ^ m (a_k, b_k])\underset{m\rightarrow \infty}{\rightarrow} P(\xi\in U ).$$
+     Значит, $\varliminf  P(\xi_n\in U ) \ge P(\xi\in U )$.
+
+     $5\Ra 6$. Обозначим $D = \{x\in\mathbb{R}\mid P(f(\xi) = x) > 0\} = \{x\mid P_\xi(f^{-1}) > 0\}$ ---не более, чем счётное (такие точки --- точки разрыва функции распределения).
+    По условию $f\in C(\mathbb{R})$ и $\abs{f}\le M$. Нарежем $[-M, M]$ на маленькие кусочки: $-M = t_0 < t_1 < \ldots < t_n = M$ такие, что $\forall i \ t_i \notin D$ (такое возможно, так как $D$ не более чем счетно).
+     Введем следующие множества $A_j, B_j, U_j$:
+     $$A_j = \{x\mid t_{j - 1}\le f(x) \le t_j\}\supset B_j = \{x\mid t_{j - 1}\le f(x) < t_j\} \supset \{x\mid t_{j - 1}< f(x) < t_j\} =  U _j.$$
+     $A_j$ ~--- замкнуто, $ U _j$ ~--- открыто и $P(f(\xi)\in A_j\setminus  U _j) = 0$, потому что это означает, что $f(\xi)\in {t_{j - 1}, t_j}$, а эти точки не лежат в $D$, поэтому у них вероятность нулевая. Итого, $B_j$ ~--- регулярное
+     Из этих $B_j$ теперь соорудим ступенчатую функцию 
+     $$g(x)= \overset{m}{\underset{j = 1}{\sum}} t_j\cdot\mathbbm{1}_{B_j}(x).$$
+    По 5-му пункту $\lim \EE g(\xi_n) = \EE g(\xi).$
+    Заметим, что
+       $$ \abs{f(x) - g(x)} = \max\{\abs{t_j - t_{j - 1}}\}, $$
+       тогда это верно и для матожидания:
+       $$\abs{\EE f(\xi) - \EE g(\xi)}\le \EE \abs{f(\xi) - g(\xi)}\le \max \abs{t_j - t_{j - 1}}.$$
+        \begin{align*}
+        \abs{\EE f(\xi_n) - \EE f(\xi)} &\le \abs{\EE f(\xi_n) - \EE g(\xi_n)} + \abs{\EE g(\xi_n) - \EE g(\xi)} + \abs{\EE g(\xi) - \EE f(\xi)} \\&< 2 \e + \abs{\EE g(\xi_n) - \EE g(\xi)} < 3 \e.
+    \end{align*}
+     Последнее верно при достаточно большом $n$. 
+ \end{proof}
+ 
+ \begin{theorem}
+     $7 \Ra 1$ ($\phi_n \to \phi$ поточечно $\Ra \xi_n \to \xi$ по распределению
+ \end{theorem}
+ 
+ \begin{proof}
+     Возьмем $\eta_\sigma \sim \mathcal{N}(0, \sigma^2)$, не зависящую от $\xi_1, \xi_2, \dots$\
+     
+     Для независимых величин хар. функция - произведение хар. функций.
+     \[ 
+        \phi_{\xi_n + \eta_\sigma}(t) = \phi_n(t) \phi_{\eta_\sigma}(t) = \phi_n(t)e^{\frac{-\sigma^2t^2}{2}}
+     \]
+     
+     $\phi$ для нормального распределения мы уже считали, поэтому смогли написать.
+     
+     $|\phi_n(t)| \leq 1$, поэтому можно написать:
+     
+     \[|\phi_{\xi_n + \eta_\sigma}(t)| \leq e^{\frac{-\sigma^2t^2}{2}}\]
+     В частности, интеграл от этой хар. функции сходится.\\
+     
+     Пусть $G_n(x) := F_{\xi_n + \eta_\sigma}$. Это непрерывная функция: мы доказывали, что если к произвольному распределению прибавить непрерывное, то результатом будет непрерывное.\\
+     
+     Напишем формулу обращения (из-за непрерывности можно выбирать любые $a,\ b$):
+     
+     \[ G_n(b) - G_n(a) = \frac{1}{2\pi} \int_{\mathbb{R}} \frac{e^{-iat}-e^{-ibt}}{2i}\phi_n(t) e^{\frac{-\sigma^2 t^2}{2}}\ dt \]
+     
+     Написали сразу интеграл а не предел, потому что интеграл от $e^\frac{-\sigma^2t^2}{2}$ сходится, а остальной множитель ограничен. Значит весь интеграл сходится. В частности, есть суммируемая мажоранта, поэтому можно перейти к пределу под знаком интеграла (теорема Лебега):
+     
+     \[
+        \frac{1}{2\pi} \int_{\mathbb{R}} \frac{e^{-iat}-e^{-ibt}}{2i}\phi_n(t) e^{\frac{-\sigma^2 t^2}{2}}\ dt \to
+        \frac{1}{2\pi} \int_{\mathbb{R}} \frac{e^{-iat}-e^{-ibt}}{2i}\phi(t) e^{\frac{-\sigma^2 t^2}{2}}\ dt = G(b) - G(a)
+     \]
+     
+     Получили $G_n(b) - G_n(a) \to G(b) - G(a)$ для всех $a,\ b$. Следовательно, $G_n(x) \to G(x)$ поточечно. (Также обсуждали, что сходимость разностей равносильна сходимости поточечной)\\
+     
+     Осталось доказать сходимость $F_n$. Пусть $x$ - точка непрерывности $F$, и $\varepsilon > 0$. Возьмем из непрерывности $\delta > 0$, такое что $|F(x \pm 2\delta) - F(x)| < \varepsilon$.
+     
+     $F_n(x) = P(\xi_n \leq x)$. 
+     
+     \[ \{\xi_n \leq x\} \subset \{\xi_n + \eta_\sigma \leq x + \delta \} \cup \{ |\eta_\sigma| \geq \delta\}\]
+
+     $P(|\eta_\sigma| \geq \delta) \leq \frac{\mathbb{D} \eta_\sigma}{\delta^2} = \frac{\sigma^2}{\delta^2}$ - неравенство Чебышева.
+     
+     $G_n \to G$ поточечно, поэтому $G_n(x + \delta) < G(x+\delta) + \varepsilon$
+     
+     Теперь можно написать
+     
+     \[  F_n(x) = P(\xi_n \leq x) \leq P(\xi_n + \eta_\sigma \leq x + \delta) + P(|\eta_\sigma| \geq \delta) \leq G_n(x+\delta) + \frac{\delta^2}{\sigma^2} \leq G(x+\delta) + \varepsilon +  \frac{\delta^2}{\sigma^2} \leq
+     \]
+     
+     Аналогично оценим $G$:
+     
+     \[ \{\xi + \eta_\sigma \leq x + \delta\} \subset \{\xi \leq x + 2\delta \} \cup \{ |\eta_\sigma| \geq \delta\}
+     \]
+     
+     Продолжим неравенство
+     
+     \[ < F(x + 2\delta) + 2\frac{\delta^2}{\sigma^2} + \varepsilon < F(x) + 2\varepsilon + 2\frac{\delta^2}{\sigma^2}
+     \]
+     
+     
+     Оценка снизу получается аналогично, надо рассмотреть
+     
+     $\{\xi_n \leq n\} \supset \{\xi_n + \eta_\sigma \leq x - \delta\} \setminus \{|\eta_\sigma| \geq \delta\}$\\
+     
+     Получим такую оценку:
+     
+     $F_n(x) > F(x) - 2\varepsilon - 2\frac{\delta^2}{\sigma^2}$
+     
+     Порядок выбора маленьких величин: сначала $\varepsilon$, по нему $\delta$, по нему $\sigma$. После этого выбора все $G_n$ зафиксированы, как и рассматриваемая точка, и можно переходить к пределу по $n$ и выбрать такое $N$, что $|G_n(x+\delta) - G(x + \delta)| < \varepsilon$, аналогично для $x-\delta$ .
+     
+     Теперь $2\varepsilon + \frac{2\sigma^2}{\delta^2} < 4\varepsilon$, что и требовалось доказать.
+     
+ \end{proof}
+
+ \begin{theorem}
+     Пусть функции $F_n, F\colon\mathbb{R}\rightarrow [0, 1]$ монотонно возрастают и $F$ непрерывна на $\R$. Тогда, если $F_n\rightarrow F$ поточечно, то $F_n\rightrightarrows F$ равномерно.
+ \end{theorem}
+
+ \begin{proof}
+     Найдем $t_k$, такие что $F(t_k) =\frac{k}{m}$, $t_0 < \ldots < t_m$.
+     По условию 
+     $$\abs{F_n(t_k) - F(t_k)} <  \e = \frac{1}{m},$$ начиная с некоторого номера.
+     Рассмотрим $t_k\le t < t_{k + 1}$:
+     $$F_n(t_k) \le F_n(t) \le F_n(t_{k+1}) < F(t_{k+1}) + \e = \frac{k+1}{m} + \frac{1}{m} = \frac{k}{m} + 2 \e = F(t_k) +2 \e \le F(t) + 2 \e.$$
+     $$F_n(t_k) > F(t_k) - \e =\frac{k}{m} -\frac{1}{m} = \frac{k+1}{m} - 2 \e = F(t_{k +1}) - 2 \e \ge F(t) -2 \e.$$
+     Итого 
+     $$F(t) - 2 \e < F_n(t) < F(t) + 2 \e.$$
+ \end{proof}
+
+

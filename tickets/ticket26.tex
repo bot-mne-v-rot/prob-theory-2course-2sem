@@ -1,0 +1,39 @@
+\section{Закон больших чисел. Следствия}
+
+\begin{theorem}[закон больших чисел] Пусть величины
+    $\xi_1, \ldots$ попарно некоррелированы, для всех $i$ верно
+    $\DD\xi_n < M$, $S_n = \xi_1 + \ldots + \xi_n$. Тогда 
+    $$P\left(\abs*{\frac{S_n}{n} - \EE \frac{S_n}{n}}\ge t\right)\rightarrow 0\fpri t > 0.$$
+\end{theorem}
+
+\begin{proof}
+   Применим неравенство Чебышёва:
+   \begin{align*}
+       P\left(\abs*{\frac{S_n}{n} - \EE \frac{S_n}{n}}\ge t\right) &\le  \frac{\DD(\frac{S_n}{n})}{t^2} = \frac{\DD(S_n)}{n^2t^2} = [\cov(\xi_i, \xi_j)=0] \\&=  \frac{\sum\DD\xi_n}{n^2t^2} \le \frac{nM}{n^2t^2} = \frac{M}{nt^2}\rightarrow 0.
+   \end{align*}
+    
+\end{proof}
+
+\begin{corollary}[закон больших чисел в форме Чебышёва] 
+Пусть $\xi_1, \ldots$ --- независимые одинаково распределенные случайные величины с конечной дисперсией и $a = \EE \xi_1$, тогда 
+$$P\left(\abs*{\tfrac{S_n}{n} - a}\ge t\right) \rightarrow 0 \fpri t > 0,$$ 
+то есть $\frac{S_n}{n}$ сходится к $a$ по вероятности.
+
+
+\end{corollary}
+\begin{proof}
+                  Величины независимы, поэтому некоррелированы, дисперсии ограничены и, поскольку матожидание суммы равно сумме матожиданий (которые равны $a$, поскольку они одинаково распределены), $\EE \frac{S_n}{n} = a$; применим теорему.
+              \end{proof} 
+\begin{corollary}[закон больших чисел для схем Бернулли]
+              Пусть $\xi_1, \ldots$ независимые бернуллиевские случайные величины с вероятностью $p$. Тогда 
+              $$P\left(\abs*{\frac{S_n}{n} - p}\ge t\right)\rightarrow 0 \fpri t > 0.$$
+             
+  
+\end{corollary}
+              \begin{proof} Для бернуллиевских величин верно
+              \begin{gather*}
+                  \EE \xi_1 = P(\xi_1 = 1) = p;\\
+                  \DD\xi = \EE \xi_1^2 - (\EE \xi_1)^2 = p - p^2.
+              \end{gather*}
+        Показали ограниченность дисперсий, и можно применить теорему.
+    \end{proof}

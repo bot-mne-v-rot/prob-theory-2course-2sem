@@ -1,0 +1,210 @@
+\section{Характеристические функции}
+
+ \begin{definition} Характеристическая функция вещественнозначной случайной величины $\xi$ --- это
+     $$\phi_\xi(t) = \EE e^{i\xi t}.$$
+ \end{definition}
+
+ \begin{properties}[характеристической функции]
+\enewline
+     \begin{enumerate}
+         \item $\phi_\xi(0) = 1$, $\abs{\phi_\xi(t)}\le 1$;
+
+         \item $\phi_{a\xi + b}(t) = e^{itb}\phi_\xi (at)$;
+              
+         \item Если $\xi$ и $\eta$ независимы, то $\phi_{\xi + \eta}(t) = \phi_\xi(t)\phi_\eta(t)$
+
+         \item Если $\xi_1, \ldots, \xi_n$ независимы, то $\phi_{\xi_1 + \ldots + \xi_n}(t) = \phi_{\xi_1}(t)\cdot\ldots\cdot \phi_{\xi_n}(t)$
+
+         \item $\phi_\xi(-t) = \overline{\phi_\xi(t)}$
+
+         \item $\phi_\xi(t)$~--- равномерно непрерывна на $\mathbb{R}$
+
+     \end{enumerate}
+ \end{properties}
+ 
+ \begin{proof}
+ \enewline
+ \begin{enumerate}
+     \item[2.] $\phi_{a\xi + b}(t) = \EE (e^{it(a\xi + b)}) = e^{itb}\EE e^{ai\xi t} = e^{itb}\phi_\xi(at)$
+     \item[3.]  $\phi_{\xi + \eta}(t) = \EE (e^{it(\xi + \eta)}) = \EE (e^{it\xi}\cdot e^{it\eta}) = \EE e^{it\xi}\EE e^{it\eta} = \phi_\xi(t)\phi_\eta(t)$
+     \item[6.]  $\abs{\phi_\xi(t + h) -\phi_\xi(t)} = \abs{\EE (e^{i\xi(t+h))} - e^{it\xi})} = \abs{\EE (e^{it\xi}(e^{ih\xi} - 1))} \le \EE \abs{e^{ih\xi} - 1}.$
+     Хотим доказать, что $\EE \abs{e^{ih\xi} - 1} \to 0$ при $h \to 0$. По определению матожидания
+     $$\EE \abs{e^{ih\xi} - 1} = \int\limits_\mathbb{R}\abs{e^{ihx} - 1}\dd P_\xi(x).$$
+     $\abs{e^{ihx} - 1} \to 0$. По теореме Лебега подынтегральное выражение всегда $\le 2$, то есть это суммируемая мажоранта и можно менять предел и интеграл местами. ,
+     \qedhere
+ \end{enumerate}
+ \end{proof}
+ 
+
+ \begin{example} Пусть $\xi\sim \mathcal{N}(a, \sigma^2)$, найдём его производящую функция $\phi_\xi (t)$.
+ 
+     Пусть $\eta \sim \mathcal{N}(0, 1)$; знаем, что $\xi = \sigma\eta + a$, $\phi_\xi(t) = e^{ita}\phi_\eta(\sigma t)$,
+     поэтому достаточно найти характеристическую функциею для $\eta$.
+     $$\phi_\eta(t) = \frac{1}{\sqrt{2\pi}}\int\limits_\mathbb{R}e^{itx}e^{-\frac{x^2}{2}}\dd x =
+         \frac{e^{-\frac{t^2}{2}}}{\sqrt{2\pi}}\int\limits_\mathbb{R}e^{-\frac{(x - it)^2}{2}}\dd x.$$
+
+     Знаем, что $\intt_\mathbb{R}f(x) \dd x = \sqrt{2\pi}$, где $f(z) = e^{-\frac{z^2}{2}}$, хотим посчитать 
+     $I = \int\limits_\mathbb{R}f(x-it)\dd x.$
+     Сделаем это с помощью вычетов. Для этого посчитаем интеграл по контуру $\Gamma_R$:
+
+      $$0 = \int\limits_{\text{Г}_R}f(z)\dd z = \int\limits_{-R}^R + \int\limits_R^{R - it} + \int\limits_{R - it}^{-R - it} + \int\limits_{-R - it}^{-R}.$$
+      Знаем, что
+      $$\int\limits_{-R}^R \to \sqrt{2\pi}, \ \int\limits_{R - it}^{-R - it}\to -I.$$
+      Оценим второй: 
+      $$\abs*{\int\limits_{R}^{R - it}f(z)\dd z} \le \int\limits_0^{-t}\abs{e^{-\frac{(R - iy)^2}{2}}}\dd y =
+         \int\limits_0^{-t}(e^{-\frac{R^2}{2} + \frac{y^2}{2}})\dd y \le t\cdot \max (e^{-\frac{R^2}{2} + \frac{y^2}{2}}) =
+         t\cdot e^{\frac{t^2}{2}}\cdot e^{-\frac{R^2}{2}} \to 0.$$ 
+    Аналогично с последним интегралом. Итого получаем, что
+     $$I = \sqrt{2\pi}\Ra\phi_\eta(t) = \frac{e^{-\frac{t^2}{2}}}{\sqrt{2\pi}}\sqrt{2\pi} =
+         e^{-\frac{t^2}{2}} \Ra\phi_\xi(t) = e^{ita}e^{-\frac{\sigma^2t^2}{2}}.$$
+ \end{example}
+
+ \begin{theorem}
+     Если $\EE \abs{\xi}^n < +\infty$, то при $k\le n$ 
+     $$\phi_\xi^{(k)}(t) = \EE ((i\xi)^ke^{it\xi}).$$
+ \end{theorem}
+
+ \begin{proof}
+     Индукция. База $k = 0$ --- определение характеристической функции.
+
+     Переход $k\rightarrow k + 1$:
+    \begin{align*}
+        \phi_\xi(t)^{(k+ 1)} &= \underset{h\rightarrow 0}{\lim} \frac{\EE ((i\xi)^ke^{i(t+h)\xi}) - \EE ((i\xi)^ke^{it\xi})}{h} =
+         \underset{h\rightarrow 0}{\lim} \frac{\EE ((i\xi)^ke^{it\xi}\frac{e^{ih\xi} - 1}{h})}{h} \\&=
+         \underset{h\rightarrow 0}{\lim} \int\limits_\mathbb{R} (ix)^ke^{itx}\frac{e^{ihx} - 1}{h}\dd P_\xi(x) =
+         \int\limits_\mathbb{R}  \underset{h\rightarrow 0}{\lim}  (ix)^ke^{itx}\frac{e^{ihx} - 1}{h}\dd P_\xi(x) \\&=
+         \int\limits_\mathbb{R} (ix)^{k + 1}e^{itx}\dd P_\xi(x) = \EE ((i\xi)^{k+1}e^{it\xi}).
+    \end{align*}
+    Нужно пояснить, почему можно менять интеграл и предел местами. Покажем, что есть суммируемая мажоранта.
+    Если $\abs{xh}\ge 1$, то
+    $$ \abs*{\frac{e^{ihx} - 1}{h}}\le \frac{2}{\abs{h}} = O(x).$$
+Если $\abs{xh}< 1$, то
+$$\abs*{\frac{e^{ihx} - 1}{h}} = \abs*{\frac{1 + O(ihx) - 1}{h}} = O(x).$$
+Таким образом, в любом случае значение подынтегрального выражения не превосходит $\abs{x}^kO(x) \le C\abs{x}^{k + 1}$. Это суммируемая мажоранта, так как интеграл по ней это $(k + 1)$-й момент, который конечен по условию.
+ \end{proof}
+
+ \begin{corollary}
+ \begin{gather*}
+     \EE \xi = -i\phi_\xi^\prime(0);\\
+     \DD\xi = -\phi_\xi^{\prime \prime}(0) + (\phi_\xi^\prime(0))^2.
+ \end{gather*}
+     \end{corollary}
+
+
+ \begin{theorem}
+     Если существует $\phi_\xi^{\prime \prime}(0)$, то $\EE \xi^2 < + \infty$.
+ \end{theorem}
+
+ \begin{proof}
+ \begin{equation*}\label{eq:chart1}\tag{$\star$}
+     \EE \xi^2 = \int\limits_\mathbb{R}x^2\dd P_\xi(x) = \int\limits_\mathbb{R} \underset{t\rightarrow 0}{\lim}\left(\frac{\sin(tx)}{t}\right)^2\dd P_\xi(x). 
+ \end{equation*}
+ Воспользуемся леммой Фату (интеграл от предела не превосходит предела от интеграла) и продолжим (\ref{eq:chart1}) неравенством:
+    \begin{align*}
+         \int\limits_\mathbb{R}\underset{t\rightarrow 0}{\lim}(\frac{\sin(tx)}{t})^2\dd P_\xi(x) &\le \lim\int (\frac{\sin(tx)}{t})^2\dd P_\xi(x)=
+         \underset{t\rightarrow 0}{\lim} \int\limits_\mathbb{R} (\frac{e^{itx} - e^{-itx}}{2it})^2\dd P_\xi(x) \\&=
+         \underset{t\rightarrow 0}{\lim} - \frac{1}{4t^2}\int\limits_\mathbb{R}(e^{2itx} +e^{-2itx} - 2) \dd P_\xi(x) \\&=
+         \underset{t\rightarrow 0}{\lim}-\frac{1}{4t^2}(\phi_\xi(2t) + \phi_\xi(-2t) - 2) \\&= [\phi_\xi(s) = 1 + \phi_\xi ^ \prime(0)\cdot s + \frac{\phi_\xi^{\prime \prime}(0)}{2}s^2 + o(s^2) = 1 + as + bs^2 + o(s^2)] \\&= \underset{t\rightarrow 0}{\lim} -\frac{1}{4t^2}(1 + 2at + 4t^2 b + o(t^2) + 1 - 2at + 4t^2b - 2) = -2b \\&= \phi_\xi^{\prime \prime}(0).
+    \end{align*}
+
+
+ \end{proof}
+
+
+ \begin{theorem}[формула обращения]
+     Пусть $a < b$ такие, что $P(\xi = a) = P(\xi = b) = 0$.
+     Тогда 
+     \begin{equation*}\label{eq:formula_obr}\tag{$\dagger$}
+         P(a\le \xi\le b) =  \underset{T\rightarrow+\infty}{\lim}\frac{1}{2\pi}\int\limits_{-T}^T \frac{e^{-iat} - e^{-ibt}}{it}\phi_\xi(t) \dd t.
+     \end{equation*}
+ \end{theorem}
+    
+    Заметим, что интеграл $\intt_{-\infty}^{\infty}$ может расходится, а сходится должен только в смысле главного значения.
+
+ \begin{proof}
+ \textsl{Шаг 1.} Пусть $\xi = \frac{a+b}{2} + \frac{b - a}{2}\eta$.
+     Тогда $\xi\in [a, b] \iff\eta\in [-1, 1]$.
+    \begin{align*}
+    \phi_\xi(t) = e^{i\frac{a + b}{2}t}\phi_\eta(\frac{b-a}{2}t);\\
+    \phi_\xi(t) = e^{i\frac{a + b}{2}t}\phi_\eta(\frac{b-a}{2}t).\\
+        \int\limits_{-T}^T \frac{e^{-iat} -e^{-ibt}}{it}\phi_\xi(t)\dd t &= \int\limits_{-T}^T \frac{e^{-iat} -e^{-ibt}}{it}e^{i\frac{a + b}{2}t}\phi_\eta(\frac{b-a}{2}t)\dd t \\&=\int\limits_{-T}^T \frac{e^{-i(\frac{a-b}{2})t}e^{-i(\frac{b-a}{2})t}}{it}\phi_\eta(\frac{b-a}{2}t)\dd t = [u = \frac{b-a}{2}t] \\ &= \int\limits_{-T(\frac{b-a}{2})}^{T(\frac{b -a}{2})}\frac{e^{iu} - e^{-u}}{iu}\phi_\eta(u)\dd u. \label{eq:obr1}\tag{$*$}
+    \end{align*}
+   
+Если (\ref{eq:obr1}) равна $2\pi P(-1\le \eta \le 1) = 2\pi P(a\le \xi\le b)$, то доказали. Таким образом свели к частному случаю ($a=-1$, $b=1$).
+
+
+     \textsl{Шаг 2.} Пусть $a = -1$, $b = 1$.
+     \begin{equation*}
+         \underset{T\rightarrow+\infty}{\lim} \int\limits_{-T}^T \frac{e^{it} - e^{-it}}{it}\int\limits_\mathbb{R}e^{itx}\dd P_\xi(x)\dd t.\label{eq:obr2}\tag{$**$}
+     \end{equation*}
+     Для подынтегрального выражения верно
+     $$\abs*{e^{itx} \frac{e^{it} - e^{-it}}{it}} = \abs*{\frac{e^{it} - e^{-it}}{it}}\le M,$$
+     значит есть суммируемость и можем применить теорему Фубини, поменяв интегралы местами. Продолжим (\ref{eq:obr2}) равенством:
+     \begin{equation*}
+         \underset{T\rightarrow+\infty}{\lim} \int\limits_\mathbb{R}\int\limits_{-T}^T \frac{e^{it} - e^{-it}}{it}\int\limits_\mathbb{R}e^{itx}\dd P_\xi(x)\dd t = \underset{T\rightarrow+\infty}{\lim}\int\limits_\mathbb{R}\Phi_T(x)\dd P_\xi(x). \label{eq:obr3}\tag{$***$}
+     \end{equation*}
+    Рассмотрим функция под интегралом.
+    \begin{align*}
+        \Phi_T(x) &= \int\limits_{-T}^T e^{itx}\frac{e^{it} - e^{-it}}{it}\dd t = \int\limits_{-T}^T\int\limits_{-1}^1 e^{itx}e^{iut}\dd u\dd t = [\text{по теореме Фубини}] \\&=  \int\limits_{-1}^1\int\limits_{-T}^T e^{it(x+u)}\dd t\dd u \int\limits_{-1}^1 \frac{e^{i(x+u)t}}{(x+u)i}\Bigg|_{-T}^T\dd u = 2\int\limits_{-1}^1 \frac{\sin((x+u)T)}{(x+u)}\dd u = [v= (x+u)T] \\&= \int\limits_{(x-1)T}^{(x+1)T} \frac{2\sin v}{v}\dd v = F((x+1)T) - F((x - 1) T).
+    \end{align*}
+     Функция $F(y) = \intt_0^y \frac{2\sin v}{v}\dd v$ непрерывна на $\mathbb{R}$ и имеет предел в $\pm\infty$, значит это ограниченная функция, значит есть суммируемая мажоранта(константа) и в (\ref{eq:obr3}) можно воспользоваться теоремой Лебега и поменять местами предел и интеграл. Осталось понять, чему равен $\lim_{T \to +\infty}F((x+1)T) - F((x - 1) T)$.
+     Если $x>1$, то $x+1, x - 1>0$, значит аргументы стремятся к $+\infty$, следовательно $ F(\ldots) \rightarrow \pi$, итого получаем, что всё выражение стремится к пределу. Аналогично при $x<1$ будет $x+1, x - 1>0$, значит аргументы будут стремится к $-\infty$, $ F(\ldots) \rightarrow \pi$ и снова предел равен нулю. Если $x\in (-1, 1)$, тогда $\lim = 2\pi$. 
+     
+     Продолжим (\ref{eq:obr3}) равенством:
+     \begin{align*}
+         \underset{T\rightarrow+\infty}{\lim}\int\limits_\mathbb{R}\Phi_T(x)\dd P_\xi(x) &= \int\limits_\mathbb{R}\underset{T\rightarrow+\infty}{\lim}\Phi_T(x)\dd P_\xi(x) \\&= \int\limits_\mathbb{R}2\pi \mathbbm{1}_{[-1, 1]}(x)\dd P_\xi (x) = 2\pi P(-1\le \xi\le 1),
+     \end{align*}
+      что и требовалось доказать.
+ \end{proof}
+
+ \begin{corollary}
+\enewline
+     \begin{enumerate}
+         \item Если $\phi_\xi = \phi_\eta$, то $P_\xi = P_\eta$.
+
+         \item Если модуль характеристической функции суммируем ---  $\intt_\mathbb{R}\abs{\phi_\xi(t)}\dd t < + \infty$, то $P_\xi$ имеет плотность и, более того, 
+         $$p_\xi(x) = \frac{1}{2\pi} \int\limits_\mathbb{R}e^{-itx}\phi_\xi(t)\dd t.$$
+
+        Эта формула называется \textit{преобразованием Фурье}, а обратная ей (определение характеристической функции) \textit{обратным преобразование Фурье}.
+     \end{enumerate}
+ \end{corollary}
+\begin{proof}
+\enewline
+\begin{enumerate}
+    \item Пусть $A= \{x\in\mathbb{R}\mid P(\xi = x) > 0\}$. $A$~--- не более чем счётное, так как в точках из $A$ функция распределения $F_\xi$ имеет скачки.
+                   Тогда $\phi_\xi$ однозначно определяет $P(a\le\xi\le b)$, если $a, b\notin A$ (это из утверждения теоремы). Поймём, что она определяет и всё остальное распределение тоже.
+                   $F_\xi(b) = \underset{n\rightarrow+\infty}{\lim} P(a_n\le\xi\le b)$,
+                   где $a_n \searrow -\infty$, $a_n\notin A$ однозначно определяется $\phi_\xi$ ($b \notin A$).
+                   Пусть $b\in A$, возьмем $b_n \searrow b$, $b_n \notin A$. Тогда, так как функция распределения непрерывна справа, то $F_\xi(b) = \underset{n\rightarrow+\infty}{\lim} F_\xi(b_n)$ также однозначно определяется $\phi_\xi$.
+                   Итого, однозначно определили $P_\xi$.
+    \item Поймём что при данных условиях интеграл из формулы обращения (\ref{eq:formula_obr}) сходится абсолютно. 
+               $$\abs*{\frac{e^{-iat} - e^{-ibt}}{it}\phi_\xi(t)} = \abs*{\frac{e^{-iat} - e^{-ibt}}{t}}\abs{\phi_\xi(t)} \le M\abs{\phi_\xi(t)}.$$
+                  Последнее верно, так как $\frac{e^{-iat} - e^{-ibt}}{t}$ --- ограниченная функция, поскольку она непрерывная и стремится к нулю при $t \to \pm\infty$.
+\begin{equation*}\label{eq:preobfur} \tag{$\spadesuit$}
+    \int\limits_a^b p_\xi(x)\dd x = \frac{1}{2\pi}\int\limits_a^b\int\limits_\mathbb{R}e^{-itx}\phi_\xi(t)\dd t\dd x.
+\end{equation*}
+    Подынтегральное выражение не превосходит по модулю $\abs{\phi_\xi(t)}$ --- суммируемая по условию. Значит можем применить теорему Фубини и в (\ref{eq:preobfur}) поменять порядок интегрирования.
+    \begin{align*}
+        \frac{1}{2\pi}\int\limits_a^b\int\limits_\mathbb{R}e^{-itx}\phi_\xi(t)\dd t\dd x &= \frac{1}{2\pi}\int\limits_\mathbb{R}\int\limits_a^b e^{-itx}\phi_\xi(t)\dd x\dd t = \frac{1}{2\pi}\int\limits_\mathbb{R}\phi_\xi(t) \frac{e^{-itx}}{-it}\Bigg|_a^b\dd t \\&=\frac{1}{2\pi}\int\limits_\mathbb{R}\frac{e^{-iat} - e^{-ibt}}{it}\phi_\xi(t)\dd t = P(a\le\xi\le b).
+    \end{align*}
+     Чтобы было верно последнее равенство, то есть формула обращения, нужно условие $P(\xi = a) = P(\xi = b) =0$. Поймем, что при условии следствия не может быть $P(\xi = c) > 0$; пусть $a_n\nearrow c$, $b_n\searrow c$ ($a_n, b_n \in A$), тогда
+                   $$P(\xi = c) = \lim\limits_{n \to +\infty} P(a_n \le \xi\le b_n)  =
+                       \lim\limits_{n \to +\infty} \int\limits_{a_n}^{b_n}p_\xi(x)\dd x \le (b_n-a_n)C \rightarrow 0.$$ \qedhere
+\end{enumerate}
+\end{proof}
+
+
+ \begin{theorem}
+     Пусть $\xi_k\sim \mathcal{N}(a_k, \sigma_k^2)$~--- независимые случайные величины и $\eta = a_0 + \underset{k = 1}{\overset{n}{\sum}}c_k\xi_k$, причем хотя бы одна $c_k\neq 0$.
+     Тогда $$\eta\sim \mathcal{N}(a_0 + \underset{k = 1}{\overset{n}{\sum}}c_ka_k,  \underset{k = 1}{\overset{n}{\sum}} c_k^2\sigma_k^2).$$
+ \end{theorem}
+
+ \begin{proof}
+    Рассмотрим характеристическую функцию $\nu$.
+    \begin{align*}
+        \phi_\eta(t) &= e^{ita_0}\phi_{\xi_1}(c_1t)\cdot\ldots\cdot\phi_{\xi_n}(ct_n) = e^{ita_0}e^{ic_1ta_1 - \frac{c_1^2t_1^2\sigma_1^2}{2}}\cdot\ldots \\&= e^{it(a_0 + \ldots + a_nc_n)} e^{\frac{-t^2(c_1^2\sigma_1^2 + \ldots + c_n^2\sigma_n^2)}{2}} = e^{iat - \frac{\sigma^2t^2}{2}}.
+    \end{align*}
+Это характеристическая функция $\mathcal{N}(a, \sigma^2)$,  где 
+     $$a = a_0 + \ldots + a_n c_n, \ \sigma^2 = c_1^2\sigma_1^2 + \ldots + c_n^2\sigma_n^2.$$
+ \end{proof}
+

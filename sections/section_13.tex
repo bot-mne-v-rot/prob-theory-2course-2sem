@@ -1,0 +1,55 @@
+\section{Большие уклонения}
+
+\begin{theorem}[закон больших чисел в форме Хинчина] Пусть
+    $\xi_1, \xi_2, \ldots$~--- независимые одинаково распределенные случайные величины,
+    $a = \EE  \xi_1$, $S_n = \xi_1 + \xi_2 + \ldots + \xi_n$. Тогда для всех $ r > a $ $$
+    P\left(\frac{S_n}{n} \ge r\right) \to 0.$$
+\end{theorem}
+
+\begin{proof}
+По неравенству Чебышёва
+    $$P\left(\frac{S_n}{n} \ge r\right) \le \frac{\DD\left(\tfrac{S_n}{n}\right)}{(r - a)^2} = \frac{\DD \xi_1}{n(r-a)^2} \underset{n \to +\infty}{\to} 0 .$$
+\end{proof}
+
+\begin{definition}
+    Случайная величина $\xi$ удовлетворяет \textit{условию Крамера}, если для всех $\lambda$ в некоторой окрестности нуля выполняется
+    $\EE  e^{\lambda \xi} < +\infty$.
+\end{definition}
+
+Оценка Чернова. Пусть $\lambda \ge 0$. Тогда
+    $$P\left(\frac{S_n}{n} \ge r\right) = P(S_n \lambda \ge \lambda n r) = P(e^{\lambda S_n} \ge e^{\lambda n r}) \le
+    \frac{\EE  e^{\lambda S_n}}{e^{\lambda n r}} = \frac{\EE  \prod_{k = 1}^{n} e^{\lambda \xi_k}}{e^{\lambda n r}} = \left ( \frac{\EE  e^{\lambda \xi_1}}{e^{\lambda r}} \right )^n.$$
+    Пусть 
+    $$\psi(\lambda) = \ln \EE  e^{\lambda \xi_1},$$
+    тогда 
+    $$P\left(\frac{S_n}{n} \ge r\right) \le \exp(n (\psi(\lambda) - \lambda r)).$$
+    Введём обозначение
+    $$I(r) = \sup \limits_{\lambda > 0} (\lambda r - \psi(\lambda)).$$ Это функция называется функцией отклонения. Тогда 
+    $$P\left(\frac{S_n}{n} \ge r\right) \le \exp(-nI(r)).$$
+
+
+\begin{examples}[оценок Чернова]
+\enewline
+    \begin{enumerate}
+        \item Пусть $\xi_k \sim \mathcal{N}(0, 1)$. Тогда
+    $$\psi(\lambda) = \ln \EE  e^{\lambda \xi} = \ln \left(\frac{1}{\sqrt{2 \pi}} \int \limits_{\R} e^{\lambda t} e^{-\frac{t^2}{2}}\right) \dd t = \left[\lambda t - \frac{t^2}{2} = \frac{-(t - \lambda)^2}{2} + \frac{\lambda^2}{2} \right]
+     = \frac{\lambda^2}{2}.$$ 
+     Найдём функцию отклонения. Максимум выражения $\lambda r - \psi(\lambda) = \lambda r - \frac{\lambda^2}{2}$ достигается  при $\lambda = r$, значит
+    $I(r) = \frac{r^2}{2}$ и
+    $$P\left(\frac{S_n}{n} \ge r\right) \le e^{\frac{-nr^2}{2}}.$$
+
+    \item Пусть $\xi_k \sim \text{Exp}(1)$. Тогда
+    $$\psi(\lambda) = \ln \EE ^{\lambda \xi} = \ln \left(\int \limits_{0}^{+\infty} e^{\lambda t} e^{-t} \dd t\right) = \ln \left(\frac{1}{1 - \lambda}\right)$$
+    при $\lambda < 1$.
+    Максимум выражения $\lambda r - \psi(\lambda) = \lambda r + \ln(1 - \lambda)$ достигается  при $\lambda = \frac{r - 1}{r}$, значит
+    $I(r) = r - 1 - \ln r$ и 
+     $$P\left(\frac{S_n}{n} \ge r\right) \le e^{-n(r - 1 - \ln r)}.$$
+    \end{enumerate}
+
+\end{examples}
+
+\begin{exercise}
+    Пусть $\xi_k \sim \text{Bern}(p_k)$. $\mu = p_1 + p_2 + \ldots + p_k$. Тогда
+    $$\forall  \delta > 0 \ \ P(S_n \ge (1 + \delta) \mu) < \exp\left(\frac{-\delta^2 \mu}{\delta + 2}\right).$$
+\end{exercise}
+

@@ -1,0 +1,52 @@
+\section{Две теоремы о связи между математическим ожиданием и характеристической функцией}
+
+\begin{theorem}
+    Если $\EE \abs{\xi}^n < +\infty$, то при $k\le n$ 
+    $$\phi_\xi^{(k)}(t) = \EE ((i\xi)^ke^{it\xi}).$$
+\end{theorem}
+
+\begin{proof}
+    Индукция. База $k = 0$ --- определение характеристической функции.
+
+    Переход $k\rightarrow k + 1$:
+   \begin{align*}
+       \phi_\xi(t)^{(k+ 1)} &= \underset{h\rightarrow 0}{\lim} \frac{\EE ((i\xi)^ke^{i(t+h)\xi}) - \EE ((i\xi)^ke^{it\xi})}{h} =
+        \underset{h\rightarrow 0}{\lim} \frac{\EE ((i\xi)^ke^{it\xi}\frac{e^{ih\xi} - 1}{h})}{h} \\&=
+        \underset{h\rightarrow 0}{\lim} \int\limits_\mathbb{R} (ix)^ke^{itx}\frac{e^{ihx} - 1}{h}\dd P_\xi(x) =
+        \int\limits_\mathbb{R}  \underset{h\rightarrow 0}{\lim}  (ix)^ke^{itx}\frac{e^{ihx} - 1}{h}\dd P_\xi(x) \\&=
+        \int\limits_\mathbb{R} (ix)^{k + 1}e^{itx}\dd P_\xi(x) = \EE ((i\xi)^{k+1}e^{it\xi}).
+   \end{align*}
+   Нужно пояснить, почему можно менять интеграл и предел местами. Покажем, что есть суммируемая мажоранта.
+   Если $\abs{xh}\ge 1$, то
+   $$ \abs*{\frac{e^{ihx} - 1}{h}}\le \frac{2}{\abs{h}} = O(x).$$
+Если $\abs{xh}< 1$, то
+$$\abs*{\frac{e^{ihx} - 1}{h}} = \abs*{\frac{1 + O(ihx) - 1}{h}} = O(x).$$
+Таким образом, в любом случае значение подынтегрального выражения не превосходит $\abs{x}^kO(x) \le C\abs{x}^{k + 1}$. Это суммируемая мажоранта, так как интеграл по ней это $(k + 1)$-й момент, который конечен по условию.
+\end{proof}
+
+\begin{corollary}
+\begin{gather*}
+    \EE \xi = -i\phi_\xi^\prime(0);\\
+    \DD\xi = -\phi_\xi^{\prime \prime}(0) + (\phi_\xi^\prime(0))^2.
+\end{gather*}
+    \end{corollary}
+
+
+\begin{theorem}
+    Если существует $\phi_\xi^{\prime \prime}(0)$, то $\EE \xi^2 < + \infty$.
+\end{theorem}
+
+\begin{proof}
+\begin{equation*}\label{eq:chart1}\tag{$\star$}
+    \EE \xi^2 = \int\limits_\mathbb{R}x^2\dd P_\xi(x) = \int\limits_\mathbb{R} \underset{t\rightarrow 0}{\lim}\left(\frac{\sin(tx)}{t}\right)^2\dd P_\xi(x). 
+\end{equation*}
+Воспользуемся леммой Фату (интеграл от предела не превосходит предела от интеграла) и продолжим (\ref{eq:chart1}) неравенством:
+   \begin{align*}
+        \int\limits_\mathbb{R}\underset{t\rightarrow 0}{\lim}(\frac{\sin(tx)}{t})^2\dd P_\xi(x) &\le \lim\int (\frac{\sin(tx)}{t})^2\dd P_\xi(x)=
+        \underset{t\rightarrow 0}{\lim} \int\limits_\mathbb{R} (\frac{e^{itx} - e^{-itx}}{2it})^2\dd P_\xi(x) \\&=
+        \underset{t\rightarrow 0}{\lim} - \frac{1}{4t^2}\int\limits_\mathbb{R}(e^{2itx} +e^{-2itx} - 2) \dd P_\xi(x) \\&=
+        \underset{t\rightarrow 0}{\lim}-\frac{1}{4t^2}(\phi_\xi(2t) + \phi_\xi(-2t) - 2) \\&= [\phi_\xi(s) = 1 + \phi_\xi ^ \prime(0)\cdot s + \frac{\phi_\xi^{\prime \prime}(0)}{2}s^2 + o(s^2) = 1 + as + bs^2 + o(s^2)] \\&= \underset{t\rightarrow 0}{\lim} -\frac{1}{4t^2}(1 + 2at + 4t^2 b + o(t^2) + 1 - 2at + 4t^2b - 2) = -2b \\&= \phi_\xi^{\prime \prime}(0).
+   \end{align*}
+
+
+\end{proof}

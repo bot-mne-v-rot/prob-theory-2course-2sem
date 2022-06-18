@@ -1,0 +1,49 @@
+\section{Математическое ожидание функции от последовательности сходящихся по вероятности слу- чайных величин. Доказательство Бернштейна тео- ремы Вейерштрасса}
+
+\begin{theorem}
+    Пусть $a \in \R, f : \R \to \R$ --- ограниченная $M$, непрерывная в точке $a$, $\xi_1, \xi_2, \dotsc$ сходятся к $a$ по вероятности. Тогда $\mathbb{E} f(\xi_n) \to f(a)$.
+ \end{theorem}
+ \begin{proof}
+     Оценим сверху модуль разности:
+     \begin{align*}
+         \left | \mathbb{E} f(\xi_n) - f(a) \right | 
+         &= \left | \mathbb{E} \left( f(\xi_n) - f(a) \right ) \right | \leq
+         \mathbb{E} \left | f(\xi_n) - f(a) \right |  \\
+         &= \mathbb{E} \left ( | f(\xi_n) - f(a) | \cdot \mathbbm{1}_{\{|\xi_n - a | < \varepsilon\}} \right )
+         + \mathbb{E} \left ( | f(\xi_n) - f(a) | \cdot \mathbbm{1}_{\{|\xi_n - a| \geq \varepsilon\}} \right ) \\
+         &\leq \sup\limits_{|x - a| < \varepsilon} | f(x) - f(a) | + 2M \cdot P \left ( |  \xi_n - a | \geq \varepsilon \right)
+     \end{align*}
+     Устремим $\varepsilon$ к 0 и ограничим верхний предел сверху(не знаем про существование обычного, тем не менее нам этого достаточно, так как величина всегда не отрицательна):
+     \begin{align*}
+         \overline{\lim} \left | \mathbb{E} f(\xi_n) - f(a) \right | \leq 
+         \sup\limits_{|x - a| < \varepsilon} | f(x) - f(a)| +
+         2M \cdot \overline{\lim} \; P(|\xi_n - a| \geq \varepsilon) \to 0
+     \end{align*}
+     Первое слагаемое можем сделать сколь угодно маленьким, так как функция непрерывна. Второе слагаемое стремится к нулю, так как есть сходимость $\xi_n$ к $a$ по вероятности.
+ \end{proof}
+ 
+ \begin{theorem}[Вейерштрасса]
+    Пусть $f \in C[a, b]$. Тогда существует последовательность многочленов $P_n \in \R[x]$ такая, что $P_n \rightrightarrows f$ на $[a, b]$.
+ \end{theorem}
+ \begin{proof}
+     Считаем, что $[a, b] = [0, 1]$, так как можем преобразовать аргументы в обе стороны какими-то линейными преобразованиями и от этого ничего не сломается. Рассмотрим схему бернулли с вероятностью успеха $p$ и введем случайную величину $\xi_n = \frac{S_n}{n}$, где $S_n$ --- количество выигрышев среди первых $n$ бросков в нашей схеме. 
+     \begin{equation*}
+         \mathbb{E} f(\xi_n) = 
+         \sum\limits_{k = 0}^n f\left( \frac{k}{n}\right) P(S_n = k) = 
+         \sum\limits_{k = 0}^n f\left( \frac{k}{n}\right) \cdot C_n^k p^k (1-p)^{n - k}
+     \end{equation*}
+     Получили какой-то многочлен(многочлен Бернштейна) от $p$ $n$-ой степени. Тогда оценим разницу такого многочлена и $f(p)$ так же как оценивали разность в прошлой теореме:
+     \begin{align*}
+         | \mathbb{E} f(\xi_n) - f(p) | 
+         &\leq 
+         \sup\limits_{|x - p| \leq \varepsilon} |f(x) - f(p)| + 2M \cdot P(|\xi_n - p| \geq \varepsilon) \\
+         &\leq 
+         \omega_f(\varepsilon) + P \left(\left | \frac{S_n}{n} - p \right | \geq \varepsilon \right) \leq \omega_f(\varepsilon) \frac{\mathbb{D} \frac{S_n}{n}}{\varepsilon^2} \\
+         &=
+         \omega_f(\varepsilon) + \frac{p(1 - p)}{n\varepsilon^2} \leq 
+         \omega_f(\varepsilon) + \frac{1}{4n\varepsilon^2}
+     \end{align*}
+     где $\omega_f(\varepsilon)$ --- это модуль непрерывности функции. Обьяснение предпоследнего перехода --- вынесли $\frac{1}{n}$ как коэффициент с квадратом, расписали дисперсию суммы как сумму дисперсий, так как броски монетки независимы.
+     
+     Таким образом получили какую-то оценку выраженную через $n$ и $\varepsilon$. Теперь давайте скажем, что $\varepsilon = \frac{1}{\sqrt[3]{n}}$ и получим равномерное стремление к нулю.
+ \end{proof}

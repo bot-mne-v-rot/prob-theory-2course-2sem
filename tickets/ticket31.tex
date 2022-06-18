@@ -1,0 +1,60 @@
+\section{Характеристическая функция. Свойства. Характеристическая функция нормального распределения}
+
+\begin{definition} Характеристическая функция вещественнозначной случайной величины $\xi$ --- это
+    $$\phi_\xi(t) = \EE e^{i\xi t}.$$
+\end{definition}
+
+\begin{properties}[характеристической функции]
+\enewline
+    \begin{enumerate}
+        \item $\phi_\xi(0) = 1$, $\abs{\phi_\xi(t)}\le 1$;
+
+        \item $\phi_{a\xi + b}(t) = e^{itb}\phi_\xi (at)$;
+             
+        \item Если $\xi$ и $\eta$ независимы, то $\phi_{\xi + \eta}(t) = \phi_\xi(t)\phi_\eta(t)$
+
+        \item Если $\xi_1, \ldots, \xi_n$ независимы, то $\phi_{\xi_1 + \ldots + \xi_n}(t) = \phi_{\xi_1}(t)\cdot\ldots\cdot \phi_{\xi_n}(t)$
+
+        \item $\phi_\xi(-t) = \overline{\phi_\xi(t)}$
+
+        \item $\phi_\xi(t)$~--- равномерно непрерывна на $\mathbb{R}$
+
+    \end{enumerate}
+\end{properties}
+
+\begin{proof}
+\enewline
+\begin{enumerate}
+    \item[2.] $\phi_{a\xi + b}(t) = \EE (e^{it(a\xi + b)}) = e^{itb}\EE e^{ai\xi t} = e^{itb}\phi_\xi(at)$
+    \item[3.]  $\phi_{\xi + \eta}(t) = \EE (e^{it(\xi + \eta)}) = \EE (e^{it\xi}\cdot e^{it\eta}) = \EE e^{it\xi}\EE e^{it\eta} = \phi_\xi(t)\phi_\eta(t)$
+    \item[6.]  $\abs{\phi_\xi(t + h) -\phi_\xi(t)} = \abs{\EE (e^{i\xi(t+h))} - e^{it\xi})} = \abs{\EE (e^{it\xi}(e^{ih\xi} - 1))} \le \EE \abs{e^{ih\xi} - 1}.$
+    Хотим доказать, что $\EE \abs{e^{ih\xi} - 1} \to 0$ при $h \to 0$. По определению матожидания
+    $$\EE \abs{e^{ih\xi} - 1} = \int\limits_\mathbb{R}\abs{e^{ihx} - 1}\dd P_\xi(x).$$
+    $\abs{e^{ihx} - 1} \to 0$. По теореме Лебега подынтегральное выражение всегда $\le 2$, то есть это суммируемая мажоранта и можно менять предел и интеграл местами. ,
+    \qedhere
+\end{enumerate}
+\end{proof}
+
+
+\begin{example} Пусть $\xi\sim \mathcal{N}(a, \sigma^2)$, найдём его производящую функция $\phi_\xi (t)$.
+
+    Пусть $\eta \sim \mathcal{N}(0, 1)$; знаем, что $\xi = \sigma\eta + a$, $\phi_\xi(t) = e^{ita}\phi_\eta(\sigma t)$,
+    поэтому достаточно найти характеристическую функциею для $\eta$.
+    $$\phi_\eta(t) = \frac{1}{\sqrt{2\pi}}\int\limits_\mathbb{R}e^{itx}e^{-\frac{x^2}{2}}\dd x =
+        \frac{e^{-\frac{t^2}{2}}}{\sqrt{2\pi}}\int\limits_\mathbb{R}e^{-\frac{(x - it)^2}{2}}\dd x.$$
+
+    Знаем, что $\intt_\mathbb{R}f(x) \dd x = \sqrt{2\pi}$, где $f(z) = e^{-\frac{z^2}{2}}$, хотим посчитать 
+    $I = \int\limits_\mathbb{R}f(x-it)\dd x.$
+    Сделаем это с помощью вычетов. Для этого посчитаем интеграл по контуру $\Gamma_R$:
+
+     $$0 = \int\limits_{\text{Г}_R}f(z)\dd z = \int\limits_{-R}^R + \int\limits_R^{R - it} + \int\limits_{R - it}^{-R - it} + \int\limits_{-R - it}^{-R}.$$
+     Знаем, что
+     $$\int\limits_{-R}^R \to \sqrt{2\pi}, \ \int\limits_{R - it}^{-R - it}\to -I.$$
+     Оценим второй: 
+     $$\abs*{\int\limits_{R}^{R - it}f(z)\dd z} \le \int\limits_0^{-t}\abs{e^{-\frac{(R - iy)^2}{2}}}\dd y =
+        \int\limits_0^{-t}(e^{-\frac{R^2}{2} + \frac{y^2}{2}})\dd y \le t\cdot \max (e^{-\frac{R^2}{2} + \frac{y^2}{2}}) =
+        t\cdot e^{\frac{t^2}{2}}\cdot e^{-\frac{R^2}{2}} \to 0.$$ 
+   Аналогично с последним интегралом. Итого получаем, что
+    $$I = \sqrt{2\pi}\Ra\phi_\eta(t) = \frac{e^{-\frac{t^2}{2}}}{\sqrt{2\pi}}\sqrt{2\pi} =
+        e^{-\frac{t^2}{2}} \Ra\phi_\xi(t) = e^{ita}e^{-\frac{\sigma^2t^2}{2}}.$$
+\end{example}

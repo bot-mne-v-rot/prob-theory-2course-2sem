@@ -1,0 +1,28 @@
+\section{Вероятностное пространство. Условная вероятность. Независимые события}
+
+\begin{definition} \textit{Вероятностное пространство} --- это $(\Omega, \mathcal{F}, P),$ где
+    $\Omega$ --- множество элементарных событий;
+    $\mathcal{F}$ ---  $\sigma$-алгебра подмножеств $\Omega$, его элементы --- \textit{случайные события};
+    $P$ --- вероятностная мера на $\mathcal{F}$, такая что $P(\Omega) = 1$.
+\end{definition}
+
+
+\begin{definition} \textit{Условная вероятность}.
+    Пусть $B \in \mathcal{F}, P(B) > 0$. Тогда
+    $P(A|B) = \frac{P(A\cap B)}{P(B)}$~--- вероятность $A$ при условии $B$.
+
+\end{definition}
+
+\begin{definition}
+    События $A$ и $B$ независимы, если 
+    $P(A \cap B) = P(A) \cdot P(B)$.
+
+\end{definition}
+
+\begin{definition}
+    Множество событий $A_i$ по $i \in I$ является независимым в совокупности, если
+    $\forall i_1, ..., i_k \in I$
+
+    $P(A_{i_1}\cap A_{i_2} \cap\ldots\cap A_{i_k}) = P(A_{i_1})\cdot P(A_{i_2})\cdot\ldots\cdot P(A_{i_k})$.
+
+\end{definition}

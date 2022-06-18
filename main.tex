@@ -1,0 +1,145 @@
+% !TeX program = lualatex
+
+\documentclass[12pt, a4paper, oneside]{book}
+\usepackage{preamble}
+\renewcommand{\thesection}{\arabic{section}}
+%здесь похоронены 2 часа моей жизни. проявите увожение и не трогайте эту секцию
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titletoc}% http://ctan.org/pkg/titletoc
+\titlecontents*{chapter}% <section-type>
+  [0pt]% <left>
+  {}% <above-code>
+  {\bfseries\chaptername\ \thecontentslabel. }% <numbered-entry-format>
+  {}% <numberless-entry-format>
+  {\bfseries\hfill}% <filler-page-format>
+  
+\titlecontents{section}
+   [25pt]
+   {\normalsize}
+   {\textsection\thecontentslabel. }
+   {}
+   {\titlerule*[0.7pc]{.}\contentspage}
+   [\addvspace{0pt}]
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\S\thesection. }{0em}{}
+  
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://t.me/thespgold/
+%подписывайтесь!
+% и на сп дурку тоже https://t.me/spdank
+
+\renewcommand{\sectionmark}[1]{\markright{\textsection\arabic{section}.\ #1}}
+\usepackage{bbm}
+\usepackage{tikz}
+\newcommand{\bsc}{\bigsqcup}
+\newcommand{\Ra}{\implies}
+\newcommand{\inff}{\infty}
+\newcommand{\sia}{$\s$-алгебра}
+\newcommand{\RR}{\overline{\R}}
+\newcommand{\indf}{\mathbbm{1} }
+\newcommand{\mto}{\xrightarrow{\mu}}
+\newcommand{\mtof}{f_n \xrightarrow{\mu} f}
+\newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega}
+\newcommand{\cov}{\text{cov}}
+\DeclareRobustCommand{\divby}{%
+  \mathrel{\vbox{\baselineskip.65ex\lineskiplimit0pt\hbox{.}\hbox{.}\hbox{.}}}%
+}
+
+\newcommand{\fsuch}{ \quad \text{ такой, что} \quad }
+\newcommand{\fand}{ \quad \text{ и } \quad }
+\newcommand{\fwhere}{, \quad \text{ где } \quad }
+\newcommand{\fpri}{ \quad \text{ при } \quad }
+
+\newtheorem*{reminder}{Напоминание}
+\newtheorem{properties}[theorem]{Свойства}
+
+\begin{document}
+
+\input{title}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+\tableofcontents
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter 
+% \input{sections/section_1}
+% \input{sections/section_2}
+% \input{sections/section_3}
+% \input{sections/section_4}
+% \input{sections/section_5}
+% \input{sections/section_6}
+% \input{sections/section_7}
+% \input{sections/section_8}
+% \input{sections/section_9}
+% \input{sections/section_10}
+% \input{sections/section_11}
+% \input{sections/section_12}
+% \input{sections/section_13}
+% \input{sections/section_14}
+% \input{sections/section_15}
+% \input{sections/section_16}
+% \input{sections/section_17}
+% \input{sections/section_18}
+\input{tickets/ticket1.tex}
+\input{tickets/ticket2.tex}
+\input{tickets/ticket3.tex}
+\input{tickets/ticket4.tex}
+\input{tickets/ticket5.tex}
+\input{tickets/ticket6.tex}
+\input{tickets/ticket7.tex}
+\input{tickets/ticket8.tex}
+\input{tickets/ticket9.tex}
+\input{tickets/ticket10.tex}
+\input{tickets/ticket11.tex}
+\input{tickets/ticket12.tex}
+\input{tickets/ticket13.tex}
+\input{tickets/ticket14.tex}
+\input{tickets/ticket15.tex}
+\input{tickets/ticket16.tex}
+\input{tickets/ticket17.tex}
+\input{tickets/ticket18.tex}
+\input{tickets/ticket19.tex}
+\input{tickets/ticket20.tex}
+\input{tickets/ticket21.tex}
+\input{tickets/ticket22.tex}
+\input{tickets/ticket23.tex}
+\input{tickets/ticket24.tex}
+\input{tickets/ticket25.tex}
+\input{tickets/ticket26.tex}
+\input{tickets/ticket27.tex}
+\input{tickets/ticket28.tex}
+\input{tickets/ticket29.tex}
+\input{tickets/ticket30.tex}
+\input{tickets/ticket31.tex}
+\input{tickets/ticket32.tex}
+\input{tickets/ticket33.tex}
+\input{tickets/ticket34.tex}
+\input{tickets/ticket35.tex}
+\input{tickets/ticket36.tex}
+\input{tickets/ticket37.tex}
+\input{tickets/ticket38.tex}
+\input{tickets/ticket39.tex}
+\input{tickets/ticket40.tex}
+\input{tickets/ticket41.tex}
+\input{tickets/ticket42.tex}
+\input{tickets/ticket43.tex}
+\input{tickets/ticket44.tex}
+\input{tickets/ticket45.tex}
+\input{tickets/ticket46.tex}
+\input{tickets/ticket47.tex}
+\input{tickets/ticket48.tex}
+\input{tickets/ticket49.tex}
+\input{tickets/ticket50.tex}
+\input{tickets/ticket51.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+
+
+\end{document}

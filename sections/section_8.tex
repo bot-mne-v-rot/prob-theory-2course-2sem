@@ -1,0 +1,214 @@
+\section{Cходимость случайных величин и закон больших чисел}
+
+ \begin{definition}
+\enewline
+     \begin{itemize}
+         \item $\xi_n$ сходится к $\xi$ \textit{почти наверное} (\textit{с вероятностью 1}), если
+               $$P(\{\omega \in \Omega \mid \lim\xi_k(\omega) = \xi(\omega)\}) = 1$$ (то же самое, что и сходимость почти везде).
+
+         \item $\xi_n$ сходится к $\xi$ \textit{в среднем порядка} $r > 0$, если 
+         $$\EE \abs{\xi_n - \xi}^r\rightarrow 0.$$
+
+         \item $\xi_n$ сходится к $\xi$ \textit{по вероятности}, если 
+         $$\forall \e > 0 \ P(\abs{\xi_n - \xi} > \e)\rightarrow 0$$ 
+         (то же самое, что и сходимость по мере).
+
+         \item $\xi_n$ сходится к $\xi$ \textit{по распределению}, если $F_{\xi_n}$ сходится $F_\xi$ во всех точках непрерывности $F_\xi$.
+     \end{itemize}
+ \end{definition}
+
+``Иерархия" сходимостей следующая:
+
+\begin{itemize}
+    \item  $1\Ra 3$. Из теории меры по теореме Лебега (в обратную сторону неверно, смотри пример в там же);
+    \item $2\Ra 3$. Применим неравенство Маркова:
+    $$P(\abs{\xi_n - \xi} >\e) = P(\abs{\xi_n - \xi}^r> \e^r)  \le  \frac{\EE \abs{\xi_n - \xi}^r}{\e^r} \rightarrow 0.$$
+    \item  $1\nRightarrow 2$ (и, следовательно, $3\nRightarrow 2$).  Пример: $\Omega = [0, 1]$.
+    $$\xi_n = n^\frac{1}{r}\mathbbm{1}_{[0, \frac{1}{n})} \rightarrow \xi \equiv 0,$$ но
+ $\EE {\xi_n}^r = 1$.
+ \item  $2\nRightarrow 1$ (и, значит, $3\nRightarrow 1$).
+ Например,
+ \begin{gather*}
+     \xi_{n, k} = \mathbbm{1}_{[\frac{k}{n}, \frac{k + 1}{n}]};\\
+     \EE \xi_{n, k}^r = \frac{1}{n}\rightarrow 0,
+ \end{gather*}
+ но сходимости почти везде нет.
+    \item  $3\Ra 4$. 
+\end{itemize}
+
+Докажем последнее.
+
+ \begin{proof}
+ \begin{gather*}
+     \{\xi_n\le x\} \subset \{\xi\le x+\e\}\cup \{\abs{\xi_n - \xi}\ge \e\}; \\
+     F\xi_n (x) = P(\xi_n\le x) \le P(\xi\le x+\e) +P(\abs{\xi_n - \xi}\ge\e) = F_\xi(x + \e) + P(\abs{\xi_n - \xi}\ge \e); \\
+     \varlimsup_{n\rightarrow +\infty} F_{\xi_n}(x) = F_\xi (x + \e) +
+         \underset{n\rightarrow +\infty}{\lim} P(\abs{\xi_n - \xi}\ge\e) = F_\xi(x+\e). \label{eq:ier1}\tag{$*$}\\
+    \{\xi_n \le x\} \supset \{\xi\le x - \e\}\cap \{\abs{\xi_n - \xi}< \e\};\\
+    \{\xi_n >x\}\subset \{\xi > x - \e\} \cup \{\abs{\xi_n - \xi} \ge\e\};\\
+    P(\xi_n > x) \le P(\xi > x-\e) + P(\abs{\xi_n - \xi}\ge\e); \\
+    1 - F_{\xi_n}(x)\le 1-F_\xi(x-\e) +P(\abs{\xi_n - \xi}\ge\e);\\
+    F_{\xi_n}(x) \ge F_\xi (x - \e) + P(\abs{\xi_n - \xi}\ge\e);\\
+    \varliminf_{n \to +\infty} F_{\xi_n}(x)  \ge F_\xi (x-\e).\label{eq:ier2}\tag{$**$}
+ \end{gather*}
+    По непрерывности имеем, что
+    $$\forall \delta > 0 \ F_\xi(x) - \delta \le F_\xi (x - \e) , \ F_\xi(x+\e) < F_\xi(x) + \delta.$$
+     Итого, из непрерывности,  $(*)$ и $(**)$ получаем $$\forall \delta > 0 \ F_\xi(x) - \delta \le F_\xi (x - \e)\le
+         \varliminf F_{\xi_n}(x) \le \varlimsup F_{\xi_n}(x) \le F_\xi(x+\e) < F_\xi(x) + \delta.$$
+    Значит, предел существует и верно
+    $$\lim F_{\xi_n}(x) = F_\xi (x).$$
+ \end{proof}
+
+
+ \begin{theorem}
+     Пусть $\xi_i$ --- независимые случайные величины, функции $f_j \colon \mathbb{R}^{n_j} \rightarrow \mathbb{R}$ измеримы относительно борелевской $\sigma$-алгебры.
+     Тогда величины $f_1(\xi_1, \ldots, \xi_{n_1})$, $f_2(\xi_{n_1 + 1}, \ldots, \xi_{n_2})$, $\ldots$ независимы.
+ \end{theorem}
+
+ \begin{proof} Покажем, что $f(\xi_1, \ldots, \xi_n)$ и $g(\eta_1, \ldots, \eta_m)$ независимы, если величины $\xi_1, \ldots, \xi_n$, $\eta_1, \ldots, \eta_m$ независимы; общий случай делается аналогично.
+     Надо проверить независимость событий $\{f(\xi_1, \ldots, \xi_n)\in A\}$ и $\{g(\eta_1, \ldots, \eta_m)\in B\}$.
+    \begin{gather*}
+        \{f(\xi_1, \ldots, \xi_n)\in A\} = \{(\xi_1, \ldots, \xi_n)\in \overline{A}\}\fwhere \overline{A} = f^{-1}(A); \\
+        \{g(\eta_1, \ldots, \eta_m)\in B\} = \{(\eta_1, \ldots, \eta_m)\in \overline{B}\} \fwhere \overline{B} = f^{-1}(B);\\
+        \end{gather*}
+        Надо доказать, что
+       $$ P((\xi_1,\ldots, \xi_n)\in \overline{A})\cdot P((\eta_1, \ldots, \eta_m)\in\overline{B}) = P((\xi_1, \ldots, \xi_n, \eta_1, \ldots, \eta_m)\in \overline{A}\times\overline{B}).$$
+     То есть надо доказать равенство мер, заданых на борелевских множествах, значит достаточно проверить это равенство на ячейках:
+     $$P((\xi_1, \ldots, \xi_n)\in (a, b]) = P(\xi_1\in(a_1, b_1])\cdot\ldots\cdot P(\xi_n\in (a_n, b_n]).$$
+    Аналогично расписываем две другие вероятности и получаем равенство. 
+ \end{proof}
+
+ \begin{theorem}[закон больших чисел] Пусть величины
+     $\xi_1, \ldots$ попарно некоррелированы, для всех $i$ верно
+     $\DD\xi_n < M$, $S_n = \xi_1 + \ldots + \xi_n$. Тогда 
+     $$P\left(\abs*{\frac{S_n}{n} - \EE \frac{S_n}{n}}\ge t\right)\rightarrow 0\fpri t > 0.$$
+ \end{theorem}
+
+ \begin{proof}
+    Применим неравенство Чебышёва:
+    \begin{align*}
+        P\left(\abs*{\frac{S_n}{n} - \EE \frac{S_n}{n}}\ge t\right) &\le  \frac{\DD(\frac{S_n}{n})}{t^2} = \frac{\DD(S_n)}{n^2t^2} = [\cov(\xi_i, \xi_j)=0] \\&=  \frac{\sum\DD\xi_n}{n^2t^2} \le \frac{nM}{n^2t^2} = \frac{M}{nt^2}\rightarrow 0.
+    \end{align*}
+     
+ \end{proof}
+
+ \begin{corollary}[закон больших чисел в форме Чебышёва] 
+ Пусть $\xi_1, \ldots$ --- независимые одинаково распределенные случайные величины с конечной дисперсией и $a = \EE \xi_1$, тогда 
+ $$P\left(\abs*{\tfrac{S_n}{n} - a}\ge t\right) \rightarrow 0 \fpri t > 0,$$ 
+ то есть $\frac{S_n}{n}$ сходится к $a$ по вероятности.
+
+
+ \end{corollary}
+ \begin{proof}
+                   Величины независимы, поэтому некоррелированы, дисперсии ограничены и, поскольку матожидание суммы равно сумме матожиданий (которые равны $a$, поскольку они одинаково распределены), $\EE \frac{S_n}{n} = a$; применим теорему.
+               \end{proof} 
+ \begin{corollary}[закон больших чисел для схем Бернулли]
+               Пусть $\xi_1, \ldots$ независимые бернуллиевские случайные величины с вероятностью $p$. Тогда 
+               $$P\left(\abs*{\frac{S_n}{n} - p}\ge t\right)\rightarrow 0 \fpri t > 0.$$
+              
+   
+ \end{corollary}
+               \begin{proof} Для бернуллиевских величин верно
+               \begin{gather*}
+                   \EE \xi_1 = P(\xi_1 = 1) = p;\\
+                   \DD\xi = \EE \xi_1^2 - (\EE \xi_1)^2 = p - p^2.
+               \end{gather*}
+         Показали ограниченность дисперсий, и можно применить теорему.
+     \end{proof}
+     
+ \begin{theorem}[усиленный закон больших чисел]
+    Пусть $\xi_1, \ldots$ --- независимые случайные величины, $\EE \abs{\xi_k - \EE \xi_k}^4\le C$.
+     Тогда $\frac{S_n}{n} - \EE \frac{S_n}{n} \rightarrow0$ почти наверное.
+ \end{theorem}
+
+ \begin{proof}
+    Пусть $a_n =\EE \xi_n$, $\wt{\xi_n} = \xi_n - a_n$; очевидно, $\EE \wt{\xi_n} = 0$, и тогда нам надо доказать, что при
+     $\EE \xi_n^4\le c $ верно $\frac{\wt{\xi_1} + \ldots + \wt{\xi_n}}{n}\rightarrow 0$ почти наверное.
+
+     Далее считаем, что $a_n = 0$, $A_n = \left\{\abs*{\frac{S_n}{n}}>\e\right\}$.
+
+     Если в какой то точке нет стремления к нулю, то это означает, что она лежит в бесконечном числе $A_n$.
+     Мы раньше обсуждали, как можно описать все такие множества, они описываются как
+     $$A = \overset{\infty}{\underset{n = 1}{\cap}}\overset{\infty}{\underset{k = n}{\cup}} A_k.$$ Таким образом, надо доказать, что $P(A) = 0$.
+     По лемме \ref{lem:borkan}(Борелля-Кантелли) достаточно доказать, что $\sum_{n=1}^{\infty} P(A_n)< +\infty$.
+     \begin{equation*}\label{eq:yzbc}\tag{$*$}
+         P(A_n) = P\left(\abs*{\frac{S_n}{n}}^4 > \e^4\right) \le \frac{\EE (\frac{S_n}{n})^4}{\e^4} = \frac{\EE S_n^4}{n^4\e^4}.
+     \end{equation*}
+     Докажем, что $\EE s_n^4\le cn^4$.
+     $$(\xi_1 + \ldots + \xi_n)^4 = \sum \xi_k^4 + C_1\underset{i\neq j}{\sum}\xi_i^2\xi_j^2 + C_2\sum\xi_i^2\xi_j\xi_k + C_3\sum\xi_i^3\xi_k + C_4\sum\xi_i\xi_j\xi_k\xi_l.$$
+    Величины независимы, а $\EE \xi_k = 0$, так что
+    \begin{align*}
+        \EE  S_n^4 &= \sum \EE \xi_k^4 + C_1\underset{i\neq j}{\sum}\EE (\xi_i^2\xi_j^2)\\
+         &\le nC + C_1\underset{i\neq j}{\sum}\EE (\xi_i^2)\EE (\xi_j^2) \le [\text{по неравенству Ляпунова}] \\
+         &\le nC + C_1\sum\sqrt{\EE \xi_i^4}\sqrt{\EE \xi_j^4} \le nC + C_1n^2C \le cn^2.
+    \end{align*}
+    Применяя к (\ref{eq:yzbc}), получаем, что $P(A_n) \le \frac{c}{n^2\e^4}$, значит ряд сходится.
+ \end{proof}
+
+ \begin{corollary}[усиленный закон больших чисел схемы Бернулли] Пусть $p$~--- вероятность успеха в бернуллиевских величинах $\xi_i$.
+     Тогда $\frac{S_n}{n}\rightarrow p$ почти наверное.
+ \end{corollary}
+
+ \begin{proof}
+     $\EE (\xi_1 - p)^4<+\infty$, так как $(\xi_1 - p)^4$ принимает значение $p^4$ с вероятностью $1-p$ и $(1- p)^4$ с вероятностью $p$.
+ \end{proof}
+
+
+ \begin{example}[метод Монте-Карло]
+     Есть фигура на плоскости. Хотим оценить её площадь. Для этого возьмём прямогульник, полностью покрывающий эту фигуру, и будем брать случайные точки внутри него. Пусть случайная величина $\xi_i = 1$, если $i$-ая случайная точка лежит внутри фигуры, и $\xi_i = 0$, если не лежит. Вероятность того, что точка попадёт? равна
+     $p = \frac{\text{площадь фигуры}}{\text{площадь прямоугольника}}$.
+    По следствию для схемы Бернулли, $\frac{S_n}{n}\rightarrow p$ почти наверное, то есть, посчитав большое количество точек, можно оценить площадь фигуры.
+ \end{example}
+
+ \begin{theorem}[усиленный закон больших чисел в форме Колмогорова] 
+    Пусть $\xi_1, \ldots$ независимые одинаково распределенные случайные величины,
+     $S_n = \xi_1 + \ldots + \xi_n$. Тогда $\frac{S_n}{n}\rightarrow a$ почти наверное равносильно тому, что $a=\EE \xi_1$.
+ \end{theorem}
+ 
+ \begin{theorem}
+    Пусть $a \in \R, f : \R \to \R$ --- ограниченная $M$, непрерывная в точке $a$, $\xi_1, \xi_2, \dotsc$ сходятся к $a$ по вероятности. Тогда $\mathbb{E} f(\xi_n) \to f(a)$.
+ \end{theorem}
+ \begin{proof}
+     Оценим сверху модуль разности:
+     \begin{align*}
+         \left | \mathbb{E} f(\xi_n) - f(a) \right | 
+         &= \left | \mathbb{E} \left( f(\xi_n) - f(a) \right ) \right | \leq
+         \mathbb{E} \left | f(\xi_n) - f(a) \right |  \\
+         &= \mathbb{E} \left ( | f(\xi_n) - f(a) | \cdot \mathbbm{1}_{\{|\xi_n - a | < \varepsilon\}} \right )
+         + \mathbb{E} \left ( | f(\xi_n) - f(a) | \cdot \mathbbm{1}_{\{|\xi_n - a| \geq \varepsilon\}} \right ) \\
+         &\leq \sup\limits_{|x - a| < \varepsilon} | f(x) - f(a) | + 2M \cdot P \left ( |  \xi_n - a | \geq \varepsilon \right)
+     \end{align*}
+     Устремим $\varepsilon$ к 0 и ограничим верхний предел сверху(не знаем про существование обычного, тем не менее нам этого достаточно, так как величина всегда не отрицательна):
+     \begin{align*}
+         \overline{\lim} \left | \mathbb{E} f(\xi_n) - f(a) \right | \leq 
+         \sup\limits_{|x - a| < \varepsilon} | f(x) - f(a)| +
+         2M \cdot \overline{\lim} \; P(|\xi_n - a| \geq \varepsilon) \to 0
+     \end{align*}
+     Первое слагаемое можем сделать сколь угодно маленьким, так как функция непрерывна. Второе слагаемое стремится к нулю, так как есть сходимость $\xi_n$ к $a$ по вероятности.
+ \end{proof}
+ 
+ \begin{theorem}[Вейерштрасса]
+    Пусть $f \in C[a, b]$. Тогда существует последовательность многочленов $P_n \in \R[x]$ такая, что $P_n \rightrightarrows f$ на $[a, b]$.
+ \end{theorem}
+ \begin{proof}
+     Считаем, что $[a, b] = [0, 1]$, так как можем преобразовать аргументы в обе стороны какими-то линейными преобразованиями и от этого ничего не сломается. Рассмотрим схему бернулли с вероятностью успеха $p$ и введем случайную величину $\xi_n = \frac{S_n}{n}$, где $S_n$ --- количество выигрышев среди первых $n$ бросков в нашей схеме. 
+     \begin{equation*}
+         \mathbb{E} f(\xi_n) = 
+         \sum\limits_{k = 0}^n f\left( \frac{k}{n}\right) P(S_n = k) = 
+         \sum\limits_{k = 0}^n f\left( \frac{k}{n}\right) \cdot C_n^k p^k (1-p)^{n - k}
+     \end{equation*}
+     Получили какой-то многочлен(многочлен Бернштейна) от $p$ $n$-ой степени. Тогда оценим разницу такого многочлена и $f(p)$ так же как оценивали разность в прошлой теореме:
+     \begin{align*}
+         | \mathbb{E} f(\xi_n) - f(p) | 
+         &\leq 
+         \sup\limits_{|x - p| \leq \varepsilon} |f(x) - f(p)| + 2M \cdot P(|\xi_n - p| \geq \varepsilon) \\
+         &\leq 
+         \omega_f(\varepsilon) + P \left(\left | \frac{S_n}{n} - p \right | \geq \varepsilon \right) \leq \omega_f(\varepsilon) \frac{\mathbb{D} \frac{S_n}{n}}{\varepsilon^2} \\
+         &=
+         \omega_f(\varepsilon) + \frac{p(1 - p)}{n\varepsilon^2} \leq 
+         \omega_f(\varepsilon) + \frac{1}{4n\varepsilon^2}
+     \end{align*}
+     где $\omega_f(\varepsilon)$ --- это модуль непрерывности функции. Обьяснение предпоследнего перехода --- вынесли $\frac{1}{n}$ как коэффициент с квадратом, расписали дисперсию суммы как сумму дисперсий, так как броски монетки независимы.
+     
+     Таким образом получили какую-то оценку выраженную через $n$ и $\varepsilon$. Теперь давайте скажем, что $\varepsilon = \frac{1}{\sqrt[3]{n}}$ и получим равномерное стремление к нулю.
+ \end{proof}

@@ -1,0 +1,62 @@
+\section{Конечное вероятностное пространство. Свойства вероятности. Классическое определение вероятности}
+
+\begin{definition}
+    $\Om = \{\om_1, \om_2, \ldots, \om_n\}$~--- \textit{множество (пространство) элементарных событий}, если
+    \begin{enumerate}
+        \item $\om_i$ -- равновозможны;
+        \item $\om_i$ и $\om_j$ не реализуемы одновременно (несовместны);
+        \item Какая-то $\om_i$ случается;
+    \end{enumerate}
+\end{definition}
+
+\begin{examples}
+   \enewline
+    \begin{enumerate}
+        \item Монетка~--- орёл или решка($1/0$);
+        \item Игральный кубик;
+        \item Колода карт;
+    \end{enumerate}
+\end{examples}
+Здесь и далее за $\#A$ обозначается мощность множества $A$.
+\begin{definition}
+   \textit{Случайное событие} --- это некоторое $A \subset \Om$.
+   \textit{Вероятность случайного события} --- это $P(A)= \frac{\#A}{\#\Om}$.
+\end{definition}
+
+Для примеров пространств элементарных событий приведём примеры случайных событий: 
+\begin{examples}
+\enewline
+    \begin{enumerate}
+        \item Орёл/решка;
+        \item Чётное число очков/число очков больше трёх;
+        \item Пики/красные старше валета;
+    \end{enumerate}
+\end{examples}
+
+\begin{properties}[вероятности]
+    \begin{enumerate}
+        \item $P(\emptyset) = 0, \; P(\Om) = 1$;
+        \item Если $A \cap B = \emptyset$ (говорят, что они \textit{несовместны}), то $P(A \cup B) = P(A) + P(B)$;
+        \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$;
+        \item $P(A \cup B) \leq P(A) + P(B)$;
+        \item \textit{Формула включений-исключений}:
+        \begin{multline*}
+             P(A_1\cup A_2 \cup \ldots \cup A_n) = \sum_i{P(A_i)} - \sum_{i<j}P(A_i\cap A_j) \\+ \sum_{i<j<k}P(A_i\cap A_j \cap A_k) - \ldots +(-1)^{n-1}P(A_1\cap\ldots\cap A_n).
+        \end{multline*}
+    
+        \item $P(\ov{A}) = 1 - P(A) = P(\Om) - P(A)$, где $\ov{A} = \Om \setminus A$;
+    \end{enumerate}
+\end{properties}
+
+\begin{proof}
+\begin{enumerate}
+    \item[5.]Индукция. База --- пункт 3. Переход $n \to n+1$.
+   Обозначим $B = A_1 \cup \ldots \cup A_n$. Тогда по 3-му пункту
+    $$P(B\cup A_{n+1}) = P(B) +  P(A_{n+1}) - P(B\cap A_{n+1}).$$
+   Заметим, что 
+   $$B\cap A_{n+1} = \bigcup_{i=1}^n(A_i\cap A_{n+1}).$$
+   Тогда по индукционному переходу
+   $$P(B\cap A_{n+1}) = \sum_{i\leq n}P(A_i\cap A_{n+1}) - \sum_{i<j\leq n}P(A_i\cap A_j \cap A_{n+1}) + \ldots.$$
+   \item[6.] Следствие из первого и третьего. \qedhere
+\end{enumerate}
+\end{proof}

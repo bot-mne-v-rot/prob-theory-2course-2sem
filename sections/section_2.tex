@@ -1,0 +1,190 @@
+\section{Схема Бернулли}
+
+ \begin{definition} \textit{Схема Бернулли}. Элементарные события в пространстве имеют вид $\om = (x_1, \ldots, x_n)$, где $x_i$ принимает значение $0$ или $1$; определим вероятность как
+ $$P(\omega) = p^{\sum x_i}q^{n - \sum x_i},\ \text{ где } \ p \in [0, 1], \ q = 1-p.$$ 
+ \end{definition}
+
+Смысл такой --- рассмотрим модель, в которой мы делаем $n$ подбрасываний монетки, при которых орёл выпадает с вероятностью $p$, а решка с вероятность $q=1-p$. Тогда элементарные события --- это все возможные исходы; нетрудно проверить, что вероятность исхода совпадает с вероятностью из определения. 
+
+Подсчитаем вероятность выпадения $k$ орлов. Надо сложить вероятность по всем возможным $\om$, в которых ровно $k$ орлов(они имеют одинаковые вероятности).
+$$P(k \text{ орлов}) = \binom{n}{k}p^kq^{n - k}.$$
+
+ \begin{definition}\textit{Полиномиальная схема}.
+Элементарные события в пространстве имеют вид $\om = (x_1, \ldots, x_n)$, где $x_i$ принимают целочисленные значения от 1 до $m$; определим вероятность как
+$$P(\omega) = p_1^{\#\{i\mid x_i = 1\}}\cdot p_2^{\#\{i\mid x_i = 2\}}\cdot\ldots\cdot p_m^{\#\{i\mid x_i = m\}},\ \text{где} \ p_i \ge 0, \ \sum p_i = 1.$$
+ \end{definition}
+Рассмотрим модель, аналогичную предыдущей, но $x_i$ принимает значение $k$ с вероятностью $p_k$.
+\begin{gather*}
+    P(k_1 \text{ раз } 1, \ldots, k_m \text{ раз } m) = p_1^{k_1}\cdot\ldots\cdot p_m^{k_m}\cdot \binom{n}{k_1,\ldots, k_m}, \ \text{где} \\ \binom{n}{k_1,\ldots, k_m} = \frac{n!}{k_1!\ldots k_m!} \ \text{--- мультиномиальный коэффициент.}
+\end{gather*}
+
+ \begin{theorem}[Пуассона]\label{th:puas}
+     Пусть $p_n$ ~--- вероятность успеха в $n$-ой схеме Бернулли, $n\cdot p_n \rightarrow \lambda$;
+     $S_n$ ~--- количество успехов, тогда при $k = o(\sqrt{n})$, $k = o(\frac{1}{n\cdot p_n - \lambda})$ верно
+     $$P(S_n = k) \rightarrow \frac{\lambda^k}{k!}e^{-\lambda}.$$
+ \end{theorem}
+ \begin{lemma}
+         $$(1-a_1)\cdot(1-a_2)\cdot\ldots\cdot (1-a_n) \ge 1 - a_1 - \ldots - a_n \fwhere 0 < a_1, \ldots, a_n < 1.$$
+     \end{lemma}
+     \begin{proof}
+         Индукция по $n$.
+     \end{proof}
+ \begin{corollary}
+         $$\binom{n}{k} \underset{n\rightarrow\infty}{\sim} \frac{n^k}{k!}\fpri k = o(\sqrt{n}).$$
+     \end{corollary}
+    
+     \begin{proof}
+     С одной стороны,
+         $$\binom{n}{k} = \frac{n\cdot(n - 1) \ldots (n - k + 1)}{k!} \le \frac{n^k}{k!}.$$
+С другой стороны, по лемме имеем, что
+$$\binom{n}{k} = \frac{n^k}{k!}\cdot(1\cdot (1 - \frac{1}{n})\ldots(1 - \frac{k - 1}{n}))
+             \ge \frac{n^k}{k!}\cdot (1 - \frac{1}{n} - \ldots - \frac{k -1}{n}) = \frac{n^k}{k!}\cdot (1 - \frac {k(k - 1)}{2n})
+             \rightarrow \frac{n^k}{k!}.$$
+     \end{proof}
+ 
+ \begin{proof}[Доказательство теоремы \ref{th:puas}(Пуассона)]
+    По следствию из леммы получаем, что
+     $$P(S_n = k) = \binom{n}{k}p_n^k(1-p_n)^{n - k} \sim \frac{n^k}{k!}p_n^k(1-p_n)^{n - k} \sim
+         \frac{\lambda^k}{k!}(1 - p_n)^{n - k}.$$
+    Осталось показать, что
+     $$(1 - p_n)^{n - k} \overset{?}{\sim} e^{-\lambda},$$
+     а это равносильно тому, что
+     $$(n - k)\ln(1-p_n) \overset{?}{\sim} -\lambda.$$
+    Это верно, поскольку $n - k \sim n$ и $\ln(1-p_n) \sim -p_n$, а по условию $np_n \sim \lambda$.
+ \end{proof}
+
+ \begin{theorem}[Прохорова]
+ Пусть вероятность в $n$-й схеме равна $\frac{\lambda}{n}$. Тогда
+     $$\sum_{k = 0}^\infty \abs*{\, P(S_n = k) - \frac{\lambda^k}{k!}e^{-\lambda}\,} \le \frac{2\lambda}{n}\min\{2, \lambda\}.$$
+ \end{theorem}
+
+ \begin{example} Модель --- рулетка: есть целые числа от $0$ до $36$. Игрок играет $n=111$ раундов, каждый раз ставит одну монетку (считаем, что число монет неограниченно), если угадывает, то получает выигрыш в 37 раз больше, то есть 37 монеток. Понятно, что для того, чтобы ``отбить" все потраченные монетки, нужно выиграть 3 раза. Посчитаем вероятность этого. Очевидно, если игрок ставит равновероятно, то вероятность выигрыша в раунде равна $p=\frac{1}{37}$.
+    Посчитаем напрямую:
+     $$P(S_{111} = 3) = \binom{111}{3}\left(\frac{1}{37}\right)^3\left(1-\frac{1}{37}\right)^{111-3} \approx 0,2271\ldots.$$ 
+
+     Если воспользуемся теоремой Пуассона, то получим оценку
+     $$P(S_{111} = 3) \approx 0,224\ldots.$$
+     
+    Также оценим шанс выигрыша(``выйти в плюс``):
+    \begin{align*}
+        P(\text{win}) &= 1 - P(S_n = 0) - P(S_n = 1) - P(S_n = 2) - P(S_n = 3) \\&\approx
+         1 - e^{-3} - 3e^{-3} - \frac{9}{2}e^{-3} - \frac{9}{2}e^{-3} \\&= 1 - 13e^{-3}\approx 0,352\ldots.
+    \end{align*}
+   
+ \end{example}
+
+ \begin{theorem}[Локальная предельная теорема Муавра-Лапласа]
+     Пусть $0 < p < 1,\; q = 1 - p$. $T$ --- некоторое число. Обозначим $x = \frac{k - np}{\sqrt{npq}}$, причём $k$ меняется так, что $\abs{x}\le T$ при $n \rightarrow +\infty$.
+     Тогда 
+     $$P(S_n = k) \underset{n\rightarrow +\infty}{\sim} \frac{e^{-\frac{x^2}{2}}}{\sqrt{2\pi npq}} \ \text{равномерно по $k$}.$$
+ \end{theorem}
+
+ \begin{proof}
+    Пусть $n \to \infty$. Из условий
+     $$np + T\sqrt{npq} \ge k = np + x\sqrt{npq} \ge np - T\sqrt{npq}.$$
+     Тогда $ k\rightarrow +\infty$ верно из 2-го неравенства и $n - k \rightarrow +\infty$ из 1-го (если из $n$ вычесть $np + T\sqrt{npq}$,
+     то это будет стремится к $+\infty$).
+     Обозначим
+     $$\alpha = \frac{k}{n} = p + x\sqrt{\frac{pq}{n}} \rightarrow p \fand \beta = \frac{n - k}{n} = 1 - \alpha = q - x\sqrt{\frac{pq}{n}} \rightarrow q.$$
+    Тогда
+    \begin{align*}
+        P(S_n = k) &= \binom{n}{k}p^kq^{n- k} \sim \frac{n^ne^{-n}\sqrt{2\pi n}p^kq^{n - k}}{k^ke^{-k}\sqrt{2\pi k}(n - k)^{n - k}e^{k - n}\sqrt{2\pi(n - k)}} \\&=
+         \frac{p^kq^{n - k}}{(\frac{k}{n})^k (1 - \frac{k}{n})^{n - k}\sqrt{2\pi n}\sqrt{\frac{k}{n}(1 - \frac{k}{n})}} \\&\sim
+         \frac{p^kq^{n - k}}{\alpha^k\beta^{n - k}\sqrt{2\pi npq}}.
+    \end{align*}
+    Надо доказать, что
+     $$\frac{p^kq^{n - k}}{\alpha^k\beta^{n - k}} \overset{}{\sim} e^{-\frac{x^2}{2}},$$
+что равносильно тому, что
+     \begin{gather*}
+     k\ln\left(\frac{\alpha}{p}\right) + (n - k)\ln\left(\frac{\beta}{q}\right) \overset{}{\sim} \frac{x^2}{2}.\\
+        \frac{\alpha}{p} = 1 + x\sqrt{\frac{q}{np}}, \  \ln\left(\frac{\alpha}{p}\right) = x\sqrt{\frac{q}{np}} - x^2 \frac{q}{2np}
+         + O\left(\frac{1}{n^\frac{3}{2}}\right).\\
+         \frac{\beta}{q} = 1 - x\sqrt{\frac{pq}{n}}, \  \ln\left(\frac{\beta}{q}\right) = -x\sqrt{\frac{p}{nq}} - x^2 \frac{p}{2nq}
+         + O\left(\frac{1}{n^\frac{3}{2}}\right).
+    \end{gather*}
+     Итого, подставив, получаем
+    \begin{align*}
+        k\ln\left(\frac{\alpha}{p}\right) + (n - k)\ln\left(\frac{\beta}{q}\right) &= (np + x\sqrt{npq})\left(x\sqrt{\frac{q}{np}} - x^2 \frac{q}{2np}
+         + O\left(\frac{1}{n^\frac{3}{2}}\right)\right) \\& \quad\quad + (nq - \sqrt{npq})\left(-x\sqrt{\frac{p}{nq}} - x^2 \frac{p}{2nq}
+         + O\left(\frac{1}{n^\frac{3}{2}}\right)\right) \\&= x\sqrt{npq} + x^2q - x^2\frac{q}{2} + O\left(\frac{1}{\sqrt{n}}\right) \\& \quad\quad - x\sqrt{npq}
+         +x^2p-x^2\frac{p}{2} + O\left(\frac{1}{\sqrt{n}}\right) \\&= \frac{x^2}{2} + O\left(\frac{1}{\sqrt{n}}\right).
+    \end{align*}
+   
+
+ \end{proof}
+
+ \begin{example}На рулетке 37 секторов --- 18 красных и 18 черных и 1 зелёный. Игрок участвует в $n = 222$ раундах. Посчитаем шанс ``отбить"":
+     $$P(S_{222} = 111) = \binom{222}{111}(\frac{18}{37})^{111}(\frac{19}{37})^{111} \approx 0,0493228\ldots.$$
+     Теорема Муавра-Лапласа дает нам оценку
+    $$ P(S_{222} = 111)\approx \frac{e^{-\frac{(k - np)^2}{2npq}}}{\sqrt{2\pi npq}}\approx 0,0493950\ldots.$$
+ \end{example}
+
+ \begin{theorem}[Интегральная предельная теорема Муавра-Лапласа]\label{th:ipt}
+     Пусть $0<p<1$.
+     Тогда $$P(a< \frac{S_n - np}{\sqrt{npq}}\le b) \underset{n\rightarrow\infty}{\rightarrow} \frac{1}{\sqrt{2\pi}} \int_a^b e^{-\frac{x^2}{2}}\dd x \ \text{ равномерно по } a, b\in \mathbb{R}.$$
+ \end{theorem}
+
+\begin{notation}
+$$\Phi(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{t^2}{2}}\dd t.$$
+$$\Phi_0(x) = \frac{1}{\sqrt{2\pi}} \int_{0}^x e^{-\frac{t^2}{2}}\dd t.$$
+\end{notation}
+
+Эти функции не выражаются через элементарные. Из матанализа знаем значения в некоторых точках. Например про второй знаем, что $\Phi_0(x) \approx \frac{1}{2}$ при $x > 4$. 
+
+ \begin{theorem}[Оценка скорости сходимости. Частный случай теоремы Берри-Эссена]
+     $$\underset{x\in\mathbb{R}}{\sup}\abs{P( \frac{S_n - np}{\sqrt{npq}} \le x) - \Phi(x)} \le
+         \frac{1}{2}\frac{p^2 + q^2}{\sqrt{npq}}.$$
+ \end{theorem}
+
+\begin{example} [Неулучшаемость оценки]
+    Приведем пример, показывающий, что сходимоcть не может быть быстрее, чем $\frac{C}{\sqrt{n}}$.
+    
+    Пусть $p=q=\frac{1}{2}, x = 0$. Точное значение $\Phi(x)$ мы знаем: $\Phi(0) = \frac{1}{2}$, так как это половина всего распределения. Теперь оценим вероятность: \[P\left(\frac{S_n - \frac{n}{2}}{\sqrt{n\frac{1}{4}}} \le 0\right) = P\left(S_n \le \frac{n}{2}\right) =  P(S_{2n} \le n) = \]
+    Заметим, что $P(S_{2n} \le n) = P(S_{2n} \ge n)$,  причем объединение этих двух событий дает все вероятностное пространство за исключением того, что событие $P(S_{2n} = n)$ посчитано 2 раза. Отсюда вытекает равенство: \[ = \frac{1}{2} + \frac{P(S_{2n} = n)}{2} = \frac{1}{2} + \frac{1}{2} \cdot \binom{2n}{n}\cdot\frac{1}{4^n} \]
+    Осталось вспомнить, что $\binom{2n}{n}\cdot\frac{1}{4^n} \sim \frac{1}{\sqrt{\pi n}}$, поэтому: \[\left|P\left(\frac{S_n - \frac{n}{2}}{\sqrt{n\frac{1}{4}}} \le 0\right) - \Phi(0)\right| \sim \frac{1}{\sqrt{\pi n}} \]
+\end{example}
+
+ \begin{example}[задача о театре]
+     В театре, рассчитанном на $n = 1600$ мест, есть два гардероба.
+     Сколько должно быть мест в каждом гардеробе, чтобы в среднем не чаще раза в месяц какому-то посетителю пришлось идти не к ближайшему из-за отсутствия в нем мест(считаем, что люди заходят в гардеробы равновероятно)?
+     Обозначим число вешалок в каждом из гардеробов за $C$.
+     Пусть $S_n$ ~--- число людей, сдавших вещи в первый гардероб. Тогда должны выполняться неравенства $S_n \le C$ и $n - S_n \le C$.
+     Хотим, чтобы выполнялось
+     $$P(n - C \le S_n \le C) \approx \frac{29}{30}.$$
+    По теореме \ref{th:ipt}
+    \begin{align*}
+        P(n - S_n \le S_n \le C) &= P(\frac{-C+\frac{n}{2}}{\sqrt{npq}} \le \frac{S_n-np}{\sqrt{npq}} \le \frac{C-\frac{n}{2}}{\sqrt{npq}}) \\&= P(\frac{-C + 800}{20} \le \frac{S_n - np}{\sqrt{npq}}\le \frac{C - 800}{20}) \approx \frac{1}{\sqrt{2\pi}}\int_{-\frac{C - 800}{20}}^{\frac{C - 800}{20}}e^{-\frac{t^2}{2}}\dd t \\&=
+         2\Phi_0(\frac{C-800}{20})\approx \frac{29}{30} \Ra C\approx 843.
+    \end{align*}
+     
+ \end{example}
+ 
+ \begin{example} [Случайное блуждание на прямой]
+     Ходим по прямой, начиная с 0. Идем на один шаг вправо с вероятностью $p$, и на один шаг влево с вероятностью $q=(1-p)$. Заметим, что точка, в которую мы придем, выражается как $a_n = 2S_n - n$. Тогда вероятность придти в конкретную точку после $n$ шагов вычисляется как: $P(a_n = k) = P(S_n = \frac{k+n}{2}) = \binom{n}{\frac{n+k}{2}}p^{\frac{n+k}{2}}q^{\frac{n-k}{2}}$, при условии, что $n$ и $k$ одной четности.
+ \end{example}
+
+
+ \begin{theorem}[Рамсея]
+Если $n \ge R(k)$, где $R$ --- некоторая функция(так называемое число Рамсея), то в любом графе на $n$ вершинах есть независимое множество или полный подграф размера $k$.
+ \end{theorem}
+
+ \begin{theorem}[Эрдёша]
+     Если для $n$ и $k$ верно 
+     $$\binom{n}{k}\cdot 2^{1 - \binom{k}{2}} < 1,$$
+     то $R(k) > n$. В частности, если $k \ge 3$, то $R(k) > 2^{\frac{k}{2}}$.
+ \end{theorem}
+
+ \begin{proof}
+     Рассмотрим случайный граф на $n$ вершинах. В нем выберем случайное подмножество $A$ из $k$ вершин. Тогда вероятность того, что этот подграф полный или независимый, равна
+     $$P_A 2\cdot (\frac{1}{2})^{\binom{k}{2}} = 2^{1 - \binom{k}{2}}.$$
+     Тогда вероятность того, что какое-то подмножество размера $k$ независимо или является полным подграфом, не превосходит
+     $$\sum_{A \,:\, \abs{A} = k}P_A =
+         \binom{n}{k}\cdot 2^{1 - \binom{k}{2}} \underset{}{<} 1.$$
+         
+     Если $n = 2^{\frac{k}{2}}$, то 
+     $$\binom{n}{k}\cdot 2^{1 - \binom{k}{2}} \le \frac{n^k}{k!}2^{1 - \frac{k(k-1)}{2}} = \frac{2^{\frac{k^2}{2}}\cdot2^{1 - \frac{k^2}{2} +
+                 \frac{k}{2}}}{k!} = \frac{2^{\frac{k}{2} + 1}}{k!} < 1.$$
+    Последнее верно при $k \ge 3.$
+ \end{proof}
+
+

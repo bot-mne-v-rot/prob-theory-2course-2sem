@@ -1,0 +1,30 @@
+\section{Теорема Харди–Рамануджана о количестве различных простых делителей числа}
+
+\begin{theorem}[Харди-Рамануджана]
+    Пусть $\nu(k)$ --- количество простых в разложении $k$, тогда если $\omega(n) \rightarrow +\infty$, то $$P(\abs{\nu(k) - \ln\ln n} > \omega(n)\sqrt{\ln\ln n}) \rightarrow 0 .$$
+ \end{theorem}
+
+ \begin{proof}
+     Обозначим $t = \omega(n)\sqrt{\ln\ln n}$.
+     Рассмотрим $$\xi_p(k) = \begin{cases}1, &\mbox{$k\divby p$}  \\ 0, &\mbox{иначе} \end{cases}, \ \text{где $p$ --- простое.}$$
+     Возьмём
+     $M = n^{\frac{1}{10}}$ и обозначим
+     \begin{gather*}
+         \xi = \underset{p\le M}{\sum} \xi_p, \ 0\le \nu(k) - \xi(k)\le 10;\\
+         \EE _{\xi_p} = \frac{[\frac{n}{p}]}{n} = \frac{1}{p} + O\left(\frac{1}{n}\right);\\
+         \EE _\xi = \sum \EE _{\xi_p} = \underset{p\le M}{\sum}\frac{1}{p} + O\left(\frac{M}{n}\right) = \underset{p\le M}{\sum}\frac{1}{p} + O(1) = \ln\ln M + O(1) = \ln\ln n + O(1).\\
+         \DD \xi = \sum \DD \xi_p + \sum \cov(\xi_p, \xi_q);\\
+         \DD \xi_p = \EE \xi_p^2 - (\EE \xi_p)^2 = \EE \xi_p - (\EE \xi_p)^2 = \frac{1}{p} - \frac{1}{p^2} + O(\frac{1}{n});\\
+     \cov(\xi_p, \xi_q) = \EE \xi_p\xi_q - \EE \xi_p\EE \xi_q = P(k\divby pq) - \frac{[\frac{n}{p}]}{n}\frac{[\frac{n}{q}]}{n} = \frac{[\frac{n}{pq}]}{n} = \frac{[\frac{n}{p}]\cdot[\frac{n}{q}]}{n}.
+     \end{gather*}
+    С одной стороны,
+    $$\frac{[\frac{n}{p}]\cdot[\frac{n}{q}]}{n}\ge \frac{\frac{n}{pq} - 1}{n} - \frac{\frac{n}{p}\frac{n}{q}}{n^2} = -\frac{1}{n}.$$
+    С другой
+$$\frac{[\frac{n}{p}]\cdot[\frac{n}{q}]}{n} \le \frac{\frac{n}{pq}}{n} - \frac{(\frac{n}{p} - 1)(\frac{n}{q} - 1)}{n} = \frac{1}{n}\left(\frac{1}{p} + \frac{1}{q}\right).$$
+     То есть 
+     $$2\sum \cov \ge -\frac{M^2}{n} = O(1) \fand 2\sum \cov \le \frac{1}{n} \sum \left(\frac{1}{p} + \frac{1}{q}\right)\le 2\frac{M}{n}\sum \frac{1}{p} = O(1).$$
+     Таким образом,
+     $$\DD \xi = \sum \left(\frac{1}{p} - \frac{1}{p^2}\right) + O(1) = \sum\frac{1}{p} + O(1) = \ln\ln n + O(1).$$
+     Теперь применим неравенство Чебышёва:
+    $$P(\abs{\xi - E\xi} \ge t)\le \frac{\DD\xi}{t^2} = \frac{\ln \ln n + O(1)}{\omega^2(n)\ln\ln n} \rightarrow 0.$$
+ \end{proof}
