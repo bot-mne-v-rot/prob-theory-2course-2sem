@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.11.1)  18 JUN 2022 04:20
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.11.1)  18 JUN 2022 04:25
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/mraker/prob-theory-2course-2sem/main.tex
@@ -1217,71 +1217,71 @@ LaTeX Font Info:    Font shape `TU/STIXTwoText(0)/m/sl' in size <12> not availab
 
 
 
-]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket2.tex
+] [2]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket2.tex
 Overfull \hbox (3.95932pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Услов-ная ве-ро-ят-ность. Мо-ти-ви-ров-ка, опре-де-ле-ние
  []
 
-) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket3.tex [2] [3]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket4.tex [4] [5]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket5.tex) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket6.tex [6] [7]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket7.tex [8]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket8.tex
+[3]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket3.tex [4] [5]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket4.tex [6] [7]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket5.tex [8]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket6.tex [9] [10]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket7.tex [11] [12]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket8.tex
 Overfull \hbox (22.43602pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 на ско-рость схо-ди-мо-сти (без до-ка-за-тель-ства). Неулуч-
  []
 
-[9] [10]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket9.tex
+[13] [14]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket9.tex
 Overfull \hbox (16.15762pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Ве-ро-ят-ност-ное про-стран-ство. Услов-ная ве-ро-ят-ность.
  []
 
-[11]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket10.tex [12]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket11.tex [13]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket12.tex
+[15]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket10.tex [16]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket11.tex [17] [18]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket12.tex
 Overfull \hbox (4.49844pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Дис-крет-ное, непре-рыв-ное и аб-со-лют-но непре-рыв-
  []
 
-[14]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket13.tex [15]
+[19]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket13.tex
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 41.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket14.tex [16]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket15.tex
+) [20] [21]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket14.tex [22]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket15.tex
 Overfull \hbox (11.18443pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Сов-мест-ная функ-ция рас-пре-де-ле-ния и сов-мест-ная
  []
 
-[17]
+
 Overfull \hbox (4.5368pt too wide) in paragraph at lines 22--24
 []\TU/STIXTwoText(0)/m/n/12 Пусть $\OML/ntxstx2mi/m/it/12 []; [] ; []$ \TU/STIXTwoText(0)/m/n/12 --- аб-со-лют-но непре-рыв-ные слу-чай-ные ве-ли-чи-ны. То-гда $\OML/ntxstx2mi/m/it/12 []; [] ; []$
  []
 
-) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket16.tex [18] [19]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket17.tex
+[23] [24]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket16.tex [25] [26]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket17.tex
 Overfull \hbox (11.16716pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Рас-пре-де-ле-ние сум-мы неза-ви-си-мых слу-чай-ных ве-
  []
 
-[20]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket18.tex [21]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket19.tex
+[27]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket18.tex [28] [29]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket19.tex
 Overfull \hbox (16.69331pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Ма-те-ма-ти-че-ское ожи-да-ние. Свой-ства (нера-вен-ства
  []
 
-[22]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket20.tex
+[30]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket20.tex
 Overfull \hbox (2.0941pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Дис-пер-сия. Свой-ства дис-пер-сии. Нера-вен-ство Че-
  []
 
-[23] [24]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket21.tex
+[31] [32]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket21.tex
 Overfull \hbox (5.36pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Ко-ва-ри-а-ция. Связь с неза-ви-си-мо-стью. Ко-эф-фи-ци-
  []
 
-[25]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket22.tex [26]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket23.tex
+[33] [34]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket22.tex [35]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket23.tex
 Overfull \hbox (11.27083pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Тео-ре-ма Хар-ди–Ра-ма-нуд-жа-на о ко-ли-че-стве раз-лич-
  []
 
-[27]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket24.tex
+[36] [37]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket24.tex
 Overfull \hbox (0.38446pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Неза-ви-си-мость функ-ций от неза-ви-си-мых слу-чай-
  []
 
-[28]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket25.tex
+[38]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket25.tex
 Overfull \hbox (6.62825pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Раз-лич-ные ви-ды схо-ди-мо-сти по-сле-до-ва-тель-но-сти
  []
@@ -1291,7 +1291,7 @@ Overfull \hbox (2.13203pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 слу-чай-ных ве-ли-чин. Связь меж-ду схо- ди-мо-стя-ми 
  []
 
-[29]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket26.tex [30]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket27.tex [31]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket28.tex
+[39] [40]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket26.tex [41]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket27.tex [42] [43]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket28.tex
 Overfull \hbox (1.10443pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 ва-тель-но-сти схо-дя-щих-ся по ве-ро-ят-но-сти слу- чай-
  []
@@ -1301,12 +1301,12 @@ Overfull \hbox (5.69171pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 ных ве-ли-чин. До-ка-за-тель-ство Берн-штей-на тео- ре-
  []
 
-[32]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket29.tex
+[44] [45]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket29.tex
 Overfull \hbox (9.23181pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Про-из-во-дя-щие функ-ции для це-лознач-ных слу-чай-
  []
 
-[33] [34]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket30.tex [35]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket31.tex
+[46] [47]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket30.tex [48]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket31.tex
 Overfull \hbox (5.17566pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Ха-рак-те-ри-сти-че-ская функ-ция. Свой-ства. Ха-рак-те-
  []
@@ -1316,12 +1316,12 @@ Overfull \hbox (18.49966pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 ри-сти-че-ская функ-ция нор-маль-но-го рас-пре-де-ле-ния 
  []
 
-[36] [37]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket32.tex [38]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket33.tex [39] [40]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket34.tex
+[49] [50]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket32.tex [51] [52]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket33.tex [53] [54]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket34.tex
 Overfull \hbox (3.03636pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 След-ствия фор-му-лы об-ра-ще-ния. Сум-ма неза-ви-си-
  []
 
-[41]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket35.tex
+[55] [56]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket35.tex
 
 LaTeX Font Warning: Font shape `U/bbm/m/n' in size <12.5> not available
 (Font)              size <12> substituted on input line 1.
@@ -1343,7 +1343,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-[42] [43] [44]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket36.tex
+[57] [58] [59]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket36.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1371,12 +1371,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[45]
+[60]
 Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket37.tex
+[61]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket37.tex
 Overfull \hbox (12.9643pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Рав-но-мер-ная схо-ди-мость к непре-рыв-ной функ-ции
  []
@@ -1386,32 +1386,31 @@ Overfull \hbox (5.70326pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 рас-пре-де-ле-ния. Цен-траль-ная пре-дель-ная тео-ре-ма
  []
 
-[46]
 
 LaTeX Font Warning: Font shape `U/bbm/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 18.
 
-) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket38.tex [47] [48]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket39.tex [49]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket40.tex [50] [51]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket41.tex
+[62] [63]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket38.tex [64] [65]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket39.tex [66] [67]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket40.tex [68] [69]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket41.tex
 Overfull \hbox (3.03403pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Услов-ные ма-те-ма-ти-че-ские ожи-да-ния от-но-си-тель-
  []
 
-[52] [53]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket42.tex
+[70] [71] [72]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket42.tex
 Overfull \hbox (7.72844pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Ма-те-ма-ти-че-ское ожи-да-ние и про-из-во-дя-щая функ-
  []
 
-[54]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket43.tex [55] [56]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket44.tex
+[73] [74]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket43.tex [75] [76]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket44.tex
 Overfull \hbox (14.96297pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Ско-рость вы-рож-де-ния вет-вя-ще-го-ся про-цес-са в кри-
  []
 
-[57]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket45.tex
+[77]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket45.tex
 Overfull \hbox (15.4434pt too wide) in paragraph at lines 1--1
 \TU/STIXTwoText(0)/b/n/17.28 ро-ван-ной тра-ек-то-рии. Тео-ре-ма су-ще-ство-ва-ния (без
  []
 
-[58]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket46.tex
+[78] [79]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket46.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1420,12 +1419,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-[59]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket47.tex [60]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket48.tex
+[80]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket47.tex [81] [82]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket48.tex
 Overfull \hbox (0.99736pt too wide) in paragraph at lines 1--1
 []\TU/STIXTwoText(0)/b/n/17.28 Клас-си-фи-ка-ция со-сто-я-ний це-пи Мар-ко-ва. Кри-те-
  []
 
-[61] [62]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket49.tex [63]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket50.tex) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket51.tex [64]) [65]
+[83] [84] [85]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket49.tex [86]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket50.tex [87]) (/Users/mraker/prob-theory-2course-2sem/tickets/ticket51.tex [88])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
  (/Users/mraker/prob-theory-2course-2sem/main.aux)
@@ -1442,19 +1441,19 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33364 strings out of 480992
+ 33387 strings out of 480992
  100000,1144653 words of node,token memory allocated
- 3872 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 151 glyph, 709 attribute, 94 glue_spec, 356 attribute_list, 3 write nodes
-   avail lists: 1:1,2:897,3:220,4:69,5:545,6:24,7:2799,8:105,9:711,10:16,11:301
+ 3867 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 3 glue, 4 kern, 151 glyph, 709 attribute, 93 glue_spec, 356 attribute_list, 3 write nodes
+   avail lists: 1:1,2:737,3:191,4:69,5:648,6:24,7:2783,8:107,9:926,10:16,11:301
  48602 multiletter control sequences out of 65536+600000
  330 fonts using 29225163 bytes
- 75i,17n,88p,1541b,561s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 75i,17n,88p,1541b,555s stack positions out of 5000i,500n,10000p,200000b,100000s
 <</Users/mraker/Library/texlive/2020/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>><</Users/mraker/Library/texlive/2020/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIX2Text-Italic.otf>{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/stix2/stix2-ot1.enc}</usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIX2Text-Bold.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIX2Text-Regular.otf></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/stix2/STIX2Text-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/stickstoo/stickstooMath-Italic.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/stickstoo/stickstooMath-Regular.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (65 pages, 534538 bytes).
+Output written on main.pdf (88 pages, 542030 bytes).
 
-PDF statistics: 851 PDF objects out of 1000 (max. 8388607)
- 755 compressed objects within 8 object streams
- 364 named destinations out of 1000 (max. 131072)
+PDF statistics: 946 PDF objects out of 1000 (max. 8388607)
+ 826 compressed objects within 9 object streams
+ 387 named destinations out of 1000 (max. 131072)
  424 words of extra memory for PDF output out of 10000 (max. 100000000)
 
